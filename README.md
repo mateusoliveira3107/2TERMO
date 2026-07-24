@@ -1,11 +1,10 @@
-```markdown
 # 🏫 Repositório de Aulas - Tecnologia da Informação (2º Termo)
 
 Este repositório reúne os conteúdos, materiais de apoio, exercícios e projetos desenvolvidos durante o **2º Termo** do curso de Tecnologia da Informação. As disciplinas aprofundam os conhecimentos adquiridos no primeiro semestre, com foco no desenvolvimento de aplicações web, modelagem de bancos de dados e execução de projetos de software.
 
 ---
 
-## ⚙️ 1. Backend
+## ⚙️ 1. Back-end
 
 Introdução ao desenvolvimento do lado do servidor, abordando a construção de APIs, integração com bancos de dados e organização de aplicações utilizando boas práticas de programação.
 
@@ -58,4 +57,3 @@ Disciplina voltada à aplicação integrada dos conhecimentos adquiridos, promov
 ## 🎯 Objetivo do 2º Termo
 
 Consolidar os conhecimentos de desenvolvimento de software por meio da criação de aplicações completas, integrando interfaces web, lógica de negócio, bancos de dados e metodologias de gerenciamento de projetos, preparando o estudante para desafios mais avançados no desenvolvimento de sistemas.
-```
