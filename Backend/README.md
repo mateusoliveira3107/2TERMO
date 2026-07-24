@@ -1,6 +1,4 @@
-# 💻 Módulos Complementares de Engenharia de Software
-
-## 1. ⚙️ Backend
+## ⚙️ Backend
 O motor do sistema. Responsável pelas regras de negócio, segurança, processamento de dados e integração com o banco de dados.
 
 ### 📌 Conteúdo Programático Geral

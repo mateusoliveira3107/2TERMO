@@ -1,4 +1,4 @@
-## 2. 📝 LIMA – Linguagem de Marcação
+## 📝 LIMA – Linguagem de Marcação
 Estruturação e semântica de dados e documentos. Foco na organização hierárquica das informações para interpretação de sistemas e navegadores.
 
 ### 📌 Conteúdo Programático Geral

@@ -1,4 +1,4 @@
-## 4. 🚀 Projetos
+## 🚀 Projetos
 A consolidação do conhecimento. Aplicação prática dos conceitos através do ciclo de vida completo do desenvolvimento de software.
 
 ### 📌 Conteúdo Programático Geral

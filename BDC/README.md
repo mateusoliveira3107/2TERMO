@@ -1,4 +1,4 @@
-## 3. 🗄️ Banco de Dados
+## 🗄️ Banco de Dados
 O coração do armazenamento. Onde a informação é modelada, guardada de forma segura e recuperada de maneira eficiente.
 
 ### 📌 Conteúdo Programático Geral
