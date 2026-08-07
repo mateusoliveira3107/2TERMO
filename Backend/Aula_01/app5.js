@@ -1,19 +1,10 @@
-// Importa a biblioteca readline-sync
-const entrada = require('readline-sync');
+const pergunta = require('readline-sync');
 
-console.log("---SISTEMA DE VENDAS PADARIA---");
+console.log("----- Calculadora IMC -----");
 
-//1. Entrada de dados pelo terminal
+const peso = pergunta.questionFloat("Informe seu peso em kg: ");
+const altura = pergunta.questionFloat("Informe sua altura: ");
 
-const nomeProduto = entrada.question("Qual o produto?");
-const precoUnitario = entrada.questionFloat("Qual o preço unitário?");
-const quantidade = entrada.questionInt("Quantas unidades foram vendidas?");
+const imc = peso / (altura**2)
 
-//3. Processa a conta
-
-const total = precoUnitario * quantidade;
-
-//4. Saída de dados:
-console.log("\n--- Recibo de Venda ---");
-console.log(`Produto: ${nomeProduto}`);
-console.log(`Total a pagar: R$ ${total.toFixed(2)}`);
+console.log(`Seu IMC (Índice de massa corporal): ${imc.toFixed(2)}`);
