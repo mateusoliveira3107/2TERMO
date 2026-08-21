@@ -11,9 +11,11 @@ const tempoUso = entrada.questionInt("Meses desde o ultimo conserto: ");
 
 const statusGarantia = oficina.verificarGarantia(tempoUso);
 const total = oficina.calcularOrcamento(peca, horas);
+let valorComDesconto = oficina.totalComDesconto(total)
 
 // Relatório Final
 console.log("\n------- RELATORIO DE SERVICO -------");
 console.log(`Orcamento: R$${total.toFixed(2)}`);
-console.log(`Status da Garantia ${statusGarantia}`)
-console.log("---".repeat(12))
+console.log(`Orcamento com desconto (5%): R$${valorComDesconto.toFixed(2)}`);
+console.log(`Status da Garantia ${statusGarantia}`);
+console.log("----".repeat(12));

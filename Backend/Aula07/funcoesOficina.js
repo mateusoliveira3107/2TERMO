@@ -12,7 +12,12 @@ function verificarGarantia(meses) {
     }
 }
 
+function totalComDesconto(precoSemDesconto){
+    return precoSemDesconto * (95/100);
+}
+
 module.exports = {
     calcularOrcamento,
-    verificarGarantia
+    verificarGarantia,
+    totalComDesconto
 }
