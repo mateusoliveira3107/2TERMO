@@ -5,24 +5,24 @@ let sistemaAtivo = true;
 while (sistemaAtivo) {
     try {
         console.log("\n=== PAINEL DE CONTROLE INDUSTRIAL ===");
-        console.log("Dica: Digite 'sair' para encerrar o sistema.\n");
-
         const leituraCarga = entrada.question("Digite o valor da carga (kg): ");
         
-        // Opção para sair do loop
-        if (leituraCarga.toLowerCase() === 'sair') {
-            sistemaAtivo = false;
-            console.log("Encerrando sistema...");
-            break;
-        }
+        if (leituraCarga.toLowerCase() === 'sair') break;
 
         const leituraMaquinas = entrada.question("Dividir por quantas maquinas? ");
 
         const num1 = Number(leituraCarga);
         const num2 = Number(leituraMaquinas);
 
+        // 1. Validar se são números
         if (isNaN(num1) || isNaN(num2)) {
-            throw new Error("Voce digitou letras. Digite apenas numeros!");
+            throw new Error("Digite apenas numeros!");
+        }
+
+        // 2. REGRA DE NEGÓCIO: Máquinas precisam ser INTEIRAS
+        // O ! significa "NÃO". Ou seja: "Se NÃO for inteiro..."
+        if (!Number.isInteger(num2)) {
+            throw new Error("Quantidade de maquinas deve ser um numero INTEIRO (sem virgula ou ponto).");
         }
 
         if (num2 === 0) {
@@ -33,12 +33,6 @@ while (sistemaAtivo) {
         console.log(`\n✅ SUCESSO: Cada maquina recebera ${resultado.toFixed(2)} kg`);
 
     } catch (erro) {
-        // A rede de proteção avisa o erro...
-        console.log("\n-------------------------------------------");
-        console.log(`⚠️  ALERTA DE SISTEMA: ${erro.message}`);
-        console.log("-------------------------------------------");
-        // ...mas como estamos dentro do 'while', o programa VOLTA para o 'try'!
+        console.log(`\n⚠️  ALERTA: ${erro.message}`);
     }
 }
-
-console.log("Sistema desligado com segurança.");

@@ -1,38 +1,44 @@
 const entrada = require('readline-sync');
 
-console.log("=== SISTEMA DE CALCULO INDUSTRIAL (VERSAO 2.0) ===");
+let sistemaAtivo = true;
 
-try {
-    // 1. Lemos como texto comum primeiro para termos controle total
-    const leituraCarga = entrada.question("Digite o valor da carga (kg): ");
-    const leituraMaquinas = entrada.question("Dividir por quantas maquinas? ");
+while (sistemaAtivo) {
+    try {
+        console.log("\n=== PAINEL DE CONTROLE INDUSTRIAL ===");
+        console.log("Dica: Digite 'sair' para encerrar o sistema.\n");
 
-    // 2. Tentamos converter para número
-    const num1 = Number(leituraCarga);
-    const num2 = Number(leituraMaquinas);
+        const leituraCarga = entrada.question("Digite o valor da carga (kg): ");
+        
+        // Opção para sair do loop
+        if (leituraCarga.toLowerCase() === 'sair') {
+            sistemaAtivo = false;
+            console.log("Encerrando sistema...");
+            break; 
+        }
 
-    // 3. SE a conversão resultou em NaN (Not a Number), "jogamos" um erro
-    if (isNaN(num1) || isNaN(num2)) {
-        throw new Error("Voce digitou letras. O sistema aceita apenas numeros!");
+        const leituraMaquinas = entrada.question("Dividir por quantas maquinas? ");
+
+        const num1 = Number(leituraCarga);
+        const num2 = Number(leituraMaquinas);
+
+        if (isNaN(num1) || isNaN(num2)) {
+            throw new Error("Voce digitou letras. Digite apenas numeros!");
+        }
+
+        if (num2 === 0) {
+            throw new Error("Divisao por zero nao permitida.");
+        }
+
+        const resultado = num1 / num2;
+        console.log(`\n✅ SUCESSO: Cada maquina recebera ${resultado.toFixed(2)} kg`);
+
+    } catch (erro) {
+        // A rede de proteção avisa o erro...
+        console.log("\n-------------------------------------------");
+        console.log(`⚠️  ALERTA DE SISTEMA: ${erro.message}`);
+        console.log("-------------------------------------------");
+        // ...mas como estamos dentro do 'while', o programa VOLTA para o 'try'!
     }
-
-    // 4. SE o número de máquinas não for um inteiro (for decimal), jogamos outro erro
-    if (!Number.isInteger(num2)) {
-        throw new Error("Nao podemos dividir carga em 'metades' de maquinas. Use numeros inteiros!");
-    }
-
-    // 5. SE tentar dividir por zero
-    if (num2 === 0) {
-        throw new Error("Divisao por zero nao permitida na linha de producao.");
-    }
-
-    const resultado = num1 / num2;
-    console.log(`\n✅ Sucesso: Cada maquina recebera ${resultado.toFixed(2)} kg`);
-
-} catch (erro) {
-    // Agora sim! Qualquer 'throw new Error' acima cairá aqui.
-    console.log("\n--- INTERRUPÇÃO DE SEGURANÇA ---");
-    console.log(`Motivo: ${erro.message}`);
 }
 
-console.log("\nO sistema continua em standby...");
+console.log("Sistema desligado com segurança.");
