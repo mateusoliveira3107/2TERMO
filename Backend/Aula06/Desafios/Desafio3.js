@@ -5,10 +5,15 @@ const entrada = require("readline-sync");
 function calcular_area(largura, comprimento){
     return largura * comprimento;
 };
-
-const largura = entrada.questionInt("Informe a largura do terreno [m]: ");
-const comprimento = entrada.questionInt("Informe o comprimento do terreno [m]: ");
-
-const area = calcular_area(largura, comprimento);
-
-console.log(`Area total do terreno: ${area}m²`);
+const terrenos = []
+for (let i = 1; i <= 3; i++) {
+    const largura = entrada.questionFloat(`Informe a largura do terreno ${i} [m]: `);
+    const comprimento = entrada.questionFloat(`Informe o comprimento do terreno ${i} [m]: `);
+    const area = calcular_area(largura, comprimento);
+    terrenos.push(area.toFixed(2));
+    console.log("-".repeat(45));
+}
+console.log("--- Terrenos ---");
+for (let i = 1; i <= terrenos.length; i++){
+    console.log(`Terreno ${i} - Area: ${terrenos[i - 1]}m`);
+}
