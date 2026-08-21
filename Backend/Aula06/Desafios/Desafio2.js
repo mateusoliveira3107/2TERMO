@@ -9,6 +9,6 @@ if (parcelas > 12) {
     console.log("Quantidade Inválida.")
 } else {
     for (let i = 1; i <= parcelas; i++) {
-        console.log(`Parcela ${i}: R$${valor_parcela}`);
+        console.log(`Parcela ${i}: R$${valor_parcela.toFixed(2)}`);
     }
 }
