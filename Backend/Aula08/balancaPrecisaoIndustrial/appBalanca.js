@@ -3,18 +3,15 @@ const funcao = require('./funcoesBalanca');
 
 while (true) {
     try {
-        const resposta = entrada.question("Digite o peso da peca [g] ou digite 'sair' para fechar o programa: ");
-        
+        const resposta = entrada.question("Digite o peso da peça [g] ou digite 'sair' para fechar o programa: ");
+
         if (resposta.toLowerCase() === "sair") {
             break;
-    }
-    
-    const peso = Number(resposta);
-    
-    const pesoVerificado = funcao.verificarPeso(peso);
+        }
+    const pesoVerificado = funcao.verificarPeso(resposta);
     console.log(pesoVerificado);
-    
+
     } catch (erro) {
-        console.log(`ALERTA: Entrada inválida.\n`);
+        console.log(`Alerta: ${erro.message}`);
     }
 }
