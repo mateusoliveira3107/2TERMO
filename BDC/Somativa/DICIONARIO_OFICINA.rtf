@@ -1,0 +1,486 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1046{\fonttbl{\f0\fnil MS Sans Serif;}{\f1\fnil\fcharset0 MS Sans Serif;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\b\f0\fs16 001 - Atributo: \cf2\b0 Ativo\cf1\b 
+\par \cf0\b0 Atributo: Ativo
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de tipo fornecedor 'ativo'
+\par \f0 
+\par \cf1\b 002 - Atributo: \cf2\b0 Ativo\cf1\b 
+\par \cf0\b0 Atributo: Ativo
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de tipo garantia de servico 'ativo'
+\par \f0 
+\par \cf1\b 003 - Atributo: \cf2\b0 Ativo\cf1\b 
+\par \cf0\b0 Atributo: Ativo
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de tipo status de servico 'ativo'
+\par \f0 
+\par \cf1\b 004 - Atributo: \cf2\b0 Ativo\cf1\b 
+\par \cf0\b0 Atributo: Ativo
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de tipo ordem de servico 'ativo'
+\par \f0 
+\par \cf1\b 005 - Atributo: \cf2\b0 CNPJ\cf1\b 
+\par \cf0\b0 Atributo: CNPJ
+\par Tipo de dado: varchar(20)
+\par Descri\f1\'e7\'e3o: Identifica o CNPJ do fornecedor
+\par Propriedades: Not null unique
+\par \f0 
+\par \cf1\b 006 - Atributo: \cf2\b0 CPF_Cliente\cf1\b 
+\par \cf0\b0 Atributo: CPF_Cliente
+\par Tipo de dado: varchar(14)
+\par Descri\f1\'e7\'e3o: CPF do cliente
+\par Propriedades: Not null unique
+\par \f0 
+\par \cf1\b 007 - Atributo: \cf2\b0 CPF_Funcionario\cf1\b 
+\par \cf0\b0 Atributo: CPF_Funcionario
+\par Tipo de dado: varchar(14)
+\par Descri\f1\'e7\'e3o: Armazena o CPF do funcion\'e1rio
+\par \f0 
+\par \cf1\b 008 - Rela\f1\'e7\'e3o: \cf2\b0 Cadastra\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 009 - Atributo: \cf2\b0 Caminhao\cf1\b 
+\par \cf0\b0 Atributo: Caminhao
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de tipo ve\'edculo 'Caminhao'
+\par \f0 
+\par \cf1\b 010 - Atributo: \cf2\b0 Carro\cf1\b 
+\par \cf0\b0 Atributo: Carro
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de tipo ve\'edculo 'carro'
+\par \f0 
+\par \cf1\b 011 - Atributo: \cf2\b0 Carros_Modelo\cf1\b 
+\par \cf0\b0 Atributo: Carros_Modelo
+\par Tipo de dado: varchar(250)
+\par Descri\f1\'e7\'e3o: Identifica os carros que o modelo possui
+\par \f0 
+\par \cf1\b 012 - Atributo: \cf2\b0 Categoria_Modelo\cf1\b 
+\par \cf0\b0 Atributo: Categoria_Modelo
+\par Tipo de dado: varchar(200)
+\par Descri\f1\'e7\'e3o: Identifica a categoria do modelo de carros
+\par \f0 
+\par \cf1\b 013 - Entidade: \cf2\b0 Clientes\cf1\b 
+\par \cf0\b0 Nome da entidade: Clientes
+\par Descri\f1\'e7\'e3o: Armazena o cadastro de clientes da oficina
+\par \f0 
+\par \cf1\b 014 - Atributo: \cf2\b0 Cor_Veiculo\cf1\b 
+\par \cf0\b0 Atributo: Cor_Veiculo
+\par Tipo de dado: varchar(20)
+\par Descri\f1\'e7\'e3o: Identifica a cor do ve\'edculo
+\par \f0 
+\par \cf1\b 015 - Atributo: \cf2\b0 Credito\cf1\b 
+\par \cf0\b0 Atributo: Credito
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de forma de pagamento 'credito'
+\par \f0 
+\par \cf1\b 016 - Atributo: \cf2\b0 Criacao_Peca\cf1\b 
+\par \cf0\b0 Atributo: Criacao_Peca
+\par Tipo de dado: datetime
+\par Descri\f1\'e7\'e3o: Armazena a data e hora da cria\'e7\'e3o da pe\'e7a
+\par \f0 
+\par \cf1\b 017 - Atributo: \cf2\b0 Data_Criacao_Marca\cf1\b 
+\par \cf0\b0 Atributo: Data_Criacao_Marca
+\par Tipo de dado: datetime
+\par Descri\f1\'e7\'e3o: Identifica a data de cria\'e7\'e3o da marca
+\par \f0 
+\par \cf1\b 018 - Atributo: \cf2\b0 Data_Criacao_Modelo\cf1\b 
+\par \cf0\b0 Atributo: Data_Criacao_Modelo
+\par Tipo de dado: timestamp default current timestamp
+\par Descri\f1\'e7\'e3o: Identifica a data de cria\'e7\'e3o do modelo de carros
+\par \f0 
+\par \cf1\b 019 - Atributo: \cf2\b0 Data_Criacao_Ordem\cf1\b 
+\par \cf0\b0 Atributo: Data_Criacao_Ordem
+\par Tipo de dado: timestamp default current timestamp
+\par Descri\f1\'e7\'e3o: Armazena a data e horario da cria\'e7\'e3o de ordem instant\'e2neamente
+\par \f0 
+\par \cf1\b 020 - Atributo: \cf2\b0 Data_Pagamento\cf1\b 
+\par \cf0\b0 Atributo: Data_Pagamento
+\par Tipo de dado: datetime
+\par Descri\f1\'e7\'e3o: Identifica a data do pagamento com data e hora
+\par \f0 
+\par \cf1\b 021 - Atributo: \cf2\b0 Data_Servico\cf1\b 
+\par \cf0\b0 Atributo: Data_Servico
+\par Tipo de dado: datetime
+\par Descri\f1\'e7\'e3o: Identifica a data do servico com data e hora
+\par \f0 
+\par \cf1\b 022 - Atributo: \cf2\b0 Debito\cf1\b 
+\par \cf0\b0 Atributo: Debito
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de forma de pagamento 'debito'
+\par \f0 
+\par \cf1\b 023 - Atributo: \cf2\b0 Descricao_Marca\cf1\b 
+\par \cf0\b0 Atributo: Descricao_Marca
+\par Tipo de dado: varchar(250)
+\par Descri\f1\'e7\'e3o: Armazena uma descricao sobre a marca
+\par \f0 
+\par \cf1\b 024 - Atributo: \cf2\b0 Descricao_Ordem_Servico\cf1\b 
+\par \cf0\b0 Atributo: Descricao_Ordem_Servico
+\par Tipo de dado: varchar(250)
+\par Descri\f1\'e7\'e3o: Armazena uma descri\'e7\'e3o da ordem de servi\'e7o
+\par \f0 
+\par \cf1\b 025 - Atributo: \cf2\b0 Descricao_Peca\cf1\b 
+\par \cf0\b0 Atributo: Descricao_Peca
+\par Tipo de dado: varchar(250)
+\par Descri\f1\'e7\'e3o: Armazena uma descri\'e7\'e3o da pe\'e7a
+\par \f0 
+\par \cf1\b 026 - Atributo: \cf2\b0 Dono_Veiculo\cf1\b 
+\par \cf0\b0 Atributo: Dono_Veiculo
+\par Tipo de dado: varchar(60)
+\par Descri\f1\'e7\'e3o: Identifica o dono do ve\'edculo na oficina
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 027 - Atributo: \cf2\b0 Email_Cliente\cf1\b 
+\par \cf0\b0 Atributo: Emaill_Cliente
+\par Tipo de dado: varchar(200)
+\par Descri\f1\'e7\'e3o: Identifica o email do cliente
+\par \f0 
+\par \cf1\b 028 - Atributo: \cf2\b0 Email_Fornecedor\cf1\b 
+\par \cf0\b0 Atributo: Emaill_Fornecedor
+\par Tipo de dado: varchar(200)
+\par Descri\f1\'e7\'e3o: Identifica o email do fornecedor
+\par \f0 
+\par \cf1\b 029 - Atributo: \cf2\b0 Email_Funcionario\cf1\b 
+\par \cf0\b0 Atributo: Email_Funcionario
+\par Tipo de dado: varchar(200)
+\par Descri\f1\'e7\'e3o: Email do funcion\'e1rio
+\par \f0 
+\par \cf1\b 030 - Atributo: \cf2\b0 Endereco_Funcionario\cf1\b 
+\par \cf0\b0 Atributo: Endereco_Funcionario
+\par Tipo de dado: varchar(200)
+\par Descri\f1\'e7\'e3o: Endere\'e7o do funcion\'e1rio
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 031 - Rela\f1\'e7\'e3o: \cf2\b0 Faz\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Funcionarios e Ordens_Servico
+\par Nome do Relacionamento: Faz
+\par Cardinalidade: 1,n e 1,1
+\par 
+\par \cf1\b 032 - Atributo: \cf2\b0 Forma_Pagamento\cf1\b 
+\par \cf0\b0 Atributo: Forma_Pagamento
+\par Tipo de dado: enum ('Pix', 'Debito', 'Credito')
+\par Descri\f1\'e7\'e3o: Identifica o m\'e9todo de pagamento
+\par \f0 
+\par \cf1\b 033 - Rela\f1\'e7\'e3o: \cf2\b0 Fornece\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Fornecedores e pecas
+\par Nome do Relacionamento: Fornece
+\par Cardinalidade: 1,n e 1,1
+\par 
+\par \cf1\b 034 - Entidade: \cf2\b0 Fornecedores\cf1\b 
+\par \cf0\b0 Nome da entidade: Fornecedores
+\par Descri\f1\'e7\'e3o: Armazena dados sobre os fornecedores da oficina
+\par \f0 
+\par \cf1\b 035 - Entidade: \cf2\b0 Funcionarios\cf1\b 
+\par \cf0\b0 Nome da entidade: Funcionarios
+\par Descri\f1\'e7\'e3o: Armazena o cadastro de funcion\'e1rios da oficina
+\par \f0 
+\par \cf1\b 036 - Atributo: \cf2\b0 Garantia_Peca\cf1\b 
+\par \cf0\b0 Atributo: Garantia_Peca
+\par Tipo de dado: date
+\par Descri\f1\'e7\'e3o: Identifica a data de validade de garantia da pe\'e7a
+\par \f0 
+\par \cf1\b 037 - Atributo: \cf2\b0 Garantia_Servico\cf1\b 
+\par \cf0\b0 Atributo: Garantia_Servico
+\par Tipo de dado: enum ('Ativo', 'Inativo')
+\par Descri\f1\'e7\'e3o: Identifica se a garantia de servi\'e7o est\'e1 ativa ou inativa
+\par \f0 
+\par \cf1\b 038 - Rela\f1\'e7\'e3o: \cf2\b0 Gera\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Servicos e Pagamentos
+\par Nome do Relacionamento: Gera
+\par Cardinalidade: 1,n e 1,1
+\par 
+\par \cf1\b 039 - Atributo: \cf2\b0 Id_Cliente\cf1\b 
+\par \cf0\b0 Atributo: Id_Cliente
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o Cliente unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 040 - Atributo: \cf2\b0 Id_Fornecedoor\cf1\b 
+\par \cf0\b0 Atributo: Id_Fornecedor
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o Fornecedor unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 041 - Atributo: \cf2\b0 Id_Funcionario\cf1\b 
+\par \cf0\b0 Atributo: Id_Funcionario
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o Funcionario unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 042 - Atributo: \cf2\b0 Id_Marca\cf1\b 
+\par \cf0\b0 Atributo: Id_Marca
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica a Marca unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 043 - Atributo: \cf2\b0 Id_Modelo\cf1\b 
+\par \cf0\b0 Atributo: Id_Modelo
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o Modelo de carro unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 044 - Atributo: \cf2\b0 Id_Ordem_Servico\cf1\b 
+\par \cf0\b0 Atributo: Id_Ordem_Servico
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica a Ordem de servi\'e7o unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 045 - Atributo: \cf2\b0 Id_Pagamento\cf1\b 
+\par \cf0\b0 Atributo: Id_Pagamento
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o Pagamento unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 046 - Atributo: \cf2\b0 Id_Peca\cf1\b 
+\par \cf0\b0 Atributo: Id_Peca
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica a Pe\'e7a unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 047 - Atributo: \cf2\b0 Id_Servico\cf1\b 
+\par \cf0\b0 Atributo: Id_Servico
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o Servico da oficina unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 048 - Atributo: \cf2\b0 Id_Veiculo\cf1\b 
+\par \cf0\b0 Atributo: Id_Veiculo
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o Veiculo unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 049 - Atributo: \cf2\b0 Inativo\cf1\b 
+\par \cf0\b0 Atributo: Inativo
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de tipo garantia de servico 'inattivo'
+\par \f0 
+\par \cf1\b 050 - Atributo: \cf2\b0 Inativo\cf1\b 
+\par \cf0\b0 Atributo: Ativo
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de tipo status de servi\'e7o 'inativo'
+\par \f0 
+\par \cf1\b 051 - Atributo: \cf2\b0 Inativo\cf1\b 
+\par \cf0\b0 Atributo: Ativo
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de tipo ordem de servi\'e7o 'inativo'
+\par \f0 
+\par \cf1\b 052 - Atributo: \cf2\b0 Inativo\cf1\b 
+\par \cf0\b0 Atributo: Inativo
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de tipo fornecedor 'inativo'
+\par \f0 
+\par \cf1\b 053 - Entidade: \cf2\b0 Marcas\cf1\b 
+\par \cf0\b0 Nome da entidade: Marcas
+\par Descri\f1\'e7\'e3o: Armazena as marcas de carros cadastradas da oficina
+\par \f0 
+\par \cf1\b 054 - Entidade: \cf2\b0 Modelos\cf1\b 
+\par \cf0\b0 Nome da entidade: Modelos
+\par Descri\f1\'e7\'e3o: Armazena os modelos de carro da oficina
+\par \f0 
+\par \cf1\b 055 - Atributo: \cf2\b0 Moto\cf1\b 
+\par \cf0\b0 Atributo: Moto
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de tipo ve\'edculo 'Moto'
+\par \f0 
+\par \cf1\b 056 - Atributo: \cf2\b0 Nascimento_Cliente\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 057 - Atributo: \cf2\b0 Nome_Cliente\cf1\b 
+\par \cf0\b0 Atributo: Nome_Cliente
+\par Tipo de dado: varchar(60)
+\par Descri\f1\'e7\'e3o: Identifica o nome do cliente
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 058 - Atributo: \cf2\b0 Nome_Fornecedor\cf1\b 
+\par \cf0\b0 Atributo: Nome_Fornecedor
+\par Tipo de dado: varchar(60)
+\par Descri\f1\'e7\'e3o: Identifica o nome do fornecedor
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 059 - Atributo: \cf2\b0 Nome_Funcionario\cf1\b 
+\par \cf0\b0 Atributo: Nome_Funcionario
+\par Tipo de dado: varchar(20)
+\par Descri\f1\'e7\'e3o: Armazena o nome do Funcion\'e1rio \f0 
+\par \cf1\b 060 - Atributo: \cf2\b0 Nome_Marca\cf1\b 
+\par \cf0\b0 Atributo: Nome_Marca
+\par Tipo de dado: varchar(20)
+\par Descri\f1\'e7\'e3o: Identifica o nome da marca
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 061 - Atributo: \cf2\b0 Nome_Modelo\cf1\b 
+\par \cf0\b0 Atributo: Nome_Modelo
+\par Tipo de dado: varchar(60)
+\par Descri\f1\'e7\'e3o: Armazena o nome do modelo
+\par \f0 
+\par \cf1\b 062 - Atributo: \cf2\b0 Nome_Peca\cf1\b 
+\par \cf0\b0 Atributo: Nome_Peca
+\par Tipo de dado: varchar(30)
+\par Descri\f1\'e7\'e3o: Armazena o nome da pe\'e7a
+\par \f0 
+\par \cf1\b 063 - Entidade: \cf2\b0 Ordens_Servico\cf1\b 
+\par \cf0\b0 Nome da entidade: Ordens_Servico
+\par Descri\f1\'e7\'e3o: Armazena dados das ordens de servi\'e7o da oficina
+\par \f0 
+\par \cf1\b 064 - Atributo: \cf2\b0 Origem_Marca\cf1\b 
+\par \cf0\b0 Atributo: Origem_Marca
+\par Tipo de dado: varchar(30)
+\par Descri\f1\'e7\'e3o: Identifica a origem da marca
+\par \f0 
+\par \cf1\b 065 - Atributo: \cf2\b0 Origem_Modelo\cf1\b 
+\par \cf0\b0 Atributo: Origem_Modelo
+\par Tipo de dado: varchar(30)
+\par Descri\f1\'e7\'e3o: Identifica a origem do modelo do ve\'edculo
+\par \f0 
+\par \cf1\b 066 - Atributo: \cf2\b0 Pagamento_Cancelado\cf1\b 
+\par \cf0\b0 Atributo: Pagamento_Cancelado
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de tipo pagamento 'Cancelado'
+\par \f0 
+\par \cf1\b 067 - Atributo: \cf2\b0 Pagamento_Finalizado\cf1\b 
+\par \cf0\b0 Atributo: Pagamento_Finalizado
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de tipo pagamento 'finalizado'
+\par \f0 
+\par \cf1\b 068 - Atributo: \cf2\b0 Pagamento_Pendente\cf1\b 
+\par \cf0\b0 Atributo: Pagamento_Pendente
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de tipo pagamento 'pendente'
+\par \f0 
+\par \cf1\b 069 - Entidade: \cf2\b0 Pagamentos\cf1\b 
+\par \cf0\b0 Nome da entidade: Pagamentos
+\par Descri\f1\'e7\'e3o: Armazena dados dos pagamentos dentro da oficina
+\par \f0 
+\par \cf1\b 070 - Entidade: \cf2\b0 Pecas\cf1\b 
+\par \cf0\b0 Nome da entidade: Pe\f1\'e7as
+\par Descri\'e7\'e3o: Armazena dados das pe\'e7as dentro da oficina
+\par \f0 
+\par \cf1\b 071 - Rela\f1\'e7\'e3o: \cf2\b0 Pede\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Servicos e Ordens_Servico
+\par Nome do Relacionamento: Pede
+\par Cardinalidade: 1,n e 1,n
+\par 
+\par \cf1\b 072 - Rela\f1\'e7\'e3o: \cf2\b0 Pertence\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Clientes e Veiculos
+\par Nome do Relacionamento: Possui
+\par Cardinalidade: 1,n e 1,1
+\par 
+\par \cf1\b 073 - Atributo: \cf2\b0 Pix\cf1\b 
+\par \cf0\b0 Atributo: Pix
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Campo de forma de pagamento 'pix'
+\par \f0 
+\par \cf1\b 074 - Atributo: \cf2\b0 Placa_Veiculo\cf1\b 
+\par \cf0\b0 Atributo: Placa_Veiculo
+\par Tipo de dado: varchar(10)
+\par Descri\f1\'e7\'e3o: Identifica a placa do ve\'edculo
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 075 - Rela\f1\'e7\'e3o: \cf2\b0 Possui\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 076 - Atributo: \cf2\b0 Prazo_Ordem_Servico\cf1\b 
+\par \cf0\b0 Atributo: Prazo_Ordem_Servico
+\par Tipo de dado: datetime
+\par Descri\f1\'e7\'e3o: Identifica a data do prazo para a finaliza\'e7\'e3o da ordem de servi\'e7o
+\par \f0 
+\par \cf1\b 077 - Atributo: \cf2\b0 Prazo_Pagamento\cf1\b 
+\par \cf0\b0 Atributo: Prazo_Pagamento
+\par Tipo de dado: datetime
+\par Descri\f1\'e7\'e3o: Identifica a data do prazo para a finaliza\'e7\'e3o do pagamento
+\par \f0 
+\par \cf1\b 078 - Atributo: \cf2\b0 Servico_da_Ordem\cf1\b 
+\par \cf0\b0 Atributo: Servico_da_Ordem
+\par Tipo de dado: varchar(50)
+\par Descri\f1\'e7\'e3o: Identifica o tipo de servi\'e7o da ordem de servi\'e7o
+\par \f0 
+\par \cf1\b 079 - Entidade: \cf2\b0 Servicos\cf1\b 
+\par \cf0\b0 Nome da entidade: Servi\f1\'e7os
+\par Descri\'e7\'e3o: Armazena os dados de servi\'e7os dentro da oficina
+\par \f0 
+\par \cf1\b 080 - Atributo: \cf2\b0 Status_Fornecedor\cf1\b 
+\par \cf0\b0 Atributo: Status_Fornecedor
+\par Tipo de dado: enum ('Ativo', 'Inativo')
+\par Descri\f1\'e7\'e3o: Identifica o status atual do fornecedor
+\par \f0 
+\par \cf1\b 081 - Atributo: \cf2\b0 Status_Ordem_Servico\cf1\b 
+\par \cf0\b0 Atributo: Status_Ordem_Servico
+\par Tipo de dado: enum ('Ativo', 'Inativo')
+\par Descri\f1\'e7\'e3o: Identifica o status atual da ordem de servi\'e7o
+\par \f0 
+\par \cf1\b 082 - Atributo: \cf2\b0 Status_Paganento\cf1\b 
+\par \cf0\b0 Atributo: Status_Pagamento
+\par Tipo de dado: enum ('Pagamento_Finalizado', 'Pagamento_Pendente', 'Pagamento_Cancelado') default 'Pagamento_Finalizado'
+\par Descri\f1\'e7\'e3o: Identifica o status do pagamento
+\par \f0 
+\par \cf1\b 083 - Atributo: \cf2\b0 Status_Servico\cf1\b 
+\par \cf0\b0 Atributo: Status_Servico
+\par Tipo de dado: enum ('Ativo', 'Inativo')
+\par Descri\f1\'e7\'e3o: Identifica o status atual do servi\'e7o
+\par \f0 
+\par \cf1\b 084 - Atributo: \cf2\b0 Telefone_Cliente\cf1\b 
+\par \cf0\b0 Atributo: Telefone_Cliente
+\par Tipo de dado: varchar(20)
+\par Descri\f1\'e7\'e3o: Telefone do cliente
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 085 - Atributo: \cf2\b0 Telefone_Fornecedor\cf1\b 
+\par \cf0\b0 Atributo: Telefone_Fornecedor
+\par Tipo de dado: varchar(20)
+\par Descri\f1\'e7\'e3o: Telefone do Fornecedor
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 086 - Atributo: \cf2\b0 Telefone_Funcionario\cf1\b 
+\par \cf0\b0 Atributo: Telefone_Funcionario
+\par Tipo de dado: varchar(20)
+\par Descri\f1\'e7\'e3o: Telefone do funcion\'e1rio
+\par \f0 
+\par \cf1\b 087 - Atributo: \cf2\b0 Tempo_na_Oficina\cf1\b 
+\par \cf0\b0 Atributo: Placa_Veiculo
+\par Tipo de dado: timestamp default current timestamp
+\par Descri\f1\'e7\'e3o: Identifica o tempo do ve\'edculo na oficina
+\par \f0 
+\par \cf1\b 088 - Atributo: \cf2\b0 Tipo_Marca\cf1\b 
+\par \cf0\b0 Atributo: Tipo_Marca
+\par Tipo de dado: varchar(10)
+\par Descri\f1\'e7\'e3o: Identifica o tipo da marca
+\par \f0 
+\par \cf1\b 089 - Atributo: \cf2\b0 Tipo_Peca\cf1\b 
+\par \cf0\b0 Atributo: Tipo_Peca
+\par Tipo de dado: varchar(50)
+\par Descri\f1\'e7\'e3o: Identifica o tipo de pe\'e7a
+\par \f0 
+\par \cf1\b 090 - Atributo: \cf2\b0 Tipo_Servico\cf1\b 
+\par \cf0\b0 Atributo: Tipo_Servico
+\par Tipo de dado: varchar(50)
+\par Descri\f1\'e7\'e3o: Identifica o tipo de servico
+\par \f0 
+\par \cf1\b 091 - Atributo: \cf2\b0 Tipo_Veiculo\cf1\b 
+\par \cf0\b0 Atributo: Tipo_Veiculo
+\par Tipo de dado: enum ('Carro', 'Moto', 'Caminhao') default 'Carro'
+\par Descri\f1\'e7\'e3o: Identifica o tipo do ve\'edculo
+\par \f0 
+\par \cf1\b 092 - Rela\f1\'e7\'e3o: \cf2\b0 Utiliza\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Servicos e Pecas
+\par Nome do Relacionamento: Utiliza
+\par Cardinalidade: 1,n e 1,n
+\par 
+\par \cf1\b 093 - Atributo: \cf2\b0 Valor_Pagamento\cf1\b 
+\par \cf0\b0 Atributo: Valor_Pagamento
+\par Tipo de dado: decimal(10,2)
+\par Descri\f1\'e7\'e3o: Identifica o valor do pagamento
+\par \f0 
+\par \cf1\b 094 - Atributo: \cf2\b0 Valor_Servico\cf1\b 
+\par \cf0\b0 Atributo: Valor_Servico
+\par Tipo de dado: decimal(10, 2)
+\par Descri\f1\'e7\'e3o: Valor do servico
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 095 - Entidade: \cf2\b0 Veiculos\cf1\b 
+\par \cf0\b0 Nome da entidade: Ve\f1\'edculos
+\par Descri\'e7\'e3o: Armazena o cadastro e armazenamento de ve\'edculos da oficina
+\par \f0 
+\par \cf1\b 096 - Rela\f1\'e7\'e3o: \cf2\b0 tem\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Modelos e Veiculos
+\par Nome do Relacionamento: Tem
+\par Cardinalidade: 1,n e 1,1
+\par 
+\par 
+\par }
+ 
