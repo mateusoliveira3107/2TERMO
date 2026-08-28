@@ -1,0 +1,146 @@
+h1, h2, h3, p, a, img {
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+    text-align: center;
+}
+h3 {
+    text-align: left;
+    font-size: 12px;
+    padding: 10px;
+}
+header {
+    background-color: rgba(22, 37, 87, 0.884);
+    color: white;
+    text-align: center;
+    padding: 3px;
+    height: 140px;
+}
+.navegacoes {
+    text-decoration: none;
+    text-align: center;
+    line-height: 35px;
+    word-spacing: 20px;
+    font-size: 14px;
+}
+.imagemequipe {
+    padding-left: 500px;
+    font-size: 12px;
+    height: 180px;
+}
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+.bemvindo, .sobredev {
+    color: rgba(6, 34, 128, 0.87);
+    text-align: right;
+    font-size: 24px;
+}
+.subtitulocabecalho {
+    font-size: 14px;
+    line-height: 3px;
+    font-weight: 100;
+}
+.nossamissao {
+    color: rgb(13, 13, 163);
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+.titulosecundario {
+    font-size: 16px;
+    padding-top: 10px;
+    color: rgb(25, 52, 100);
+}
+p {
+    font-size: 12px;
+}
+body {
+    background-color: white;
+}
+
+.session1 {
+    padding: 20px;
+    background-color: rgba(7, 7, 7, 0.089);
+    margin: 5px 0px 5px 0px;
+}
+.session2 {
+    padding: 20px;
+    background-color: rgba(7, 7, 7, 0.089);
+    margin: 5px 0px 5px 0px;
+}
+article {
+    background-color: rgba(31, 80, 172, 0.116);
+}
+
+.desenvolvimentoweb, .desenvolvimentosistemas, .bcd, .consultoriatec {
+    color: rgba(12, 12, 126, 0.808);
+    padding-left: 10px;
+    padding-bottom: 0;
+    padding-top: 15px;
+}
+.text {
+    padding-bottom: 15px;
+    padding-left: 10px;
+}
+
+.equipe, .nome {
+    text-align: center;
+}
+img {
+    font-size: 14px;
+}
+.nome {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.pessoasequipe {
+    margin: 10px 0px 10px 0px;
+    padding-bottom: 10px;
+    background-color: rgba(7, 7, 7, 0.089);
+    height: 150px;
+    border-radius: 5px;
+}
+.projetos {
+    margin: 10px 0px 10px 0px;
+    padding-bottom: 5px;
+    background-color: rgba(7, 7, 7, 0.089);
+}
+.textoprojeto {
+    padding-left: 10px;
+    font-size: 12px;
+}
+.imagemprojeto{
+    height: 200px;
+}
+.subtituloprojeto {
+    color: rgb(21, 21, 124);
+    font-weight: bold;
+}
+.referencias {
+    color: rgb(27, 27, 156);
+    text-decoration: underline;
+    font-size: 12px;
+}
+.botao {
+    background-color: rgb(22, 37, 87, 0.884);
+    height: 40px;
+    width: 140px;
+    padding-top: 0;
+}
+.textobotao {
+    color: white;
+    text-align: center;
+}
+footer {
+    background-color: rgb(22, 37, 87, 0.884);
+    height: 70px;
+    text-align: center;
+    color: white;
+}
+.textofooter {
+    padding-top: 10px;
+}
