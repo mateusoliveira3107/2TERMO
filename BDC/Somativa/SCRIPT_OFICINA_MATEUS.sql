@@ -14,11 +14,11 @@ CPF_Cliente varchar(20) not null unique
 
 create table marcas (
 Id_Marca int auto_increment primary key,
+Nome_Marca varchar(20) not null,
 Descricao_Marca varchar(250),
-Data_Criacao_Marca datetime,
+Data_Criacao_Marca date,
 Tipo_Marca varchar(20),
-Origem_Marca varchar(30),
-Nome_Marca varchar(20) not null
+Origem_Marca varchar(30)
 );
 
 create table veiculos (
@@ -49,7 +49,7 @@ Nome_Funcionario varchar(60)
 
 create table pagamentos (
 Id_Pagamento int auto_increment primary key,
-Tipo_Veiculo enum ('Pagamento_Finalizado', 'Pagamento_Pendente', 'Pagamento_Cancelado') default 'Pagamento_Finalizado',
+Tipo_Pagamento enum ('Pagamento_Finalizado', 'Pagamento_Pendente', 'Pagamento_Cancelado') default 'Pagamento_Finalizado',
 Prazo_Pagamento datetime,
 Valor_Pagamento decimal(10,2),
 Data_Pagamento datetime,
