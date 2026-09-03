@@ -24,7 +24,16 @@ try {
     numero = entrada.questionInt("Informe o ID: ");
 
     const funcionario_por_id = funcionarios.find(p => p.id === numero);
-    console.log(`Setor do funcionario: ${funcionario_por_id.setor}`);
+
+    if (funcionario_por_id) {
+        console.log(`Nome do funcionario: ${funcionario_por_id.nome}`)
+        console.log(`Setor do funcionario: ${funcionario_por_id.setor}`);
+        const resposta = entrada.question("Informe para qual setor o funcionario vai mudar: ");
+        funcionario_por_id.setor = resposta;
+        salvarDados()
+    } else {
+        console.log("Acesso Negado: ID não encontrado");
+    }
 } catch (erro) {
-    confirm.log("Erro ao acessar o banco de dados: " + erro.message);
+    console.log("Erro ao acessar o banco de dados: " + erro.message);
 }
