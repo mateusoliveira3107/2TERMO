@@ -1,0 +1,50 @@
+/* Configurações Gerais */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgba(22, 37, 87, 0.884);
+    color: white;
+    text-align: center;
+    padding-top: 1px;
+    padding-bottom: 10px;
+}
+main {
+    margin: 30px;
+}
+header h1 {
+    font-weight: bold;
+    font-size: 42px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 20px;
+}
+section {
+    border: 30px solid #1e3a5f;
+    border-width: 3px;
+    border-color: #1e3a5f;
+    padding: 20px;
+    margin: 1px;
+}
+
+.servicos {
+    margin: 20px;
+    padding: 15px;
+    background-color: aliceblue;
+    border: 10px solid aliceblue;
+}
+
+footer {
+    padding-left: 40px;
+    border: 3px solid #1e3a5f;
+    margin: 30px;
+}
+
