@@ -9,28 +9,30 @@ const funcionarios = [
   {"id": 5,"nome": "Joaquim","setor": "Logistica"}
 ];
 
-function salvarDados() {
-    const dadosTexto = JSON.stringify(funcionarios, null, 2);
+function salvarDados(f) {
+    const dadosTexto = JSON.stringify(f, null, 2);
 
     fs.writeFileSync('funcionarios.json', dadosTexto);
 };
 
-salvarDados()
+salvarDados(funcionarios);
 
 try {
     const dadosJson = fs.readFileSync('funcionarios.json', 'utf-8');
-    const funcionarios = JSON.parse(dadosJson);
+    const funcionariosJson = JSON.parse(dadosJson);
 
     numero = entrada.questionInt("Informe o ID: ");
 
-    const funcionario_por_id = funcionarios.find(p => p.id === numero);
+    const funcionario_por_id = funcionariosJson.find(function(p) {
+        return p.id === numero;
+    });
 
     if (funcionario_por_id) {
         console.log(`Nome do funcionario: ${funcionario_por_id.nome}`)
         console.log(`Setor do funcionario: ${funcionario_por_id.setor}`);
         const resposta = entrada.question("Informe para qual setor o funcionario vai mudar: ");
         funcionario_por_id.setor = resposta;
-        salvarDados()
+        salvarDados(funcionariosJson);
     } else {
         console.log("Acesso Negado: ID não encontrado");
     }
