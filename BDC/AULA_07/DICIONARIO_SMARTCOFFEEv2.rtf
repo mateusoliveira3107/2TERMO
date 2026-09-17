@@ -1,0 +1,462 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1046{\fonttbl{\f0\fnil MS Sans Serif;}{\f1\fnil\fcharset0 MS Sans Serif;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\b\f0\fs16 001 - Rela\f1\'e7\'e3o: \cf2\b0 Atende\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Clientes e funcionarios
+\par Nome do Relacionamento: Atende
+\par Cardinalidade: 1,n e 1,n
+\par  
+\par \cf1\b 002 - Atributo: \cf2\b0 CNPJ\cf1\b 
+\par \cf0\b0 Atributo: CNPJ
+\par Tipo de dado: varchar(20)
+\par Descri\f1\'e7\'e3o: CNPJ do fornecedor
+\par Propriedades: Not null unique \f0 
+\par \cf1\b 003 - Atributo: \cf2\b0 CPF\cf1\b 
+\par \cf0\b0 Atributo: CPF
+\par Tipo de dado: varchar(14)
+\par Descri\f1\'e7\'e3o: CPF do cliente cadastrado
+\par Propriedades: Not null unique
+\par \f0 
+\par \cf1\b 004 - Atributo: \cf2\b0 CPF\cf1\b 
+\par \cf0\b0 Atributo: CPF
+\par Tipo de dado: varchar(14)
+\par Descri\f1\'e7\'e3o: CPF do funcion\'e1rio
+\par Propriedades: not null unique
+\par \f0 
+\par \cf1\b 005 - Atributo: \cf2\b0 Cargo\cf1\b 
+\par \cf0\b0 Atributo: Cargo
+\par Tipo de dado: varchar(50)
+\par Descri\f1\'e7\'e3o: cargo do funcion\'e1rio
+\par propriedades: not null
+\par \f0 
+\par \cf1\b 006 - Entidade: \cf2\b0 Categoria\cf1\b 
+\par \cf0\b0 Nome da entidade: Categoria
+\par Descri\f1\'e7\'e3o: Classifica os produtos em grupos para
+\par facilitar a organiza\'e7\'e3o e consulta no card\'e1pio.
+\par (ex: bebidas quentes, salgados, sobremesas
+\par \f0 
+\par \cf1\b 007 - Atributo: \cf2\b0 Categoria_Ativa\cf1\b 
+\par \cf0\b0 Atributo: Categoria_Ativa
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Categoria est\'e1 ativa ou n\'e3o
+\par \f0 
+\par \cf1\b 008 - Entidade: \cf2\b0 Clientes\cf1\b 
+\par \cf0\b0 Nome da entidade: Clientes
+\par Descri\f1\'e7\'e3o: Armazena o cadastro de clientes da cafeteria
+\par \f0 
+\par \cf1\b 009 - Rela\f1\'e7\'e3o: \cf2\b0 Consulta\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Produtos e Estoque
+\par Nome do Relacionamento: Consulta
+\par Cardinalidade: 1,1 e 1,n
+\par 
+\par \cf1\b 010 - Rela\f1\'e7\'e3o: \cf2\b0 Contem\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Produtos e Pedidos
+\par Nome do Relacionamento: Contem
+\par Cardinalidade: 1,n e 1,n
+\par 
+\par \cf1\b 011 - Atributo: \cf2\b0 Credito\cf1\b 
+\par \cf0\b0 Atributo: Credito
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Pagamento em forma de cr\'e9dito
+\par \f0 
+\par \cf1\b 012 - Atributo: \cf2\b0 Data_Cadastro\cf1\b 
+\par \cf0\b0 Atributo: Data_Cadastro
+\par Tipo de dado: timestamp default current_timestamp
+\par Descri\f1\'e7\'e3o: Data e hora do cadastro do usu\'e1rio
+\par \f0 
+\par \cf1\b 013 - Atributo: \cf2\b0 Data_Criacao\cf1\b 
+\par \cf0\b0 Atributo: Data_Criacao
+\par Tipo de dado: timestamp default current_timestamp
+\par Descri\f1\'e7\'e3o: Data e hora que a categoria foi criada
+\par \f0 
+\par \cf1\b 014 - Atributo: \cf2\b0 Data_Pagamento\cf1\b 
+\par \cf0\b0 Atributo: Data_Pagamento
+\par Tipo de dado: timestamp default current_timestamp
+\par Descri\f1\'e7\'e3o: Data e hora do pagamento
+\par \f0 
+\par \cf1\b 015 - Atributo: \cf2\b0 Data_Pedido\cf1\b 
+\par \cf0\b0 Atributo: Data_Pedido
+\par Tipo de dado: timestamp default current_timestamp
+\par Descri\f1\'e7\'e3o: Data e hora do pedido \f0 
+\par \cf1\b 016 - Atributo: \cf2\b0 Debito\cf1\b 
+\par \cf0\b0 Atributo: Debito
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Pagamento em forma de Debito
+\par \f0 
+\par \cf1\b 017 - Entidade: \cf2\b0 Delivery\cf1\b 
+\par \cf0\b0 Nome da entidade: Delivery
+\par Descri\f1\'e7\'e3o: Armazena as informa\'e7\'f5es de entregas,
+\par como endere\'e7o de destino, taxa de entrega e status do envio.
+\par \f0 
+\par \cf1\b 018 - Atributo: \cf2\b0 Descricao_Categoria\cf1\b 
+\par \cf0\b0 Atributo: Descricao_Categoria
+\par Tipo de dado: varchar(100)
+\par Descri\f1\'e7\'e3o: Descri\'e7\'e3o da categoria
+\par \f0 
+\par \cf1\b 019 - Atributo: \cf2\b0 Descricao_Produto\cf1\b 
+\par \cf0\b0 Atributo: Descricao_Produto
+\par Tipo de dado: varchar(250)
+\par Descri\f1\'e7\'e3o: Descri\'e7\'e3o do produto \f0 
+\par \cf1\b 020 - Atributo: \cf2\b0 Email_Cliente\cf1\b 
+\par \cf0\b0 Atributo: Email_Cliente
+\par Tipo de dado: varchar(250)
+\par Descri\f1\'e7\'e3o: Email do cliente \f0 
+\par \cf1\b 021 - Atributo: \cf2\b0 Email_Fornecedor\cf1\b 
+\par \cf0\b0 Atributo: Email_Fornecedor
+\par Tipo de dado: varchar(200)
+\par Descri\f1\'e7\'e3o: Email do fornecedor
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 022 - Atributo: \cf2\b0 Email_Funcionario\cf1\b 
+\par \cf0\b0 Atributo: Email_Funcionario
+\par Tipo de dado: varchar(250)
+\par Descri\f1\'e7\'e3o: Email do Funcionario
+\par \f0 
+\par \cf1\b 023 - Atributo: \cf2\b0 Endereco\cf1\b 
+\par \cf0\b0 Atributo: Endereco
+\par Tipo de dado: varchar(200)
+\par Descri\f1\'e7\'e3o: Endere\'e7o de entrega do delivery
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 024 - Atributo: \cf2\b0 Endereco_Cliente\cf1\b 
+\par \cf0\b0 Atributo: Endereco_Cliente
+\par Tipo de dado: varchar(200)
+\par Descri\f1\'e7\'e3o: Endere\'e7o do cliente
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 025 - Atributo: \cf2\b0 Endereco_Funcionario\cf1\b 
+\par \cf0\b0 Atributo: Endereco_Funcionario
+\par Tipo de dado: varchar(200)
+\par Descri\f1\'e7\'e3o: Endere\'e7o do funcion\'e1rio
+\par Propriedades: Not null unique
+\par \f0 
+\par \cf1\b 026 - Atributo: \cf2\b0 Entrega_Cancelada\cf1\b 
+\par \cf0\b0 Atributo: Entrega_Cancelada
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Entrega foi cancelada
+\par \f0 
+\par \cf1\b 027 - Atributo: \cf2\b0 Entrega_Finalizada\cf1\b 
+\par \cf0\b0 Atributo: Entrega_Finalizada
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Entrega foi finalizada
+\par \f0 
+\par \cf1\b 028 - Atributo: \cf2\b0 Entrega_em_Andamento\cf1\b 
+\par \cf0\b0 Atributo: Entrega_em_Andamento
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Entrega est\'e1 em andamento
+\par \f0 
+\par \cf1\b 029 - Entidade: \cf2\b0 Estoque\cf1\b 
+\par \cf0\b0 Nome da entidade: Estoque
+\par Descri\f1\'e7\'e3o: Controla a quantidade atual e a margem m\'ednima
+\par necess\'e1ria de cada item para a opera\'e7\'e3o da cafeteria.
+\par \f0 
+\par \cf1\b 030 - Rela\f1\'e7\'e3o: \cf2\b0 Faz\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Clientes e Pedidos
+\par Nome do Relacionamento: Faz
+\par Cardinalidade: 1,n e 1,1
+\par 
+\par \cf1\b 031 - Atributo: \cf2\b0 Forma_Pagamento\cf1\b 
+\par \cf0\b0 Atributo:Forma_Pagamento
+\par Tipo de dado: Atributo composto - varchar(20)
+\par Descri\f1\'e7\'e3o: Forma de pagamento do pedido
+\par Propriedades: Not null default "Debito"
+\par \f0 
+\par \cf1\b 032 - Rela\f1\'e7\'e3o: \cf2\b0 Fornece\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Produtos e Fornecedores
+\par Nome do Relacionamento: Fornece
+\par Cardinalidade: 1,1 e 1,n
+\par 
+\par \cf1\b 033 - Entidade: \cf2\b0 Fornecedores\cf1\b 
+\par \cf0\b0 Nome da entidade: Fornecedores
+\par Descri\f1\'e7\'e3o: Armazena os dados de contato e identifica\'e7\'e3o dos
+\par fornecedores respons\'e1veis pelo abastecimento do estoque.
+\par \f0 
+\par \cf1\b 034 - Entidade: \cf2\b0 Funcionarios\cf1\b 
+\par \cf0\b0 Nome da entidade: Funcionarios
+\par Descri\f1\'e7\'e3o: Armazena o cadastro de funcion\'e1rios da cafeteria
+\par \f0 
+\par \cf1\b 035 - Rela\f1\'e7\'e3o: \cf2\b0 Gera\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Pedidos e Pagamentos
+\par Nome do Relacionamento: Gera
+\par Cardinalidade: 1,1 e 1,1
+\par 
+\par \cf1\b 036 - Atributo: \cf2\b0 Hora_Saida\cf1\b 
+\par \cf0\b0 Atributo: Data_Saida
+\par Tipo de dado: timestamp default current_timestamp
+\par Descri\f1\'e7\'e3o: Data e hora da saida da entrega
+\par \f0 
+\par \cf1\b 037 - Atributo: \cf2\b0 Id_Categoria\cf1\b 
+\par \cf0\b0 Atributo: Id_Categoria
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o Categoria unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 038 - Atributo: \cf2\b0 Id_Cliente\cf1\b 
+\par \cf0\b0 Atributo: Id_Cliente
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o Cliente unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 039 - Atributo: \cf2\b0 Id_Delivery\cf1\b 
+\par \cf0\b0 Atributo: Id_Delivery
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o Delivery unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 040 - Atributo: \cf2\b0 Id_Fornecedor\cf1\b 
+\par \cf0\b0 Atributo: Id_Fornecedor
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o fornecedor unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 041 - Atributo: \cf2\b0 Id_Funcionario\cf1\b 
+\par \cf0\b0 Atributo: Id_Funcionario
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o Funcion\'e1rio unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 042 - Atributo: \cf2\b0 Id_Item_Estoque\cf1\b 
+\par \cf0\b0 Atributo: Id_Item_Estoque
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o item no estoque unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 043 - Atributo: \cf2\b0 Id_Pagamento\cf1\b 
+\par \cf0\b0 Atributo: Id_Pagamento
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o pagamento unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 044 - Atributo: \cf2\b0 Id_Pedido\cf1\b 
+\par \cf0\b0 Atributo: Id_Pedido
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o pedido unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 045 - Atributo: \cf2\b0 Id_Produto\cf1\b 
+\par \cf0\b0 Atributo: Id_Produto
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o Produto unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 046 - Atributo: \cf2\b0 Id_Programa_Fidelidade\cf1\b 
+\par \cf0\b0 Atributo: Id_Programa_Fidelidade
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Identifica o programa de fidelidade unicamente
+\par Propriedades: PK - Primary Key auto_increment
+\par \f0 
+\par \cf1\b 047 - Atributo: \cf2\b0 Nome_Categoria\cf1\b 
+\par \cf0\b0 Atributo: Nome_Categoria
+\par Tipo de dado: varchar(200)
+\par Descri\f1\'e7\'e3o: Nome da categoria
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 048 - Atributo: \cf2\b0 Nome_Cliente\cf1\b 
+\par \cf0\b0 Atributo: Nome_Cliente
+\par Tipo de dado: varchar(60)
+\par Descri\f1\'e7\'e3o: Nome do cliente cadastrado
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 049 - Atributo: \cf2\b0 Nome_Fornecedor\cf1\b 
+\par \cf0\b0 Atributo: Nome_Fornecedor
+\par Tipo de dado: varchar(60)
+\par Descri\f1\'e7\'e3o: Nome do fornecedor
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 050 - Atributo: \cf2\b0 Nome_Funcionario\cf1\b 
+\par \cf0\b0 Atributo: Nome_Funcionario
+\par Tipo de dado: varchar(60)
+\par Descri\f1\'e7\'e3o: Nome do funcionario cadastrado
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 051 - Atributo: \cf2\b0 Nome_Insumo\cf1\b 
+\par \cf0\b0 Atributo: Nome_Insumo
+\par Tipo de dado: varchar(100) not null
+\par Descri\f1\'e7\'e3o: Nome do insumo
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 052 - Atributo: \cf2\b0 Nome_Produto\cf1\b 
+\par \cf0\b0 Atributo: Nome_Produto
+\par Tipo de dado: varchar(200)
+\par Descri\f1\'e7\'e3o: Nome do produto cadastrado
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 053 - Atributo: \cf2\b0 Ofertas_Pontos\cf1\b 
+\par \cf0\b0 Atributo: Oferta_Pontos
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Ofertas atuais de pontos para usu\'e1rios
+\par \f0 
+\par \cf1\b 054 - Atributo: \cf2\b0 Pagamento_Cancelado\cf1\b 
+\par \cf0\b0 Atributo: Pagamento_Cancelado
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Pagamento est\'e1 cancelado
+\par \f0 
+\par \cf1\b 055 - Atributo: \cf2\b0 Pagamento_Finalizado\cf1\b 
+\par \cf0\b0 Atributo: Pagamento_Finalizado
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Pagamento foi finalizado
+\par \f0 
+\par \cf1\b 056 - Atributo: \cf2\b0 Pagamento_Pendente\cf1\b 
+\par \cf0\b0 Atributo: Pagamento_Pendente
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Pagamento est\'e1 em andamento
+\par \f0 
+\par \cf1\b 057 - Entidade: \cf2\b0 Pagamentos\cf1\b 
+\par \cf0\b0 Nome da entidade: Pagamentos
+\par Descri\f1\'e7\'e3o: Armazena o registro das transa\'e7\'f5es, vinculando o
+\par valor pago ao pedido realizado e o m\'e9todo de pagamento utilizado.
+\par \f0 
+\par \cf1\b 058 - Rela\f1\'e7\'e3o: \cf2\b0 Participa\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Clientes e Programa_Fidelidade
+\par Nome do Relacionamento: Participa
+\par Cardinalidade: 1,1 e 1,n
+\par 
+\par \cf1\b 059 - Atributo: \cf2\b0 Pedido_Cancelado\cf1\b 
+\par \cf0\b0 Atributo: Pedido_Cancelado
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Pedido foi cancelado
+\par \f0 
+\par \cf1\b 060 - Atributo: \cf2\b0 Pedido_Finalizado\cf1\b 
+\par \cf0\b0 Atributo: Pedido_Finalizado
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Pedido est\'e1 finalizado
+\par \f0 
+\par \cf1\b 061 - Atributo: \cf2\b0 Pedido_em_Andamento\cf1\b 
+\par \cf0\b0 Atributo: Pedido_em_Andamento
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Pedido est\'e1 em andamento
+\par \f0 
+\par \cf1\b 062 - Entidade: \cf2\b0 Pedidos\cf1\b 
+\par \cf0\b0 Nome da entidade: Pedidos
+\par Descri\f1\'e7\'e3o: Registra as compras feita pelo cliente,
+\par contendo a data, o status do pedido e os itens selecionados.
+\par \f0 
+\par \cf1\b 063 - Rela\f1\'e7\'e3o: \cf2\b0 Pertence\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Produtos e Categoria
+\par Nome do Relacionamento: Pertence
+\par Cardinalidade: 1,1 e 1,n
+\par 
+\par \cf1\b 064 - Atributo: \cf2\b0 Pix\cf1\b 
+\par \cf0\b0 Atributo: Pix
+\par Tipo de dado: boolean
+\par Descri\f1\'e7\'e3o: Pagamento em forma de pix
+\par \f0 
+\par \cf1\b 065 - Atributo: \cf2\b0 Pontos_Acumulados\cf1\b 
+\par \cf0\b0 Atributo: Pontos_Acumulados
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Quantidade de pontos atual acumulados pelo usu\'e1rio
+\par Propriedades: Not null \f0 
+\par \cf1\b 066 - Atributo: \cf2\b0 Preco_Unitario\cf1\b 
+\par \cf0\b0 Atributo: Valor_Produto
+\par Tipo de dado: decimal(10, 2)
+\par Descri\f1\'e7\'e3o: Valor do produto cadastrado
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 067 - Entidade: \cf2\b0 Produtos\cf1\b 
+\par \cf0\b0 Nome da entidade: Produtos
+\par Descri\f1\'e7\'e3o: Armazena o cat\'e1logo dos itens comercializados,
+\par incluindo nome, descri\'e7\'e3o e valor unit\'e1rio.
+\par \f0 
+\par \cf1\b 068 - Entidade: \cf2\b0 Programa_Fidelidade\cf1\b 
+\par \cf0\b0 Nome da entidade: Programa de Fidelidade
+\par Descri\f1\'e7\'e3o: Gerencia o hist\'f3rico de pontua\'e7\'e3o, cadastro e
+\par benef\'edcios acumulados pelos clientes participantes.
+\par \f0 
+\par \cf1\b 069 - Atributo: \cf2\b0 Quantidade_Atual\cf1\b 
+\par \cf0\b0 Atributo: Quantidade_Atual
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Quantidade atual de um item no estoque
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 070 - Atributo: \cf2\b0 Quantidade_Minima\cf1\b 
+\par \cf0\b0 Atributo: Quantidade_Minima
+\par Tipo de dado: int
+\par Descri\f1\'e7\'e3o: Quantidade m\'ednima de um item para o estoque sugerir uma recarga
+\par Propriedades: Not null \f0 
+\par \cf1\b 071 - Rela\f1\'e7\'e3o: \cf2\b0 Recebe\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre Pedidos e Delivery
+\par Nome do Relacionamento: Recebe
+\par Cardinalidade: 1,n e 1,1
+\par 
+\par \cf1\b 072 - Atributo: \cf2\b0 Salario\cf1\b 
+\par \cf0\b0 Atributo: Salario
+\par Tipo de dado: decimal(10,2)
+\par Descri\f1\'e7\'e3o: Sal\'e1rio do funcion\'e1rio
+\par \f0 
+\par \cf1\b 073 - Observa\f1\'e7\'e3o: \cf2\b0 Smart Coffe Cafeteria\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 074 - Atributo: \cf2\b0 Status_Entrega\cf1\b 
+\par \cf0\b0 Atributo: Status_Entrega
+\par Tipo de dado: atributo composto - varchar(25) default 'Entrega_Finalizada'
+\par Descri\f1\'e7\'e3o: Status atual da entrega
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 075 - Atributo: \cf2\b0 Status_Pagamento\cf1\b 
+\par \cf0\b0 Atributo: Status_Pagamento
+\par Tipo de dado: Atributo composto - varchar(25) default "Pagamento_Finalizado"
+\par Descri\f1\'e7\'e3o: Status atual do pagamento
+\par \f0 
+\par \cf1\b 076 - Atributo: \cf2\b0 Status_Pedido\cf1\b 
+\par \cf0\b0 Atributo: Status_Pedido
+\par Tipo de dado: Atributo composto - varchar(20) default "Pedido_Finalizado"
+\par Descri\f1\'e7\'e3o: Status atual do pedido \f0 
+\par \cf1\b 077 - Atributo: \cf2\b0 Taxa_Entrega\cf1\b 
+\par \cf0\b0 Atributo: Taxa_Entrega
+\par Tipo de dado: decimal (10, 2)
+\par Descri\f1\'e7\'e3o: Pre\'e7o da taxa de entrega
+\par \f0 
+\par \cf1\b 078 - Atributo: \cf2\b0 Telefone_Cliente\cf1\b 
+\par \cf0\b0 Atributo: Telefone_Cliente
+\par Tipo de dado: varchar(20)
+\par Descri\f1\'e7\'e3o: Telefone do cliente \f0 
+\par \cf1\b 079 - Atributo: \cf2\b0 Telefone_Fornecedor\cf1\b 
+\par \cf0\b0 Atributo: Telefone_Fornecedor
+\par Tipo de dado: varchar(20)
+\par Descri\f1\'e7\'e3o: Telefone do Fornecedor
+\par Propriedades: Not null
+\par \f0 
+\par \cf1\b 080 - Atributo: \cf2\b0 Telefone_Funcionario\cf1\b 
+\par \cf0\b0 Atributo: Telefone_Funcionario
+\par Tipo de dado: varchar(20)
+\par Descri\f1\'e7\'e3o: Telefone do Funcion\'e1rio \f0 
+\par \cf1\b 081 - Atributo: \cf2\b0 Tipo_Pedido\cf1\b 
+\par \cf0\b0 Atributo: Tipo_Pedido
+\par Tipo de dado: varchar(30)
+\par Descri\f1\'e7\'e3o: identifica o tipo do pedido
+\par \f0 
+\par \cf1\b 082 - Atributo: \cf2\b0 Ultima_Entrada\cf1\b 
+\par \cf0\b0 Atributo: Data_Entrada
+\par Tipo de dado: timestamp default current_timestamp
+\par Descri\f1\'e7\'e3o: Data e hora da \'faltima recarga de um item no estoque
+\par \f0 
+\par \cf1\b 083 - Atributo: \cf2\b0 Ultima_Pontuacao\cf1\b 
+\par \cf0\b0 Atributo: Ultima_Pontuacao
+\par Tipo de dado: timestamp default current_timestamp
+\par Descri\f1\'e7\'e3o: Data e hora da \'faltima pontua\'e7\'e3o do usu\'e1rio \f0 
+\par \cf1\b 084 - Atributo: \cf2\b0 Unidade_Medida\cf1\b 
+\par \cf0\b0 Atributo: Unidade_Medido
+\par Tipo de dado: varchar(30)
+\par Descri\f1\'e7\'e3o: Unidade de medida do item no estoque
+\par \f0 
+\par \cf1\b 085 - Atributo: \cf2\b0 Valor_Pago\cf1\b 
+\par \cf0\b0 Atributo: Valor_Pago
+\par Tipo de dado: decimal(10,2)
+\par Descri\f1\'e7\'e3o: identifica o valor do pagamento
+\par \f0 
+\par \cf1\b 086 - Atributo: \cf2\b0 Valor_Total\cf1\b 
+\par \cf0\b0 Atributo: Valor_Total
+\par Tipo de dado: decimal(10, 2)
+\par Descri\f1\'e7\'e3o: Valor total do pedido
+\par \f0 
+\par \cf1\b 087 - Atributo: \cf2\b0 data_admissao\cf1\b 
+\par \cf0\b0 Atributo: data_admissao
+\par Tipo de dado: date
+\par Descri\f1\'e7\'e3o: Data da admiss\'e3o do funcion\'e1rio
+\par \f0 
+\par \cf1\b 088 - Atributo: \cf2\b0 data_cadastro\cf1\b 
+\par \cf0\b0 Atributo: data_cadastro
+\par Tipo de dado: timestamp default current_timestamp
+\par Descri\f1\'e7\'e3o: Data e hor\'e1rio do cadastro do cliente
+\par \f0 
+\par 
+\par }
+ 
