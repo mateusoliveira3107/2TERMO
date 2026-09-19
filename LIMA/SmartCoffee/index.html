@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartCoffee</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Código para usar fonte inter no css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jomhuria&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>SmartCoffee</h1>
-        <h2>Gestão Inteligente</h2>
+        <!-- span serve pra poder deixar o título sem quebrar linha -->
+        <h1>Smart<span id="coffee">Coffee</span></h1>
+        <h2 id="gestaointeligente">Gestão Inteligente</h2>
 
         <nav>
-            <a href="inicio">Início</a>
+            <a href="inicio" id="inicio">Início</a>
             <a href="clientes">clientes</a>
             <a href="produtos">produtos</a>
             <a href="funcionarios">Funcionários</a>
+            <a href="pedidos">Pedidos</a>
             <a href="pagamentos">Pagamento</a>
             <a href="estoque">Estoque</a>
             <a href="delivery">Delivey</a>
@@ -23,8 +33,8 @@
     </header>
 
     <main>
-        <section>
-            <h2>Bem-Vindo ao SmartCoffee!</h2>
+        <section id="secaoBemVindo">
+            <h2 id="bemvindo">Bem-Vindo ao SmartCoffee!</h2>
 
             <h3>Café que conecta pessoas</h3>
             <p>Mais que café, uma experiencia</p>
@@ -47,21 +57,59 @@
             <p>Nossos Produtos</p>
             <h2>Nossos Cafés</h2>
 
-            <img src="imagem" alt="imagem">
-            <h3>Capuccino Tradicional</h3>
-            <p>Equilíbrio entre sabor e cremosidade.</p>
-            <p>R$ 14,90</p>
+            <article class="cafe">
+                <img src="imagem" alt="imagem">
+                <h3>Capuccino Tradicional</h3>
+                <p>Equilíbrio entre sabor e cremosidade.</p>
+                <p>R$ 14,90</p>
+            </article>
+
+            <article class="cafe">
+                <img src="imagem" alt="imagem">
+                <h3>Lattle Caramelo</h3>
+                <p>Leve, doce e irresistível.</p>
+                <p>R$ 16,90</p>
+            </article>
+            
+            <article class="cafe">
+                <img src="imagem" alt="imagem">
+                <h3>Espresso Especial</h3>
+                <p>Intenso como boas conversas.</p>
+                <p>R$ 12,90</p>
+            </article>
+        </section>
+
+        <section>
+            <p>Nossos Produtos</p>
+            <h2>Um espaço para boas ideias</h2>
+            <p>Ambiente moderno, acolhedor e pensado para trabalhar, estudar ou apenas relaxar</p>
+
+            <button>Conheça o espaço</button>
 
             <img src="imagem" alt="imagem">
-            <h3>Capuccino Tradicional</h3>
-            <p>Equilíbrio entre sabor e cremosidade.</p>
-            <p>R$ 14,90</p>
-            
-            <img src="imagem" alt="imagem">
-            <h3>Capuccino Tradicional</h3>
-            <p>Equilíbrio entre sabor e cremosidade.</p>
-            <p>R$ 14,90</p>
+        </section>
+
+        <section>
+            <article>
+            <p>Contato</p>
+                <h2>Fale com a gente</h2>
+                <p>Tem dúvidas, sugestões ou quer fazer um evento?</p>
+                <p>Envie uma mensagem.</p>
+            </article>
+
+            <article>
+                <input type="text" id="nome">
+                <input type="email" id="email">
+                <input type="text" id="mensagem">
+
+                <button>Enviar mensagem</button>
+            </article>
         </section>
     </main>
+
+    <footer>
+        <h2>SmartCoffee</h2>
+        <p>Contato: suporte@smartcoffee.com</p>
+    </footer>
 </body>
 </html>

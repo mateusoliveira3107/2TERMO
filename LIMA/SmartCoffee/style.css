@@ -1,0 +1,67 @@
+body {
+    font-family: 'Inter';
+    width: 100%;
+    margin: 0;
+}
+header {
+    background-color: rgb(105, 59, 13);
+    text-align: center;
+    padding-top: 1px;
+}
+h1 {
+    color: white;
+}
+#gestaointeligente {
+    color: white;
+}
+#coffee {
+    color: rgb(182, 86, 3);
+}
+nav {
+    padding-bottom: 5px;
+    padding-top: 10px;
+    background-color: rgb(75, 34, 13);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+section {
+    padding: 20px;
+}
+#inicio {
+    color: rgb(182, 86, 3);
+}
+#bemvindo {
+    color: rgb(182, 86, 3);
+}
+h3 {
+    font-size: 30px;
+}
+button {
+    height:50px;
+    width: 120px;
+    border-radius: 40px;
+    background-color: rgb(182, 86, 3);
+    color: white;
+}
+p {
+    color: #75451B;
+    font-weight: 400;
+    font-family: "Jomhuria", serif;
+    font-size: 30px;
+}
+.cafe {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+footer {
+    padding: 20px;
+    background-color: #371B11;
+}
