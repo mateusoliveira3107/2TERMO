@@ -8,11 +8,18 @@ header {
     text-align: center;
     padding-top: 1px;
 }
-h1 {
+h1 { /*titulo */
     color: white;
+    font-size: 44px;
+    font-weight: 800;
 }
-#gestaointeligente {
+
+ #gestaointeligente { /*subtitulo */
     color: white;
+    font-size: 26px;
+    margin-top: -25px;
+    font-weight: 600;
+    margin-bottom: 40px;
 }
 #coffee {
     color: rgb(182, 86, 3);
@@ -22,24 +29,38 @@ nav {
     padding-top: 10px;
     background-color: rgb(75, 34, 13);
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    padding: 15px;
     gap: 20px;
 }
 a {
     text-decoration: none;
+    font-size: 18px;
     color: white;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 6px;
+    margin: -4px;
 }
 section {
-    padding: 20px;
+    padding: 3%;
+    padding-left: 6%;
+    padding-right: 6%;
 }
 #inicio {
     color: rgb(182, 86, 3);
+    font-weight: 700;
 }
 #bemvindo {
     color: rgb(182, 86, 3);
+    margin-top: 0;
+    font-size: 28px;
 }
 h3 {
-    font-size: 30px;
+    margin-top: 0;
+    font-size: 34px;
+    font-weight: 700;
 }
 button {
     height:50px;
@@ -59,9 +80,111 @@ p {
     flex-wrap: wrap;
     gap: 20px;
 }
+#secaoBemVindo {
+    background-color: rgb(206, 193, 184);
+}
 
+.texto {
+    color: black;
+    font-family: 'inter';
+    font-size: 20px;
+}
+#imagemCardapio {
+    float: right;
+    height: 230px;
+}
 
 footer {
-    padding: 20px;
+    line-height: 0px;
+    padding: 1px;
+    padding-top: 10px; 
+    padding-left: 6%;
+    padding-right: 6%;
     background-color: #371B11;
+    padding-bottom: 4px;
+    height: 50px;
+}
+#smartRodape {
+    text-align: left;
+    color: white;
+    padding-top: 5px;
+    margin-bottom: -30px;
+}
+#contatoRodape {
+    background-color: brown;
+    text-align: right;
+    color: white;
+    font-size: 18px;
+    font-family: 'inter';
+    margin-top: 30px;
+}
+#inputs {
+    float: r;
+    text-align: right;
+}
+#enviarMensagem {
+    border-radius: 4px;
+    width: 40%;
+    height: 30px;
+    margin: 
+    8px;
+}
+.input{
+    float: le;
+    width: 250px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 4px;
+    width: 40%;
+}
+#mensagem {
+    overflow-y: auto;
+    height: 50px;
+}
+
+@media (max-width: 1030px) {
+    a {
+        width: 30%;
+        padding-bottom: 5px;
+        font-size: 18px;
+        background-color: rgb(63, 21, 7);
+        border-radius: 6px;
+        padding: 6px;
+        margin: -4px;
+    }
+    #imagemCardapio {
+    float: right;
+    height: 220px;
+    width: auto;
+    }
+}
+
+@media (max-width: 690px) {
+    a {
+        width: 40%;
+        font-size: 16px;
+        padding-bottom: 5px;
+        background-color: rgb(63, 21, 7);
+        border-radius: 6px;
+        padding: 5px;
+        margin: -4px;
+    }
+    #programaFidelidade {
+        width: 84%;
+    }
+    #smartRodape {
+    text-align: left;
+    color: white;
+    font-size: 18px;
+    padding-top: 10px;
+    margin-bottom: -30px;
+    }
+    #contatoRodape {
+        background-color: brown;
+        text-align: right;
+        color: white;
+        font-size: 15px;
+        font-family: 'inter';
+        margin-top: 30px;
+    }
 }

@@ -28,27 +28,28 @@
             <a href="pagamentos">Pagamento</a>
             <a href="estoque">Estoque</a>
             <a href="delivery">Delivey</a>
-            <a href="pragramaFidelidade">Pragrama Fidelidade</a>
+            <a href="pragramaFidelidade" id="programaFidelidade">Pragrama Fidelidade</a>
         </nav>
     </header>
 
     <main>
         <section id="secaoBemVindo">
+            <img src="imagem" alt="imagem" id="imagemCardapio">
             <h2 id="bemvindo">Bem-Vindo ao SmartCoffee!</h2>
 
             <h3>Café que conecta pessoas</h3>
-            <p>Mais que café, uma experiencia</p>
+            <p class="texto">Mais que café, uma experiencia</p>
 
-            <button>Ver Cardápio</button>
+            <button id="verCardapio">Ver Cardápio</button>
 
-            <img src="imagem" alt="imagem">
+            
         </section>
 
         <section>
             <p>Quem somos</p>
             <h2>Sobre nós</h2>
 
-            <p>A SmartCoffee combina café de qualidade, tecnologia e um ambiente acolhedor</p>
+            <p class="texto">A SmartCoffee combina café de qualidade, tecnologia e um ambiente acolhedor</p>
 
             <button>Saiba Mais</button>
         </section>
@@ -91,25 +92,28 @@
 
         <section>
             <article>
-            <p>Contato</p>
+                <p>Contato</p>
                 <h2>Fale com a gente</h2>
-                <p>Tem dúvidas, sugestões ou quer fazer um evento?</p>
-                <p>Envie uma mensagem.</p>
+                <p class="texto">Tem dúvidas, sugestões ou quer fazer um evento?</p>
+                <p class="texto">Envie uma mensagem.</p>
             </article>
 
-            <article>
-                <input type="text" id="nome">
-                <input type="email" id="email">
-                <input type="text" id="mensagem">
+            <article id="inputs">
+                <input type="text" class="input" placeholder="Nome">
+                <br>
+                <input type="email" class="input" placeholder="Email">
+                <br>
+                <textarea id="mensagem" class="input" placeholder="Mensagem"></textarea>
+                <br>
 
-                <button>Enviar mensagem</button>
+                <button id="enviarMensagem">Enviar mensagem</button>
             </article>
         </section>
     </main>
 
     <footer>
-        <h2>SmartCoffee</h2>
-        <p>Contato: suporte@smartcoffee.com</p>
+        <h2 id="smartRodape">Smart<span id="coffee">Coffee</span></h2>
+        <p id="contatoRodape">Contato: suporte@smartcoffee.com</p>
     </footer>
 </body>
 </html>
