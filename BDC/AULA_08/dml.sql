@@ -110,14 +110,6 @@ INSERT INTO pedido (data_pedido, status_pedido, valor_total id_cliente) VALUES
 ("2026-09-06 09:20:00" "FINALIZADO", 19.99, 6),
 ("2026-10-09 21:32:00" "CANCELADO", 5.99, 5);
 
-
-
-    id_pedido INT NOT NULL,
-    id_produto INT NOT NULL,
-    quantidade INT NOT NULL,
-    preco_unitatio DECIMAL (10,2) NOT NULL,
-    observacao VARCHAR(150),
-
 INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario, observacao) VALUES
 (1, 2, 1, 5.99, "Entregar Quente")
 (2, 2, 2, 5.99, "Entregar Quente")
