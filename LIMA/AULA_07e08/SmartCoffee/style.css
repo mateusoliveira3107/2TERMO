@@ -77,7 +77,13 @@ nav {
     font-size: 16px;
     font-weight: 1000;
 }
-#nossosProdutos, #contato {
+#contato {
+    color: rgb(151, 80, 22);
+    font-size: 22px;
+    font-weight: 1000;
+    text-align: left;
+}
+#nossosProdutos {
     color: rgb(151, 80, 22);
     font-size: 16px;
     font-weight: 1000;
