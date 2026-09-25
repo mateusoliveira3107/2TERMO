@@ -1,5 +1,7 @@
+* {
+    font-family: 'inter';
+}
 body {
-    font-family: 'Inter';
     width: 100%;
     margin: 0;
 }
@@ -7,34 +9,32 @@ header {
     background-color: rgb(105, 59, 13);
     text-align: center;
     padding-top: 1px;
+    height: 230px;
 }
-h1 { /*titulo */
+h1 { /* titulo */
     color: white;
     font-size: 44px;
     font-weight: 800;
 }
 
- #gestaointeligente { /*subtitulo */
+ #gestaointeligente { /* subtitulo */
     color: white;
     font-size: 26px;
     margin-top: -25px;
     font-weight: 600;
     margin-bottom: 40px;
 }
-#coffee {
+#coffee { /* parte Coffee de outra cor */
     color: rgb(182, 86, 3);
 }
-nav {
+nav { /* barra de nav */
     padding-bottom: 5px;
     padding-top: 10px;
     background-color: rgb(75, 34, 13);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     padding: 15px;
     gap: 20px;
 }
-a {
+a { /* Partes de navegação do nav */
     text-decoration: none;
     font-size: 18px;
     color: white;
@@ -47,10 +47,6 @@ section {
     padding: 3%;
     padding-left: 6%;
     padding-right: 6%;
-}
-#inicio {
-    color: rgb(182, 86, 3);
-    font-weight: 700;
 }
 #bemvindo {
     color: rgb(182, 86, 3);
@@ -72,12 +68,9 @@ button {
 p {
     color: #75451B;
     font-weight: 400;
-    font-family: "Jomhuria", serif;
     font-size: 30px;
 }
 .cafe {
-    display: flex;
-    flex-wrap: wrap;
     gap: 20px;
 }
 #secaoBemVindo {
@@ -86,11 +79,9 @@ p {
 
 .texto {
     color: black;
-    font-family: 'inter';
     font-size: 20px;
 }
 #imagemCardapio {
-    float: right;
     height: 230px;
 }
 
@@ -115,11 +106,9 @@ footer {
     text-align: right;
     color: white;
     font-size: 18px;
-    font-family: 'inter';
     margin-top: 30px;
 }
 #inputs {
-    float: r;
     text-align: right;
 }
 #enviarMensagem {
@@ -130,7 +119,6 @@ footer {
     8px;
 }
 .input{
-    float: le;
     width: 250px;
     height: 20px;
     padding: 5px;
@@ -140,51 +128,4 @@ footer {
 #mensagem {
     overflow-y: auto;
     height: 50px;
-}
-
-@media (max-width: 1030px) {
-    a {
-        width: 30%;
-        padding-bottom: 5px;
-        font-size: 18px;
-        background-color: rgb(63, 21, 7);
-        border-radius: 6px;
-        padding: 6px;
-        margin: -4px;
-    }
-    #imagemCardapio {
-    float: right;
-    height: 220px;
-    width: auto;
-    }
-}
-
-@media (max-width: 690px) {
-    a {
-        width: 40%;
-        font-size: 16px;
-        padding-bottom: 5px;
-        background-color: rgb(63, 21, 7);
-        border-radius: 6px;
-        padding: 5px;
-        margin: -4px;
-    }
-    #programaFidelidade {
-        width: 84%;
-    }
-    #smartRodape {
-    text-align: left;
-    color: white;
-    font-size: 18px;
-    padding-top: 10px;
-    margin-bottom: -30px;
-    }
-    #contatoRodape {
-        background-color: brown;
-        text-align: right;
-        color: white;
-        font-size: 15px;
-        font-family: 'inter';
-        margin-top: 30px;
-    }
 }
