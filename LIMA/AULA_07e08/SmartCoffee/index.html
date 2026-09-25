@@ -7,11 +7,12 @@
 
     <link rel="stylesheet" href="style.css">
     
-    <!-- Código para usar fonte inter no css -->
+    <!-- Código para usar fonte inter e poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jomhuria&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -20,64 +21,71 @@
         <h2 id="gestaointeligente">Gestão Inteligente</h2>
 
         <nav>
-            <a href="inicio" id="inicio">Início</a>
-            <a href="clientes">clientes</a>
-            <a href="produtos">produtos</a>
-            <a href="funcionarios">Funcionários</a>
-            <a href="pedidos">Pedidos</a>
-            <a href="pagamentos">Pagamento</a>
-            <a href="estoque">Estoque</a>
-            <a href="delivery">Delivey</a>
-            <a href="pragramaFidelidade" id="programaFidelidade">Pragrama Fidelidade</a>
+            <a href="#inicio" class="link">Início</a>
+            <a href="#clientes" class="link">clientes</a>
+            <a href="#produtos" class="link">produtos</a>
+            <a href="#funcionarios" class="link">Funcionários</a>
+            <a href="#pedidos" class="link">Pedidos</a>
+            <a href="#pagamentos" class="link">Pagamento</a>
+            <a href="#estoque" class="link">Estoque</a>
+            <a href="#delivery" class="link">Delivey</a>
+            <a href="#pragramaFidelidade" class="link">Pragrama Fidelidade</a>
         </nav>
     </header>
 
     <main>
         <section id="secaoBemVindo">
-            <img src="imagem" alt="imagem" id="imagemCardapio">
-            <h2 id="bemvindo">Bem-Vindo ao SmartCoffee!</h2>
-
-            <h3>Café que conecta pessoas</h3>
-            <p class="texto">Mais que café, uma experiencia</p>
-
-            <button id="verCardapio">Ver Cardápio</button>
-
+            <div>
+                <h2 id="bemvindo">Bem-Vindo ao SmartCoffee!</h2>
+                <h3>Café que conecta pessoas</h3>
+                <p class="texto">Mais que café, uma experiência</p>
+                <button id="verCardapio">Ver Cardápio</button>
+            </div>
+            <figure class="imagemBemVindo">
+                <img src="imagemBemVindo" alt="imagemBemVindo" id="imagemBemVindo">
+            </figure>
+            
             
         </section>
 
         <section>
-            <p id="quemSomos">Quem somos</p>
-            <h2 id="sobreNos">Sobre nós</h2>
+            <figure class="imagemSobreNos">
+                <img src="imagemSobreNos" alt="imagemSobreNos">
+            </figure>
+            <div id="sobreNos">
+                <p id="quemSomos">Quem somos</p>
+                <h2 id="sobreNos">Sobre nós</h2>
+                <p class="texto">A SmartCoffee combina café de qualidade, tecnologia e um ambiente acolhedor</p>
 
-            <p class="texto">A SmartCoffee combina café de qualidade, tecnologia e um ambiente acolhedor</p>
-
-            <button>Saiba Mais</button>
+                <button>Saiba Mais</button>
+            </div>
         </section>
 
         <section id="secaoCafes">
             <p id="nossosProdutos">Nossos Produtos</p>
             <h2 id="nossosCafes">Nossos Cafés</h2>
+            <div id="tiposCafe">
+                <article class="cafe">
+                    <img src="imagem" alt="imagem">
+                    <h3 class="nomeCafe">Capuccino Tradicional</h3>
+                    <p class="descricaoCafe">Equilíbrio entre sabor e cremosidade.</p>
+                    <strong class="preco">R$ 14,90</strong>
+                </article>
 
-            <article class="cafe">
-                <img src="imagem" alt="imagem">
-                <h3 class="nomeCafe">Capuccino Tradicional</h3>
-                <p class="descricaoCafe">Equilíbrio entre sabor e cremosidade.</p>
-                <p class="preco">R$ 14,90</p>
-            </article>
-
-            <article class="cafe">
-                <img src="imagem" alt="imagem">
-                <h3 class="nomeCafe">Lattle Caramelo</h3>
-                <p class="descricaoCafe">Leve, doce e irresistível.</p>
-                <p class="preco">R$ 16,90</p>
-            </article>
-            
-            <article class="cafe">
-                <img src="imagem" alt="imagem">
-                <h3 class="nomeCafe">Espresso Especial</h3>
-                <p class="descricaoCafe">Intenso como boas conversas.</p>
-                <p class="preco">R$ 12,90</p>
-            </article>
+                <article class="cafe">
+                    <img src="imagem" alt="imagem">
+                    <h3 class="nomeCafe">Lattle Caramelo</h3>
+                    <p class="descricaoCafe">Leve, doce e irresistível.</p>
+                    <strong class="preco">R$ 16,90</strong>
+                </article>
+                
+                <article class="cafe">
+                    <img src="imagem" alt="imagem">
+                    <h3 class="nomeCafe">Espresso Especial</h3>
+                    <p class="descricaoCafe">Intenso como boas conversas.</p>
+                    <strong class="preco">R$ 12,90</strong>
+                </article>
+            </div>
         </section>
 
         <section id="secaoAmbiente">
@@ -98,16 +106,15 @@
                 <p class="texto">Envie uma mensagem.</p>
             </article>
 
-            <article id="inputs">
+            <form id="inputs">
                 <input type="text" class="input" placeholder="Nome">
                 <br>
                 <input type="email" class="input" placeholder="Email">
                 <br>
                 <textarea id="mensagem" class="input" placeholder="Mensagem"></textarea>
                 <br>
-
-                <button id="enviarMensagem">Enviar mensagem</button>
-            </article>
+                <button type="submit" id="enviarMensagem">Enviar mensagem</button>
+            </form>
         </section>
     </main>
 

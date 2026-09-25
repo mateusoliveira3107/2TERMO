@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="#inicio">SmartCoffee</a>
+        <a href="#inicio" id="tituloSmart">Smart<span id="tituloCoffee">Coffee</span></a>
         <nav>
             <ul>
                 <li><a href="#inicio">Início</a></li>
@@ -17,6 +17,7 @@
                 <li><a href="#cafes">Cafés</a></li>
                 <li><a href="#ambiente">Ambiente</a></li>
                 <li><a href="#contato">Contato</a></li>
+                <li><a href="#cardapio">Cardápio</a></li>
             </ul>
         </nav>
     </header>
@@ -34,6 +35,109 @@
             </figure>
 
         </section>
+
+        <section>
+                <figure id="sobre" class="sobre">
+                    <img src="img/sobre_smartcoffee.png" alt="Ambiente da SmartCoffee">
+                </figure>
+
+                <header class="sobre-cabecalho">
+                    <p>Quem Somos</p>
+                    <h2>Sobre nós</h2>
+                </header>
+
+                <p>
+                    Café, tecnologia e boas experiências
+                </p>
+
+                <a href="#">Saiba mais</a>
+        </section>
+
+        <section id="cafes" class="cafes">
+            <header class="secao-cabecalho">
+                <p>Nossos Produtos</p>
+                <h2>Nossos Cafés</h2>
+            </header>
+
+            <ul class="lista-cafes">
+                <li>
+                    <article class="card-cafe">
+                        <img src="img/cappucino_tradicional.jpg" alt="Cappucino Tradicional">
+                        <h3>Capuccino Tradicional</h3>
+                        <p>Equilíbrio entre sabor e cremosidade</p>
+                        <strong>R$ 14,90</strong>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="card-cafe">
+                        <img src="img/latte.jpg" alt="Latte Caramelo">
+                        <h3>Latte Caramelo</h3>
+                        <p>Leve, doce e irresistível</p>
+                        <strong>R$ 16,90</strong>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="card-cafe">
+                        <img src="img/espresso.jpg" alt="Espresso Especial">
+                        <h3>Espresso Especial</h3>
+                        <p>Intenso como boas conversas</p>
+                        <strong>R$ 12,50</strong>
+                    </article>
+                </li>
+            </ul>
+            
+        </section>
+
+        <section id="ambiente" class="ambiente">
+            <header class="ambiente-conteudo">
+                <p>Nosso Ambiente</p>
+                <h2>Um espaço para boas ideias</h2>
+                <p>Ambiente moderno, confortável, acolhedor e pensafo para trabalhar, estudar ou apenas relaxar</p>
+                <a href="#contato">Conheça nosso espaço</a>
+            </header>
+
+            <figure class="ambiente-imagem">
+                <img src="img/ambiente.png" alt="Espaço Interno da SmartCoffee">
+            </figure>
+        </section>
+
+        <section id="contato" class="contato">
+            <header class="contato-cabecalho">
+                <h2>Fale com a gente</h2>
+                <p>Entre em contato com nossa equipe.</p>
+            </header>
+
+            <form>
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome">
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+
+                <label for="mensagem"></label>
+                <textarea name="mensagem" id="mensagem"></textarea>
+
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
     </main>
+
+    <footer>
+        <p>SmartCoffee</p>
+
+        <nav>
+            <ul>
+                <li><a href="#instagram"></a>instagram</li>
+                <li><a href="#tiktok"></a>TikTok</li>
+                <li><a href="#whatsapp"></a>Whatsapp</li>
+                <li><a href="#telegram"></a>Telegram</li>
+            </ul>
+        </nav>
+
+        <p>&copy 2026 SmartCoffee</p>
+    </footer>
+
 </body>
 </html>

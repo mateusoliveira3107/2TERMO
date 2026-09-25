@@ -2,26 +2,38 @@
     font-family: 'inter';
 }
 body {
-    width: 100%;
     margin: 0;
+    margin-bottom: 0;
+    padding: 0;
+    border: solid 2px;
 }
 header {
     background-color: rgb(105, 59, 13);
     text-align: center;
     padding-top: 1px;
-    height: 230px;
+    height: 300px;
 }
-h1 { /* titulo */
+h1 {
+    padding-top: 20px;
     color: white;
-    font-size: 44px;
+    font-size: 58px;
     font-weight: 800;
 }
-
- #gestaointeligente { /* subtitulo */
+.imagemBemVindo {
+    height: 250px;
+    background-color: rgb(150, 105, 21);
+    width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+}
+#imagemCardapio {
+    text-align: right;
+}
+#gestaointeligente {
     color: white;
-    font-size: 26px;
+    font-size: 34px;
     margin-top: -25px;
-    font-weight: 600;
+    font-weight: 800;
     margin-bottom: 40px;
 }
 #secaoCafes {
@@ -35,24 +47,37 @@ h1 { /* titulo */
     font-size: 30px;
 }
 .descricaoCafe {
-    font-size: 16px;
+    font-size: 20px;
     color: black;
 }
 .preco {
-    font-size: 16px;
+    font-size: 21px;
     color: black;
     font-weight: 1000;
 }
 nav {
-    display: flex;
-    padding-bottom: 5px;
+    margin-top: 65px;
     padding-top: 10px;
     background-color: rgb(75, 34, 13);
     padding: 15px;
-    height: 20px;
-    gap: 20px
+    height: 30px;
+    text-align: center;
 }
-#quemSomos, #nossosProdutos, #contato {
+.link {
+    padding-right: 50px;
+    font-size: 20px;
+}
+#bemvindo {
+    color: rgb(182, 86, 3);
+    margin-top: 0;
+    font-size: 34px;
+}
+#quemSomos {
+    color: rgb(151, 80, 22);
+    font-size: 16px;
+    font-weight: 1000;
+}
+#nossosProdutos, #contato {
     color: rgb(151, 80, 22);
     font-size: 16px;
     font-weight: 1000;
@@ -78,8 +103,20 @@ nav {
     text-align: center;
     margin-top: -10px;
 }
+.cafe {
+    padding: 50px;
+    width: 500px;
+}
+#tiposCafe {
+    display: flex;
+    justify-content: space-around;
+}
+.cafe3 {
+    text-align: right;
+    width: 400px
+}
 .nomeCafe {
-    font-size: 20px;
+    font-size: 24px;
 }
 a {
     text-decoration: none;
@@ -91,17 +128,13 @@ a {
     margin: -4px;
 }
 section {
-    padding: 20px;
+    padding: 50px;
 }
-#bemvindo {
-    color: rgb(182, 86, 3);
-    margin-top: 0;
-    font-size: 28px;
-}
+
 h3 {
     margin-top: 0;
-    font-size: 34px;
-    font-weight: 700;
+    font-size: 38px;
+    font-weight: 9  00;
 }
 article {
     background-color: #a8875cb0;
@@ -110,8 +143,10 @@ article {
     margin: 5px;
 }
 button {
-    height:40px;
-    width: 150px;
+    height: 70px;
+    width: 250px;
+    font-size: 24px;
+    font-weight: 600;
     border-radius: 40px;
     background-color: rgb(182, 86, 3);
     color: white;
@@ -122,35 +157,35 @@ p {
     font-weight: 400;
     font-size: 30px;
 }
+#sobreNos {
+    text-align: right;
+    font-size: 36px;
+}
 #secaoBemVindo {
+    display: flex;
+    justify-content: space-between;
     background-color: rgb(206, 193, 184);
 }
 .texto {
     color: black;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 24px;
 }
-footer {
-    line-height: 0px;
-    padding: 1px;
-    padding-top: 10px; 
-    padding-left: 6%;
-    padding-right: 6%;
-    background-color: #371B11;
-    padding-bottom: 4px;
-    height: 50px;
-}
+
 #smartRodape {
     text-align: left;
     color: white;
-    padding-top: 5px;
+    font-size: 34px;
+    padding-top: 20px;
     margin-bottom: -30px;
 }
 #contatoRodape {
     background-color: brown;
     text-align: right;
     color: white;
-    font-size: 18px;
+    font-size: 22px;
     margin-top: 30px;
+    margin-right: 100px;
 }
 #inputs {
     text-align: right;
@@ -158,13 +193,14 @@ footer {
 }
 #enviarMensagem {
     border-radius: 4px;
-    width: 300px;
-    height: 30px;
+    width: 325px;
+    height: 60px;
     margin: 8px;
 }
 .input{
     height: 30px;
-    padding: 5px;
+    margin: 10px;
+    padding: 10px;
     border-radius: 4px;
     width: 300px;
     border-width: 1px;
@@ -183,4 +219,13 @@ footer {
 }
 #secaoContato {
     display: flex;
+}
+footer {
+    line-height: 0px;
+    padding: 1px;
+    padding-left: 60px;
+    padding-top: 10px; 
+    background-color: #371B11;
+    padding-bottom: 4px;
+    height: 100px;
 }
