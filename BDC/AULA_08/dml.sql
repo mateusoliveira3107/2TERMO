@@ -46,7 +46,7 @@ CREATE TABLE item_pedido (
     CONSTRAINT fk_item_pedido FOREIGN KEY (id_pedido) REFERENCES pedido (id_pedido),
     CONSTRAINT fk_item_produto FOREIGN KEY (id_produto) REFERENCES produto (id_produto)
 );
-drop table item_pedido;
+
 CREATE TABLE forma_pagamento (
     id_forma_pagamento INT PRIMARY KEY AUTO_INCREMENT,
     descricao VARCHAR(40) NOT NULL UNIQUE
@@ -57,10 +57,10 @@ CREATE TABLE pagamento (
     id_pedido INT NOT NULL,
     id_forma_pagamento INT NOT NULL,
     valor DECIMAL (10,2) NOT NULL,
+    data_pagamento timestamp default current_timestamp,
     CONSTRAINT fk_pagamento_pedido FOREIGN KEY (id_pedido) REFERENCES pedido (id_pedido),
     CONSTRAINT fk_pagamento_forma_pagamento FOREIGN KEY (id_forma_pagamento) REFERENCES forma_pagamento (id_forma_pagamento)
 );
-
 -- INSERINDO DADOS NO BD
 INSERT INTO cliente (nome_cliente, email, telefone, cidade, ativo) VALUES
 ("Mateus Silva", "matheus@gmail.com", "19999999901", "Limeira", TRUE),
@@ -89,7 +89,6 @@ INSERT INTO categoria (nome) VALUES
 ("Doces"),
 ("Salgados"),
 ("Combo"));
-
 
 SELECT * FROM categoria;
 
@@ -130,11 +129,11 @@ INSERT INTO forma_pagamento (descricao) VALUES
 SELECT * FROM forma_pagamento;
 
 INSERT INTO pagamento(id_pedido, id_forma_pagamento, valor) VALUES
-((2, 4, 19.99),
+(2, 4, 19.99),
 (3, 2, 10.99),
 (4, 1, 39.99),
 (5, 3, 19.99),
-(1, 2, 0.00));
+(1, 2, 0.00);
 
 SELECT * FROM item_pedido;
 
@@ -157,7 +156,7 @@ WHERE id_cliente = 9;
 UPDATE produto
 SET preco = 1.00;
 -- Sem "where" que é a condição, o preço de todos os dados da tabela produto são alterados
--- NUNCA REALIZAR UM UPDATE SEM --- WHERE 😡
+-- NUNCA REALIZAR UM UPDATE SEM WHERE 😡
 
 UPDATE cliente
 SET telefone = "19987869445"
@@ -201,4 +200,70 @@ UPDATE cliente
 SET ativo = FALSE
 WHERE id_cliente = 10;
 
+
 SELECT * from cliente
+
+-- TRANSAÇÕES - SEGURANÇA PARA DML
+START TRANSACTION;
+UPDATE produto
+SET preco = preco * 2.80
+WHERE id_categoria = 1;
+
+SELECT id_produto, nome, preco
+FROM produto
+WHERE id_categoria = 1;
+
+ROLLBACK;
+-- DESFAZ O QUE FOI FEITO NA TRANSAÇÃO
+COMMIT;
+-- VALIDA AS MUDANÇAS FEITAS DENTRO DA TRANSAÇÂO
+
+START TRANSACTION;
+UPDATE cliente SET cidade = 'Santos' WHERE id_cliente = 12;
+COMMIT;
+ROLLBACK;
+
+-- PROCEDIMENTO DE UMA COMPRA
+-- PASSO 1: REALIZAR CADASTRO CLIENTE
+INSERT INTO cliente (nome_cliente, email, telefone, cidade) VALUES
+('Carlos Silva', 'carlos.silva@gmail.com', '19999999999', 'Santos');
+
+SET @cliente_compra = LAST_INSERT_ID();
+
+-- PASSO 2: REALIZAR PEDIDO
+INSERT INTO pedido (data_pedido, status_pedido, valor_total, id_cliente) VALUES
+(NOW(), 'ABERTO', 0.00, @cliente_compra);
+
+SET @pedido_compra = LAST_INSERT_ID();
+
+-- PASSO 3: INSERINDO ITENS
+INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario)
+VALUES (@pedido_compra, 62, 1, 9.00), (@pedido_compra, 38, 1, 7.00);
+
+-- PASSO 4: ATUALIZANDO TOTAL E STATUS
+UPDATE pedido
+SET valor_total = 22.00,
+status_pedido = 'PREPARANDO'
+WHERE id_pedido = @pedido_compra;
+
+-- PASSO 5: REGISTRAR PAGAMENTO
+INSERT INTO pagamento (id_pedido, id_forma_pagamento, valor, data_pagamento) VALUES
+(@pedido_compra, 2, 22.00, now());
+
+-- PASSO 6: CONSULTAR PEDIDO E RESULTADO
+
+SELECT p.id_pedido,
+c.nome_cliente AS nome_cliente,
+p.status_pedido AS status_pedido,
+p.valor_total AS compra_total
+FROM pedido p
+JOIN cliente c ON c.id_cliente = p.id_cliente
+WHERE p.id_cliente = @pedido_compra
+
+-- PASSO 7: RELATÓRIO
+-- PASSO 1
+SELECT nome FROM cliente WHERE id_cliente = @cliente_compra;
+SELECT nome FROM cliente WHERE id_cliente = 2;
+
+-- PASSO 2
+SELECT * FROM pedido WHERE id_pedido = @pedido_compra;

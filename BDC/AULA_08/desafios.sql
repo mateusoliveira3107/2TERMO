@@ -117,6 +117,11 @@ WHERE id_produto = @id_ultimo_pedido)
 ---------------------------------------------------------------
 
 -- 12. Escolha um dos produtos criados e faça uma exclusão lógica (ativo = FALSE).
+
+-- SELECT * FROM produto WHERE nome = 'Brigadeiro';
+-- UPDATE produto SET ativo = FALSE WHERE nome = 'Brigadeiro';
+-- SELECT * FROM produto WHERE nome = 'Brigadeiro';
+
 UPDATE produto
 SET status_produto = FALSE
 WHERE id_produto = 4
@@ -127,10 +132,11 @@ WHERE id_produto = 4
 
 -- 13. Crie um cliente de teste sem pedidos.
 --     Depois localize e exclua apenas esse cliente.
-INSERT INTO cliente (nome_cliente, email, telefone, cidade, ativo) VALUES
-("Enaldo Souza", "enaldo@gmail.com", "19858599901", "Limeira", TRUE);
-DELETE FROM cliente
-WHERE nome_cliente = "Enaldo Souza";
+INSERT INTO cliente (nome, email, cidade) VALUES
+('Cliente Temporário', 'temporario.a09@gmail.com', 'Limeira');
+SELECT * FROM cliente WHERE email = 'temporario.a09@gmail.com';
+DELETE FROM cliente WHERE email = 'temporario.a09@gmail.com';
+SELECT * FROM cliente WHERE email = 'temporario.a09@gmail.com';
 
 ---------------------------------------------------------------
 
@@ -141,13 +147,15 @@ WHERE nome_cliente = "Enaldo Souza";
 -- DELETE FROM cliente
 -- WHERE id_cliente = 1;
 
---ERRO: Cannot delete or update a parent row: a foreign key constraint fails(`smartcoffee_dml_mateus`.`pedido`, CONSTRAINT `fk_pedido_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`))
+--ERRO: "Cannot delete or update a parent row: a foreign key constraint fails(`smartcoffee_dml_mateus`.`pedido`, CONSTRAINT `fk_pedido_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`))"
+
+-- O erro foi: Não foi possível deletar o cliente pois a chave estrangeira depende de um vínculo de relação com a outra tabela
 
 ---------------------------------------------------------------
 
 -- 15. Explique em comentário por que a FK bloqueou a exclusão.
 
--- Resposta: Não foi possível excluir o cliente, pois ele possui uma chave estrangeira relacionando ele com um item da tabela pedido
+-- Resposta: Não foi possível excluir o cliente, pois ele possui dependência em outra tabela  e possui dados com informações
 
 ---------------------------------------------------------------
 
@@ -155,8 +163,8 @@ WHERE nome_cliente = "Enaldo Souza";
 INSERT INTO categoria (nome) VALUES
 ("Excluir Depois");
 
-DELETE FROM categoria WHERE
-nome = "Excluir Depois";
+DELETE FROM categoria
+WHERE nome = "Excluir Depois";
 
 ---------------------------------------------------------------
 
@@ -195,10 +203,14 @@ INSERT INTO pedido (data_pedido, status_pedido, valor_total, id_cliente) VALUES
 -- PARTE E - DESAFIO COMPLETO COM TRANSAÇÃO
 
 -- 21. Inicie uma transação.
-
+START TRANSACTION;
 
 -- 22. Dentro dela, cadastre um cliente, um pedido e dois itens relacionados.
+INSERT INTO cliente (nome_cliente, email, telefone, cidade, ativo) VALUES
+("Fernando Oliveira", "fernando@gmail.com", "19233439901", "Santa Catarina", TRUE);
 
+INSERT INTO pedido (data_pedido, status_pedido, valor_total, id_cliente) VALUES
+("2026-11-04 16:25:00", "ABERTO", 0.00, 1)
 
 -- 23. Faça uma consulta com JOIN comprovando que os registros existem
 --     enquanto a transação está aberta.
