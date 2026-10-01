@@ -41,12 +41,12 @@ CREATE TABLE item_pedido (
     id_pedido INT NOT NULL,
     id_produto INT NOT NULL,
     quantidade INT NOT NULL,
-    preco_unitatio DECIMAL (10,2) NOT NULL,
+    preco_unitario DECIMAL (10,2) NOT NULL,
     observacao VARCHAR(150),
     CONSTRAINT fk_item_pedido FOREIGN KEY (id_pedido) REFERENCES pedido (id_pedido),
     CONSTRAINT fk_item_produto FOREIGN KEY (id_produto) REFERENCES produto (id_produto)
 );
-
+drop table item_pedido;
 CREATE TABLE forma_pagamento (
     id_forma_pagamento INT PRIMARY KEY AUTO_INCREMENT,
     descricao VARCHAR(40) NOT NULL UNIQUE
@@ -116,11 +116,11 @@ INSERT INTO pedido (data_pedido, status_pedido, valor_total, id_cliente) VALUES
 SELECT * FROM pedido
 
 INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario, observacao) VALUES
-((1, 38, 1, 5.99, "Entregar Quente"),
+(1, 38, 1, 5.99, "Entregar Quente"),
 (2, 39, 2, 5.99, "Entregar Quente"),
 (3, 60, 1, 5.99, "Deixar Macio"),
 (4, 61, 2, 5.99, "Deixar Macio"),
-(5, 62, 3, 5.99, "Entregar Quente"));
+(5, 62, 3, 5.99, "Entregar Quente");
 
 SELECT * FROM item_pedido;
 
@@ -167,7 +167,7 @@ WHERE nome_cliente = "Mateus Silva";
 UPDATE cliente
 SET telefone = "19977777701",
 cidade = "Valinhos"
-WHERE id_cliente 9;
+WHERE id_cliente = 9;
 
 -- EX 4: Ajustes de valores
 UPDATE produto
