@@ -175,7 +175,7 @@ WHERE nome = "Excluir Depois";
 -- Qual restrição impediu a operação?
 INSERT INTO produto (nome, preco, ativo, id_categoria) VALUES
 ("Café Espresso", 7.99, TRUE, 9999);
--- Deu erro pois o programa não encontrou uma chave estrangeira id_categoria com valor 9999 na tabela categoria
+-- Deu erro pois o programa não encontrou uma chave estrangeira id_categoria com id 9999 na tabela categoria
 
 ---------------------------------------------------------------
 
