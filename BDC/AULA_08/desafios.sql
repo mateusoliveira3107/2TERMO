@@ -179,7 +179,7 @@ INSERT INTO produto (nome, preco, ativo, id_categoria) VALUES
 
 ---------------------------------------------------------------
 
--- 18. Tente cadastrar um cliente usando 'ana@email.com'.
+-- 18. Tente cadastrar um cliente usando um e-mail que já existe.
 -- Qual restrição impediu a operação?
 INSERT INTO cliente (nome_cliente, email, telefone, cidade, ativo) VALUES
 ("Matheus Alves", "matheus@gmail.com", "19125734801", "Paulínia", TRUE);
@@ -198,19 +198,17 @@ INSERT INTO pedido (data_pedido, status_pedido, valor_total, id_cliente) VALUES
 -- Deu erro pois o programa não encontrou uma chave estrangeira id_cliente com valor 9999 na tabela cliente
 
 -- 20. Escreva em comentários a diferença entre os três erros anteriores.
-
+-- O primeiro erro é gerado ao tentar excluir algo com uma chave estrangeira que não existe.
+-- O segundo erro é gerado ao tentar criar um cliente, preenchendo um dado único com um valor que já existe em outro cliente, o que geraria um valor duplicado.
+-- O terceiro erro é gerado ao tentar criar um pedido para um cliente que não existe, é necessário colocar uma chave estrangeira que exista na tabela em que pedido está relacionado.
 
 -- PARTE E - DESAFIO COMPLETO COM TRANSAÇÃO
 
 -- 21. Inicie uma transação.
-START TRANSACTION;
+
 
 -- 22. Dentro dela, cadastre um cliente, um pedido e dois itens relacionados.
-INSERT INTO cliente (nome_cliente, email, telefone, cidade, ativo) VALUES
-("Fernando Oliveira", "fernando@gmail.com", "19233439901", "Santa Catarina", TRUE);
 
-INSERT INTO pedido (data_pedido, status_pedido, valor_total, id_cliente) VALUES
-("2026-11-04 16:25:00", "ABERTO", 0.00, 1)
 
 -- 23. Faça uma consulta com JOIN comprovando que os registros existem
 --     enquanto a transação está aberta.
