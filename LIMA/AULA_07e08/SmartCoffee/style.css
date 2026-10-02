@@ -20,7 +20,7 @@ img {
 /* HEADER */
 
 header {
-    background-color: rgb(105, 59, 13);
+    background: linear-gradient(rgb(97, 61, 24), rgb(105, 59, 13), rgb(124, 68, 13)) ;
     text-align: center;
     padding-top: 1px;
     height: 300px;
@@ -44,8 +44,7 @@ h1 {
 /* - */
 
 nav {
-    margin-top: 65px;
-    padding-top: 10px;
+    margin-top: 60px;
     background-color: rgb(75, 34, 13);
     padding: 15px;
     height: 30px;
@@ -59,6 +58,9 @@ a {
     border-radius: 6px;
     padding: 6px;
     margin: -4px;
+}
+a:hover {
+    color: rgb(219, 209, 186);
 }
 .link {
     padding-right: 40px;
@@ -94,12 +96,19 @@ h3 {
 }
 
 .imagemBemVindo {
-    height: 250px;
-    background-color: rgb(114, 79, 30);
-    width: 300px;
+    height: 240px;
+    background-color: rgb(128, 97, 54);
+    width: 480px;
     padding: 20px;
     border-radius: 20px;
-    margin: 0;
+    margin: -10px;
+    border: solid 3px rgb(141, 89, 39);
+}
+#imagemBemVindo {
+    width: 520px;
+    margin-left: -20px;
+    margin-top: -20px;
+    border-radius: 20px;
 }
 /* - SECÃO SOBRE NÓS */
 
@@ -119,17 +128,17 @@ h3 {
     font-weight: 1000;
 }
 .areaImagemSobreNos {
-    height: 250px;
-    background-color: rgb(114, 79, 30);
-    width: 300px;
+    height: 300px;
+    background-color: rgb(128, 97, 54);
+    width: 450px;
     padding: 20px;
     border-radius: 20px;
-    margin: 0;
+    margin: -10px;
 }
 /* SEÇÃO DOS CAFÉS*/
 
 .areaImagemCafe {
-    background-color: rgb(114, 79, 30);
+    background-color: rgb(128, 97, 54);
     height: 250px;
     padding: 20px;
     margin: 0;
@@ -140,8 +149,10 @@ h3 {
 }
 #nossosProdutos {
     color: rgb(151, 80, 22);
-    font-size: 20px;
-    margin-top: 0;
+    font-size: 21px;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    padding: 0;
     font-weight: 1000;
     text-align: center;
 }
@@ -161,7 +172,7 @@ h3 {
 }
 
 article {
-    background-color: #a8875cb0;
+    background-color: #927a55b0;
     border-radius: 10px;
     padding: 20px;
     margin: 5px;
@@ -212,7 +223,7 @@ article {
     width: 25%;
     padding: 20px;
     border-radius: 20px;
-    background-color: rgb(114, 79, 30);
+    background-color: rgb(128, 97, 54);
 }
 
 /* - */
@@ -235,23 +246,21 @@ article {
 }
 #inputs {
     text-align: center;
-    background-color: rgb(202, 187, 178);
+    background-color: rgb(151, 132, 105);
     width: 35%;
-    padding: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin: 0;
-    padding: 10px;
+    margin: -20px;
+    padding: 30px;
     border-radius: 10px;
 }
 .input {
     height: 30px;
     margin: 10px;
-    padding: 10px;
+    padding: 15px;
     border-radius: 4px;
     width: 80%;
     border-width: 1px;
-    font-size: 16px;
+    font-size: 18px;
+    border: none;
 }
 #mensagem {
     height: 90px;
@@ -264,7 +273,7 @@ article {
     border-radius: 4px;
     margin: 0;
     border-width: 1px;
-    width: 60%;
+    width: 85%;
     height: 60px;
 }
 
@@ -290,25 +299,25 @@ p {
 /* - */
 footer {
     line-height: 0px;
-    padding: 1px;
     padding-left: 60px;
-    padding-top: 10px; 
+    padding-top: 1px;
+    padding-bottom: 20px;
     background-color: #371B11;
-    padding-bottom: 4px;
     height: 100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 #smartRodape {
     text-align: left;
     color: white;
     font-size: 34px;
-    padding-top: 20px;
-    margin-bottom: -30px;
+    padding-left: 50px;
 }
 #contatoRodape {
     background-color: brown;
     text-align: right;
     color: white;
     font-size: 22px;
-    margin-top: 30px;
-    margin-right: 100px;
+    padding-right: 50px;
 }
