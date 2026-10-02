@@ -1,0 +1,47 @@
+body {
+    padding: 40px;
+    margin: 0;
+}
+
+.equipe {
+    /* Ex 1 */
+    display: flex;
+    flex-direction: row;
+
+    /* Ex 2 */
+    gap: 30px;
+
+    /* Ex 3 */
+    /* justify content: flex-start;
+    justify content: center;
+    justify content: flex-end;
+    justify content: space-between;
+    justify content: space-evenly; 
+    Mudou a parte da página onde os elementos ficam localizados*/
+    justify-content: center;
+}
+
+.area {
+    display: flex;
+    height: 350px;
+    gap: 20px;
+}
+#area1 {
+    display: flex;
+    align-items: flex-start;
+}
+#area2 {
+    display: flex;
+    align-items: center;
+}
+#area3 {
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Ex 5 */
+.cards {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}

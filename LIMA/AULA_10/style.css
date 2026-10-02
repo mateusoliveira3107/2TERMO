@@ -1,0 +1,78 @@
+/* .menu {
+    display: flex;
+    flex-direction: row;
+    flex-direction: column-reverse deixa reverso
+    justify-content: center;
+    padding: 20px;
+} */
+
+/* p {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    align-items: flex-end;
+} */
+/* .menu2 {
+    display: flex;
+    gap: 40px;  
+} */
+
+/* body {
+    display: flex;
+    justify-content: center;
+} */
+.cabecalho-c {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px 8%;
+}
+
+.lista-c {
+    display: flex;
+    gap: 23px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/* gap - espaçamento entre eles */
+.ban {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 8%;
+}
+
+.ban-c, .ban-i {
+    flex: 1;
+}
+/* flex 1: cria 1 divisao entre todos os conteúdos */
+.ban-i {
+    margin: 0;
+}
+.ban-i img {
+    width: 100%;
+    display: block;
+}
+.lista-ca {
+    display: flex;
+    gap: 23px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 10px 8%;
+    margin: 0;
+}
+.lista-ca > li {
+    flex: 1;
+    min-width: 223px;
+}
+.cont-c {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 60px 8%;
+}
+
+.cont-ca, .cont-c form {
+    flex: 1;
+}
