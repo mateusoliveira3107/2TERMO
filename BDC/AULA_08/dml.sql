@@ -64,8 +64,8 @@ CREATE TABLE pagamento (
 -- INSERINDO DADOS NO BD
 INSERT INTO cliente (nome_cliente, email, telefone, cidade, ativo) VALUES
 ("Mateus Silva", "matheus@gmail.com", "19999999901", "Limeira", TRUE),
-("Maria Eduarda", "maria@gamil.com" "19999999902", "Limeira", TRUE),
-("Matheus Oricolli", "matheusc@gmail.com", "19999999903", "Limeira", TRUE)
+("Maria Eduarda", "maria@gamil.com", "19999999902", "Limeira", TRUE),
+("Matheus Oricolli", "matheusc@gmail.com", "19999999903", "Limeira", TRUE),
 ("Luiz Felipe", "luis@gmail.com", "19999999904", "Limeira", TRUE),
 ("Nicolas Filipe", "nicolas@gmail.com", "19999999905", "Limeira", TRUE),
 ("Otavio Correia", "otavio@gmail.com", "19999999906", "Conchal", TRUE),
@@ -83,36 +83,36 @@ INSERT INTO cliente (nome_cliente, email, telefone, cidade, ativo) VALUES
 SELECT * FROM cliente;
 
 INSERT INTO categoria (nome) VALUES
-(("Café"),
+("Café"),
 ("Bebidas Quentes"),
 ("Bebidas Geladas"),
 ("Doces"),
 ("Salgados"),
-("Combo"));
+("Combo");
 
 SELECT * FROM categoria;
 
 INSERT INTO produto (nome, preco, ativo, id_categoria) VALUES
-(("Café", 5.99, TRUE, 1),
+("Café", 5.99, TRUE, 1),
 ("Capuccino", 8.99, TRUE, 2),
 ("Esfirra", 9.99, TRUE, 5),
 ("Brigadeiro", 2.99, FALSE, 4),
 ("Combo salgado e café", 12.99, TRUE, 6),
 ("Bolo de chocolate", 10.99, TRUE, 4),
 ("Suco natural", 9.99, TRUE, 3),
-("Pão de queijo", 7.99, TRUE, 5));
+("Pão de queijo", 7.99, TRUE, 5);
 
 SELECT * FROM produto;
 
 INSERT INTO pedido (data_pedido, status_pedido, valor_total, id_cliente) VALUES
-(("2026-11-04 16:25:00", "ABERTO", 0.00, 1),
+("2026-11-04 16:25:00", "ABERTO", 0.00, 1),
 ("2026-12-03 12:30:00", "FINALIZADO", 19.99, 2),
 ("2026-11-02 14:35:00", "CANCELADO", 10.99, 3),
 ("2026-10-03 13:15:00", "PREPARANDO", 30.99, 4),
 ("2026-09-06 09:20:00", "FINALIZADO", 19.99, 6),
-("2026-10-09 21:32:00", "CANCELADO", 5.99, 5));
+("2026-10-09 21:32:00", "CANCELADO", 5.99, 5);
 
-SELECT * FROM pedido
+SELECT * FROM pedido;
 
 INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario, observacao) VALUES
 (1, 38, 1, 5.99, "Entregar Quente"),
@@ -124,7 +124,10 @@ INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario, obse
 SELECT * FROM item_pedido;
 
 INSERT INTO forma_pagamento (descricao) VALUES
-(("Dinheiro"), ("Cartão de Débito"), ("Cartão de Crédito"), ("Pix"));
+("Dinheiro"),
+("Cartão de Débito"),
+("Cartão de Crédito"),
+("Pix");
 
 SELECT * FROM forma_pagamento;
 
@@ -140,7 +143,7 @@ SELECT * FROM item_pedido;
 ------------------------------------------------------
 -- EXEMPLO NOVO DE INSERÇÃO DE DADOS PORÉM COM RECUPERAÇÃO DO ÚLTIMO ID
 INSERT INTO pedido (data_pedido, status_pedido, valor_total, id_cliente) VALUES
-(NOW(), "Aberto", 0.00, 1);
+(NOW(), "ABERTO", 0.00, 1);
 SET @pedido = LAST_INSERT_ID();
 SELECT @pedido;
 
@@ -170,7 +173,7 @@ WHERE id_cliente = 9;
 
 -- EX 4: Ajustes de valores
 UPDATE produto
-SET preco = produto * 1.05
+SET preco = preco * 1.05
 WHERE id_categoria = 1;
 
 -- EX 5: Ajustes de atualizações condicionais
@@ -189,7 +192,8 @@ DELETE FROM cliente
 WHERE id_cliente = 9;
 
 -- EX 2: Apagar todos os clientes inativos
-DELETE FROM clienteWHERE ativo = FALSE;
+DELETE FROM cliente
+WHERE ativo = FALSE;
 
 -- EX 3: Apagar todos os clientes de uma cidade específica
 DELETE FROM cliente
@@ -201,7 +205,7 @@ SET ativo = FALSE
 WHERE id_cliente = 10;
 
 
-SELECT * from cliente
+SELECT * from cliente;
 
 -- TRANSAÇÕES - SEGURANÇA PARA DML
 START TRANSACTION;
@@ -213,10 +217,8 @@ SELECT id_produto, nome, preco
 FROM produto
 WHERE id_categoria = 1;
 
-ROLLBACK;
--- DESFAZ O QUE FOI FEITO NA TRANSAÇÃO
-COMMIT;
--- VALIDA AS MUDANÇAS FEITAS DENTRO DA TRANSAÇÂO
+ROLLBACK; -- DESFAZ O QUE FOI FEITO NA TRANSAÇÃO
+COMMIT; -- VALIDA AS MUDANÇAS FEITAS DENTRO DA TRANSAÇÂO
 
 START TRANSACTION;
 UPDATE cliente SET cidade = 'Santos' WHERE id_cliente = 12;
@@ -262,8 +264,8 @@ WHERE p.id_cliente = @pedido_compra
 
 -- PASSO 7: RELATÓRIO
 -- PASSO 1
-SELECT nome FROM cliente WHERE id_cliente = @cliente_compra;
-SELECT nome FROM cliente WHERE id_cliente = 2;
+SELECT nome_cliente FROM cliente WHERE id_cliente = @cliente_compra;
+SELECT nome_cliente FROM cliente WHERE id_cliente = 2;
 
 -- PASSO 2
 SELECT * FROM pedido WHERE id_pedido = @pedido_compra;
