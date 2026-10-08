@@ -1,0 +1,17 @@
+[
+  {
+    "nome": "Chave de fenda",
+    "quantidade": 10,
+    "custo_unitario": 20
+  },
+  {
+    "nome": "torno",
+    "quantidade": 2,
+    "custo_unitario": 500
+  },
+  {
+    "nome": "lima",
+    "quantidade": 40,
+    "custo_unitario": 50
+  }
+]
