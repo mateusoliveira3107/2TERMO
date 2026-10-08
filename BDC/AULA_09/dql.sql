@@ -107,7 +107,7 @@ FROM cliente
 WHERE cidade IN ('Limeira', 'Campinas', 'Americana', 'Piracicaba');
 -- CONSULTA COM VÁRIAS CONDIÇÕES E DIMINUINDO O USO DE OR
 
-SELECT nome, cidade
+SELECT nome_cliente, cidade
 FROM cliente WHERE cidade NOT IN ('Limeira', 'Piracicaba');
 -- CONSULTA COM EXCESSÃO DOS VALORES ESPECIFICADOS
 
@@ -215,6 +215,59 @@ FROM pedido;
 SELECT nome_cliente, COALESCE(telefone, 'Não possui telefone')
 FROM cliente;
 
+-- Atualizando nome que estava como email 'ana@email.com'
 UPDATE cliente
 SET nome_cliente = 'Ana Sampaio'
 WHERE nome_cliente = 'ana@email.com';
+
+
+-- EX 14: FUNÇÕES DE AGRUPAMENTO
+-- COUNT - CONTAR QUANTOS REGISTROS EXISTEM
+-- SUM - SOMA DE VALORES
+-- AVG - MÉDIA DE VALORES
+-- MIN - MENOR VALOR
+-- MAX - MAIOR VALOR
+
+SELECT COUNT(*) AS TOTAL_CLIENTE
+FROM cliente;
+-- CONTAR QUANTOS CLIENTES EXISTEM
+
+SELECT ROUND(AVG(preco), 2) AS Média_Preços
+FROM produto;
+
+SELECT MIN(preco) AS MENOR_PREÇO, MAX(preco) AS MAIOR_PREÇO, ROUND(AVG(preco), 2) AS MÉDIA_PREÇO
+FROM produto;
+-- RESUMO DE PREÇOS
+
+SELECT SUM(valor_total) AS Faturamento_Mensal
+FROM pedido
+WHERE status_pedido = 'FINALIZADO'
+-- TOTAL DE VENDAS OU PEDIDOS REALIZADOS COM CRITÉRIO
+
+-- EX 15: GROUP BY - AGRUPAR DADOS
+SELECT cidade, COUNT(*) AS Quantidade_Clientes
+FROM cliente
+GROUP BY cidade;
+
+SELECT id_categoria, count(*) AS Quantidade_Produtos
+FROM categoria
+GROUP BY id_categoria;
+
+
+-- EX 16: HAVING - FILTRO POR GRUPOS
+-- WHERE - FILTRA LINHAS ANTES DO GROUP BY
+-- HAVING = FILTRA LINHAS DEPOIS DO GROUP BY
+SELECT cidade, COUNT(*) AS QTDE_CLIENTES
+FROM cliente
+GROUP BY cidade
+HAVING COUNT(*) >= 2;
+-- CIDADES COM PELO MENOS DOIS CLIENTES
+
+-- EX 17: ORDEM DE CRIAÇÃO DE UMA CONSULTA COMPLETA
+-- SELECT colunas
+-- FROM tabela
+-- WHERE condicao
+-- GROUP BY colunas_agrupar
+-- HAVING condicao_agrupar
+-- ORDER BY colunas
+-- LIMIT quantidade;

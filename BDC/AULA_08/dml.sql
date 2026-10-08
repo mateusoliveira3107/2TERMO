@@ -120,6 +120,7 @@ INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario, obse
 (3, 60, 1, 5.99, "Deixar Macio"),
 (4, 61, 2, 5.99, "Deixar Macio"),
 (5, 62, 3, 5.99, "Entregar Quente");
+-- UTILIZEI VALORES ALTOS DE id_produto POIS EU JÁ HAVIA CADASTRADO VÁRIOS PRODUTOS
 
 SELECT * FROM item_pedido;
 
