@@ -1,0 +1,22 @@
+/* .grid {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.grid-l {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+@media (max-width: 700px) {
+    .grid-c {
+        flex-direction: column;
+        gap: 120px;
+    }
+    .grid-l {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+} */

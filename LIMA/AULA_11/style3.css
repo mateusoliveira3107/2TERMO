@@ -1,0 +1,16 @@
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 800px) {
+    .lab-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .lab-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,101 @@
+body {
+    padding: 10px 30px;
+}
+/* Exercício 1 */
+.grade {
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+}
+
+/* Exercício 2 */
+.grade2 {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+}
+
+/* Exercício 3 */
+.grade1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.grade2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+/* Exercício 4 */
+.gradeEx4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Exercício 5 */
+
+/* Desktop */
+.gradeEx5 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+
+/* Tablet */
+@media (max-width: 800px) {
+    .gradeEx5 {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    }
+}
+
+/* Celular */
+@media (max-width: 500px) {
+    .gradeEx5 {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+/* Exercício 6 */
+
+/* Desktop */
+.gradeEx6 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+
+/* Desafio Senai */
+.gradeDesafio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* Telas médias */
+@media (max-width: 800px) {
+    .gradeDesafio {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Telas pequenas */
+@media (max-width: 500px) {
+    .gradeDesafio {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+/* Segunda solução */
+.gradeDesafio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* 6. compare qual solução possui menos regras; */
+/* A Segunda opção que utiliza auto-fit e mimax é a opção com menos regras */
+
+
+/* 7. explique qual você escolheria para esse caso.  */
+/* Eu escolheria a segunda opção, com auto-fit, pois é a opção mais simples e objetiva para
+responsividade */
