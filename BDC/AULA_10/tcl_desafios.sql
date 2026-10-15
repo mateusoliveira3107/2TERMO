@@ -155,7 +155,16 @@ SET status_pedido = "FINALIZADO"
 WHERE id_pedido = @pedido_smartcoffee;
 
 -- g)
+-- Consultando PEDIDO
 SELECT * FROM pedido
-WHERE id_pedido = @pedido_smartcoffee
+WHERE id_pedido = @pedido_smartcoffee;
+
+-- Consultando ITEM_PEDIDO
+SELECT * FROM item_pedido
+WHERE id_pedido = @pedido_smartcoffee;
+
+-- Consultando PAGAMENTO
+SELECT * FROM pagamento
+WHERE id_pedido = @pedido_smartcoffee;
 
 COMMIT;
