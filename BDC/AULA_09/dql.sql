@@ -271,3 +271,71 @@ HAVING COUNT(*) >= 2;
 -- HAVING condicao_agrupar
 -- ORDER BY colunas
 -- LIMIT quantidade;
+
+-----------------------------------------------
+-- PARTE II - COM INNER JOIN< LEFT JOIN< RIGHT JOIN< - CONSULTA DE ENTIDADES RELACIONADAS
+
+-- INNER JOIN - CONSULTA DE REGISTROS RELACIONADOS ENTRE DUAS TABELAS
+-- RETORAN REGISTRO QUE POSSUEM CORRESPONDÊNCIAS
+-- EX 1: PEDIDOS COM O NOME DO CLIENTE
+SELECT P.id_pedido, P.data_pedido, C.nome_cliente AS CLIENTE, P.valor_total
+FROM pedido AS P
+INNER JOIN cliente AS C
+ON C.id_cliente = P.id_cliente;
+
+-- LEIA ON: CLIENTE CUJO ID_CLIENTE É IGUAL AO ID_CLIENTE GRAVADO NO PEDIDO;
+-- ALIAS DE TABELA
+-- P e C SÃO APELIDOS QUE DEIXAM CONSULTAS MAS CURTAS E LEGÍVEIS.
+
+-- EX 2: LEFT JOIN MANTEM TODOS OS REGISTROS DA TABELA DA ESQUERDA MESMO
+-- QUANDO NÃO EXISTE CORRESPONDÊNCIA NA TABELA DA DIREITA
+
+-- TODOS OS CLIENTE, INCLUSIVE QUEM NUNCA COMPROU
+SELECT C.nome_cliente, P.id_pedido, P.data_pedido
+FROM cliente AS C
+LEFT JOIN pedido AS P
+ON P.id_cliente = C.id_cliente
+ORDER BY C.nome_cliente;
+
+-- EX 3: JOINS COM TRÊS TABELAS
+-- ITENS DE PEDIDO COM NOME DO PRODUTO
+SELECT P.id_pedido, PR.nome AS PRODUTO, IP.quantidade, IP.preco_unitario,
+IP.quantidade * IP.preco_unitario AS SUBTOTAL
+FROM pedido AS P
+INNER JOIN item_pedido AS IP
+ON IP.id_pedido = P.id_pedido
+INNER JOIN produto AS PR
+ON PR.id_produto = IP.id_produto
+ORDER BY P.id_pedido;
+
+-- EX 4: JOIN COM CATEGORIA
+-- PRODUTO E NOME DE SUA CATEGORIA
+SELECT PR.nome AS PRODUTO, C.nome AS CATEGORIA, PR.preco
+FROM produto AS PR
+INNER JOIN categoria AS C
+ON C.id_categoria = PR.id_categoria
+ORDER BY C.nome, PR.nome;
+ 
+-- EX 5: AGREGAÇÃO + JOIN
+-- QUANTIDADE DE PRODUTOS POR CATEGORIA
+SELECT C.nome_cliente AS CATEGORIA, COUNT(P.id_pedido) AS QNTD_PEDIDOS,
+SUM(P.valor_total) AS TOTAL_COMPRADO
+FROM CLIENTE AS C
+INNER JOIN PEDIDO AS P
+ON P.id_cliente = C.id_cliente
+WHERE P.status_pedido = 'PREPARANDO'
+GROUP BY C.id_cliente, C.nome_cliente
+ORDER BY TOTAL_COMPRADO DESC;
+
+-- EX 6: RELATÓRIO COMPLETO DO PEDIDO
+SELECT P.id_pedido, DATE_FORMAT(P.data_pedido, '%d %m %y %H:%i') AS
+DATA, C.nome_cliente AS CLIENTE, PR.nome AS PRODUTO, IP.quantidade, IP.preco_unitario,
+quantidade * preco_unitario AS subtotal
+FROM pedido AS P
+INNER JOIN cliente AS C
+ON C.id_cliente = P.id_cliente
+INNER JOIN item_pedido AS IP
+ON IP.id_pedido = P.id_pedido
+INNER JOIN produto AS PR
+ON PR.id_produto = IP.id_produto
+ORDER BY P.id_pedido, PR.nome;

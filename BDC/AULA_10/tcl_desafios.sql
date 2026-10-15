@@ -167,4 +167,21 @@ WHERE id_pedido = @pedido_smartcoffee;
 SELECT * FROM pagamento
 WHERE id_pedido = @pedido_smartcoffee;
 
+SELECT P.id_pedido, C.nome_cliente AS Cliente, PR.nome AS Produto, IP.quantidade, IP.preco_unitario,
+IP.quantidade * IP.preco_unitario AS SUBTOTAL, FP.descricao AS forma_pagamento
+FROM pedido AS P
+INNER JOIN pagamento AS PA
+ON PA.id_pedido = 2
+INNER JOIN forma_pagamento AS FP
+ON FP.id_forma_pagamento = PA.id_forma_pagamento
+INNER JOIN cliente AS C
+ON C.id_cliente = P.id_cliente
+INNER JOIN item_pedido AS IP
+ON IP.id_pedido = P.id_pedido
+INNER JOIN produto AS PR
+ON PR.id_produto = IP.id_produto
+ORDER BY P.id_pedido;
+
 COMMIT;
+
+SELECT * FROM pedido
