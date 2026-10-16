@@ -1,5 +1,27 @@
+:root {
+    /* Paleta de Cores */
+    --branco: #FFFFFF;
+    --preto: black;
+    --laranja: rgb(206, 93, 0);
+    --marromAlaranjado: rgb(182, 86, 3);
+    --marromEscuro: rgb(75, 34, 13);
+    --marromBemEscuro: #311400;
+    --marrom: rgb(97, 61, 24);
+    --cafe: rgb(105, 59, 13);
+    --cafeClaro: rgb(124, 68, 13);
+    --begeClaro: rgb(219, 209, 186);
+    --bege: rgb(206, 193, 184);
+    --caramelo: rgb(128, 97, 54);
+    --begeMarrom: rgb(141, 89, 39);
+    --begeAlaranjado: rgb(151, 80, 22);
+    --marromDourado: #927a55b0;
+    --marromAvermelhado: #371B11;
+
+    /* Fonte */
+    --fonte-principal: "Poppins", sans-serif;
+}
 * {
-    font-family: 'inter';
+    font-family: var(--fonte-principal);
 }
 body {
     margin: 0;
@@ -15,52 +37,51 @@ h2 {
 }
 img {
     font-size: 20px;
-    color: white;
+    color: var(--branco);
 }
 /* HEADER */
 
 header {
-    background: linear-gradient(rgb(97, 61, 24), rgb(105, 59, 13), rgb(124, 68, 13)) ;
+    background: linear-gradient(var(--marrom), var(--cafe), var(--cafeClaro));
     text-align: center;
     padding-top: 1px;
     height: 300px;
 }
 h1 {
     padding-top: 20px;
-    color: white;
+    color: var(--branco);
     font-size: 58px;
     font-weight: 800;
 }
 #coffee {
-    color: rgb(182, 86, 3);
+    color: var(--marromAlaranjado);
 }
 #gestaointeligente {
-    color: white;
+    color: var(--branco);
     font-size: 34px;
-    margin-top: -25px;
+    margin-top: -40px;
     font-weight: 800;
     margin-bottom: 40px;
 }
-/* - */
+
+/* Barra de navegação */
 
 nav {
-    margin-top: 60px;
-    background-color: rgb(75, 34, 13);
-    padding: 15px;
-    height: 30px;
+    background-color: var(--marromEscuro);
+    padding: 20px;
     text-align: center;
 }
 a {
     text-decoration: none;
     font-size: 18px;
-    color: white;
+    color: var(--branco);
     font-weight: 500;
     border-radius: 6px;
-    padding: 6px;
-    margin: -4px;
+    transition: transform(0.2s);
 }
 a:hover {
-    color: rgb(219, 209, 186);
+    color: var(--begeClaro);
+    transform: translateY(3px);
 }
 .link {
     padding-right: 40px;
@@ -74,11 +95,11 @@ section {
 #secaoBemVindo {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(206, 193, 184);
+    background-color: var(--bege);
 }
 
 #bemvindo {
-    color: rgb(182, 86, 3);
+    color: var(--marromAlaranjado);
     margin-top: 0;
     font-size: 34px;
 }
@@ -90,21 +111,20 @@ h3 {
 }
 
 .texto {
-    color: black;
+    color: var(--preto);
     font-weight: 500;
     font-size: 24px;
 }
 
 .imagemBemVindo {
     height: 240px;
-    background-color: rgb(128, 97, 54);
+    background-color: var(--caramelo);
     width: 480px;
     padding: 20px;
     border-radius: 20px;
-    margin: -10px;
-    border: solid 3px rgb(141, 89, 39);
+    border: solid 3px var(--begeMarrom);
 }
-#imagemBemVindo {
+#imagemBemVindo, #imagemNos {
     width: 520px;
     margin-left: -20px;
     margin-top: -20px;
@@ -123,13 +143,13 @@ h3 {
     justify-content: space-between;
 }
 #quemSomos {
-    color: rgb(151, 80, 22);
+    color: var(--begeAlaranjado);
     font-size: 20px;
     font-weight: 1000;
 }
 .areaImagemSobreNos {
     height: 300px;
-    background-color: rgb(128, 97, 54);
+    background-color: var(--caramelo);
     width: 450px;
     padding: 20px;
     border-radius: 20px;
@@ -138,17 +158,17 @@ h3 {
 /* SEÇÃO DOS CAFÉS*/
 
 .areaImagemCafe {
-    background-color: rgb(128, 97, 54);
+    background-color: var(--caramelo);
     height: 250px;
     padding: 20px;
     margin: 0;
     border-radius: 10px;
 }
 #secaoCafes {
-    background-color: rgb(206, 193, 184);
+    background-color: var(--bege);
 }
 #nossosProdutos {
-    color: rgb(151, 80, 22);
+    color: var(--begeAlaranjado);
     font-size: 21px;
     margin-top: -30px;
     margin-bottom: 30px;
@@ -172,11 +192,18 @@ h3 {
 }
 
 article {
-    background-color: #927a55b0;
+    background-color: var(--marromDourado);
     border-radius: 10px;
     padding: 20px;
     margin: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 1px 5px 10px rgb(0, 0, 0, 0.5);
 }
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 1px 10px 10px rgb(0, 0, 0, 0.4);
+}
+
 .nomeCafe {
     font-size: 24px;
 }
@@ -185,11 +212,11 @@ article {
 }
 .descricaoCafe {
     font-size: 20px;
-    color: black;
+    color: var(--preto);
 }
 .preco {
     font-size: 21px;
-    color: black;
+    color: var(--preto);
     font-weight: 1000;
     margin: 15px;
 }
@@ -197,19 +224,19 @@ article {
 /* SEÇÃO AMBIENTE */
 
 #secaoAmbiente {
-    background-color: #311400;
+    background-color: var(--marromBemEscuro);
 }
 #nossoAmbiente {
-    color: rgb(206, 93, 0);
+    color: var(--laranja);
     font-size: 20px;
     font-weight: 1000;
 }
 #textoAmbiente {
-    color: white;
+    color: var(--branco);
     font-size: 18px;
 }
 #secaoAmbiente h2 {
-    color: white;
+    color: var(--branco);
 }
 #secaoAmbiente {
     display: flex;
@@ -223,7 +250,7 @@ article {
     width: 25%;
     padding: 20px;
     border-radius: 20px;
-    background-color: rgb(128, 97, 54);
+    background-color: var(--caramelo);
 }
 
 /* - */
@@ -234,11 +261,11 @@ article {
 }
 #contatoEsquerda {
     height: 200px;
-    background-color: white;
+    background-color: var(--branco);
     width: 500px;
 }
 #contato {
-    color: rgb(151, 80, 22);
+    color: var(--begeAlaranjado);
     font-size: 22px;
     font-weight: 1000;
     margin-top: 0;
@@ -267,27 +294,31 @@ article {
     width: 80%;
     border-radius: 4px;
     border-width: 1px;
-    border-color: black;
+    border-color: var(--preto);
 }
 #enviarMensagem {
     border-radius: 4px;
     margin: 0;
-    border-width: 1px;
     width: 85%;
     height: 60px;
 }
 
 button {
-    height: 70px;
-    width: 250px;
+    padding: 25px 60px;
     font-size: 20px;
     font-weight: 600;
     border-radius: 40px;
-    background-color: rgb(182, 86, 3);
-    color: white;
-    border: 0;
+    background-color: var(--caramelo);
+    box-shadow: 1px 5px 10px rgb(0, 0, 0, 0.5);
+    color: var(--branco);
+    transition: all 0.3s ease;
+    border: none;
     margin-top: 20px;
     margin-left: 20px;
+}
+button:hover {
+    transform: translateY(3px);
+    box-shadow: 1px 5px 13px rgb(0, 0, 0, 0.3);
 }
 p {
     color: #75451B;
@@ -302,7 +333,7 @@ footer {
     padding-left: 60px;
     padding-top: 1px;
     padding-bottom: 20px;
-    background-color: #371B11;
+    background-color: var(--marromAvermelhado);
     height: 100px;
     display: flex;
     align-items: flex-start;
@@ -310,14 +341,14 @@ footer {
 }
 #smartRodape {
     text-align: left;
-    color: white;
+    color: var(--branco);
     font-size: 34px;
     padding-left: 50px;
 }
 #contatoRodape {
     background-color: brown;
     text-align: right;
-    color: white;
+    color: var(--branco);
     font-size: 22px;
     padding-right: 50px;
 }

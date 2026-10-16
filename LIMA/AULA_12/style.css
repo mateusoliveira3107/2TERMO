@@ -11,6 +11,18 @@
     --textoCinza: #fff6f0;
     --marromClaro: #523223c7;
     --marromFundo: #52210042;
+
+    /* Espaçamento */
+    --espaco-xs: 4px;
+    --espaco-sm: 8px;
+    --espaco-md: 16px;
+    --espaco-lg: 32px;
+    --espaco-xl: 64px;
+    --espaco-xxl: 128px;
+
+    /* Fontes */
+    --fonte-principal: "Arimo";
+    --fonte-secundaria: "Open Sans"
 }
 
 * {
@@ -120,12 +132,24 @@ h3 {
 .imagens img {
     width: 100%;
     padding: 10px;
-    aspect-ratio: 4 / 1;
+    aspect-ratio: 4 / 2;
     object-fit: cover;
     border-radius: 18px;
     box-shadow: 0 8px 24px rgba(43, 23, 13, 0.1);
     transition: all 0.3s ease;
     box-sizing: 0.3s ease;
+}
+
+#imagem1 {
+    aspect-ratio: 5 / 3;
+}
+
+#imagem2 {
+    aspect-ratio: 3 / 3;
+}
+
+#imagem3 {
+    aspect-ratio: 4 / 3;
 }
 
 .imagens img:hover {
