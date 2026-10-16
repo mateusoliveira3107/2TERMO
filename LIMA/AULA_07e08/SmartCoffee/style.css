@@ -113,7 +113,7 @@ h3 {
 /* - SECÃO SOBRE NÓS */
 
 #areaIntroducao {
-    width: 40%;
+    width: 100%;
 }
 #textoSobreNos {
     font-size: 40px;
@@ -321,3 +321,23 @@ footer {
     font-size: 22px;
     padding-right: 50px;
 }
+@media (max-width: 1250px) and (min-width: 868px) {
+    #secaoBemVindo {
+        display: flex;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 867px) {
+    #secaoBemVindo {
+        display: grid;
+        gap: 50px;
+    }
+    #areaIntroducao {
+        width: 100%;
+    }
+    nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    };
+};

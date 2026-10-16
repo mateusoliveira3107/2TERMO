@@ -1,0 +1,134 @@
+/* Variáveis em CSS */
+
+/* :root representa o elemento raiz do documento */
+:root {
+
+    /* Paleta de Cores */
+    --espresso: #371B11;
+    --cafe: #5A321B;
+    --texto: #1E140F;
+    --branco: #FFFFFF;
+    --textoCinza: #fff6f0;
+    --marromClaro: #523223c7;
+    --marromFundo: #52210042;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Movimentação visual do scroll do html */
+}
+
+body {
+    font-family: "Arimo", sans-serif;
+    margin: 0;
+    color: var(--cafe);
+    line-height: 1.6;
+    padding: 30px;
+    background-color: var(--marromFundo);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+p {
+    line-height: 2;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    color: var(--espresso);
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+.menu {
+    display: flex;
+    gap: 43px;
+    list-style: none;
+    margin: 0 -30px;
+}
+
+.menu a {
+    color: var(--textoCinza);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 500ms ease;
+    transition: transform 0.3s;
+    box-shadow: 1px 5px 10px rgb(0, 0, 0, 0.5);
+}
+
+.menu a:hover {
+    color: var(--branco);
+    border-radius: 20px;
+    transform: translateY(-2px);
+    box-shadow: 1px 3px 12px rgb(0, 0, 0, 0.4);
+}
+
+.menu a:focus-visible {
+    outline: 3px solid var(--cafe);
+    outline-offset: 4px;
+}
+
+.menu-id {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--espresso);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 20px;
+    transition: background-color 2.5 ease;
+}
+
+.menu-id:hover {
+    background-color: var(--marromClaro);
+}
+
+.lista-imgs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(223, 1fr));
+    gap: 23px;
+    margin: 0;
+    padding: 0;
+}
+
+.imagens {
+    height: 100%;
+    padding: 20px;
+    background-color: var(--branco);
+    border: 1px solid var(--cafe);
+    border-radius: 14px;
+    list-style-type: none;
+}
+
+.imagens img {
+    width: 100%;
+    padding: 10px;
+    aspect-ratio: 4 / 1;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(43, 23, 13, 0.1);
+    transition: all 0.3s ease;
+    box-sizing: 0.3s ease;
+}
+
+.imagens img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12 38px rgba(43, 23, 13, 0.15);
+}
