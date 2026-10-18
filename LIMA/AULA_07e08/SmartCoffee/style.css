@@ -11,6 +11,7 @@
     --cafeMedio: #75451B;
     --cafeClaro: rgb(124, 68, 13);
     --begeClaro: rgb(219, 209, 186);
+    --begeEscuro: rgb(151, 132, 105);
     --bege: rgb(206, 193, 184);
     --caramelo: rgb(128, 97, 54);
     --begeMarrom: rgb(141, 89, 39);
@@ -26,13 +27,13 @@
     box-sizing: border-box;
     font-family: var(--fonte-principal);
 }
+body {
+    margin: 0;
+}
 html {
     scroll-behavior: smooth;
 }
-body {
-    margin: 0;
-    min-width: 320px;
-}
+
 img {
     max-width: 100%;
 }
@@ -60,7 +61,7 @@ header {
     padding-top: 5px;
 }
 h1 {
-    padding: 20px 10px 0;
+    padding-top: 20px;
     color: var(--branco);
     font-size: 58px;
     font-weight: 800;
@@ -108,10 +109,10 @@ nav {
     padding: 20px 50px;
     font-size: 18px;
     font-weight: 600;
+    color: var(--branco);
     border-radius: 40px;
     background-color: var(--caramelo);
     box-shadow: 1px 5px 10px rgb(0, 0, 0, 0.5);
-    color: var(--branco);
     transition: 0.3s ease;
     border: none;
     margin-top: 20px;
@@ -139,13 +140,10 @@ button:hover {
 }
 #secaoBemVindo {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 40px;
     background-color: var(--bege);
-}
-#areaIntroducao {
-    min-width: 0;
 }
 #bemvindo {
     color: var(--marromAlaranjado);
@@ -173,7 +171,7 @@ h3 {
 }
 #secaoSobreNos {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 50px;
 }
@@ -223,11 +221,10 @@ h3 {
 }
 #tiposCafe {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 .cafe {
-    min-width: 0;
     background-color: var(--marromDourado);
     border-radius: 10px;
     box-shadow: 1px 5px 10px rgb(0, 0, 0, 0.4);
@@ -238,12 +235,14 @@ h3 {
     box-shadow: 1px 10px 15px rgb(0, 0, 0, 0.3);
 }
 .areaImagemCafe {
+    display: flex;
     height: 230px;
     margin: 0;
     padding: 12px;
+    justify-content: center;
 }
 .areaImagemCafe img {
-    width: 100%;
+    width: 95%;
     height: 100%;
     border-radius: 10px;
 }
@@ -252,7 +251,6 @@ h3 {
 }
 .nomeCafe {
     font-size: 22px;
-    line-height: 1.4;
     margin-bottom: 10px;
     color: var(--marromBemEscuro);
 }
@@ -268,13 +266,10 @@ h3 {
 }
 #secaoAmbiente {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 40px;
     background-color: var(--marromBemEscuro);
-}
-#areaConteudoAmbiente {
-    min-width: 0;
 }
 #nossoAmbiente {
     color: var(--laranja);
@@ -308,7 +303,6 @@ h3 {
 #imagemAmbiente {
     width: 100%;
     aspect-ratio: 5 / 3;
-    object-fit: cover;
     border-radius: 16px;
     display: block;
 }
@@ -316,7 +310,7 @@ h3 {
 /* Contato */
 #secaoContato {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 40px;
 }
@@ -337,8 +331,7 @@ h3 {
     margin-bottom: 10px;
 }
 #inputs {
-    min-width: 0;
-    background-color: rgb(151, 132, 105);
+    background-color: var(--begeEscuro);
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgb(0, 0, 0, 0.5);
@@ -350,13 +343,10 @@ h3 {
 }
 .grupoInput label {
     color: var(--branco);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
 }
 .input {
-    width: 100%;
-    min-width: 0;
-    min-height: 45px;
     padding: 12px;
     border-radius: 4px;
     font-size: 16px;
