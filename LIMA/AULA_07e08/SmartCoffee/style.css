@@ -405,9 +405,8 @@ footer {
     }
     nav {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 5px;
-        padding: 10px;
     }
     .link {
         padding: 10px 4px;
@@ -417,37 +416,11 @@ footer {
         padding: 35px 20px;
     }
     #secaoBemVindo, #secaoSobreNos, #secaoAmbiente, #secaoContato {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: 1fr;
         gap: 30px;
-    }
-    #secaoSobreNos #areaImagemSobreNos {
-        order: 1;
-    }
-    #sobreNos {
-        order: 2;
-    }
-    #bemvindo, #textoSobreNos, #nossosCafes, #secaoAmbiente h2, #contatoEsquerda h2 {
-        font-size: 27px;
-    }
-    h3 {
-        font-size: 25px;
-    }
-    .texto {
-        font-size: 17px;
-    }
-    #imagemBemVindo {
-        min-height: 0;
-        height: auto;
     }
     #tiposCafe {
         grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    .areaImagemCafe {
-        height: 230px;
-    }
-    .areaDescricaoCafe {
-        padding: 20px;
     }
     #inputs {
         padding: 20px;
@@ -455,30 +428,5 @@ footer {
     footer {
         flex-direction: column;
         text-align: center;
-        padding: 25px 15px;
-    }
-    #smartRodape {
-        font-size: 27px;
-    }
-    #contatoRodape {
-        font-size: 14px;
-    }
-}
-@media (max-width: 380px) {
-    h1 {
-        font-size: 32px;
-    }
-    #gestaointeligente {
-        font-size: 18px;
-    }
-    section {
-        padding: 30px 15px;
-    }
-    .botao {
-        padding: 14px 22px;
-        font-size: 16px;
-    }
-    #inputs {
-        padding: 15px;
     }
 }
