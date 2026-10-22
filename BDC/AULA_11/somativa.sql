@@ -79,12 +79,11 @@ SELECT * FROM livro;
 
 -- Cadastre pelo menos 3 empréstimos ABERTOS para usuários e livros existentes.
 INSERT INTO emprestimo (data_emprestimo, data_prevista, data_devolucao, id_livro, id_usuario, status_emprestimo) VALUES
-('2026-04-11 12:20:00', '2026-10-11', '2026-11-11', 12, 1, 'ABERTO'),
-('2026-06-09 13:50:00', '2026-09-11', '2026-14-11', 13, 2, 'ABERTO'), -- utilizei valores 12, 13 e 14 pois eu havia inserido varios livros
+('2026-04-11 12:20:00', '2026-04-11', '2026-04-11', 12, 1, 'ABERTO'),
+('2026-06-09 13:50:00', '2026-06-11', '2026-06-11', 13, 2, 'ABERTO'), -- utilizei valores 12, 13 e 14 pois eu havia inserido varios livros
 ('2026-07-21 17:40:00', '2026-07-11', '2026-07-11', 14, 3, 'ABERTO');
 
 -- Localize um usuário com SELECT e depois altere seu telefone com UPDATE.
-
 SELECT * FROM usuario
 WHERE id_usuario = 2;
 
@@ -129,5 +128,11 @@ FROM livro
 WHERE quantidade_disponivel > 2;
 
 -- Pesquise livros cujo título contenha uma palavra escolhida por você.
-SELECT * FROM livro
-WHERE titulo = '%de%';
+SELECT titulo, autor, quantidade_disponivel
+FROM livro
+WHERE titulo LIKE '%de%';
+
+-- Liste livros publicados entre 2015 e 2025.
+SELECT titulo, autor, quantidade_disponivel
+FROM livro
+WHERE ano_publicacao BETWEEN 2015 AND 2025;
