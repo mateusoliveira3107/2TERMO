@@ -239,6 +239,16 @@ ROLLBACK TO SAVEPOINT modificacao1;
 
 COMMIT;
 
+-- Transação de devolução
+START TRANSACTION;
+UPDATE emprestimo
+SET status_emprestimo = 'DEVOLVIDO'
+data_devolucao = '2026-06-01 10:00:00'
+WHERE id_emprestimo = 1;
+
+COMMIT;
+
+
 
 -- Desafio Final de integridade
 -- constraint, integridade referencial, transação ou regra da aplicação
