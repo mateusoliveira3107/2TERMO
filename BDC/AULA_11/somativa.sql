@@ -58,6 +58,14 @@ ADD COLUMN editora VARCHAR(100);
 
 -- FASE 2 — DML: MANIPULAÇÃO DE DADOS
 
+-- INSERT em categoria
+INSERT INTO categoria (nome_categoria) VALUES
+('Contos de Fada'),
+('Ficcional'),
+('Revista / HQ'),
+('Fantasia'),
+('Romance');
+
 INSERT INTO usuario (id_usuario,nome, email, telefone, ativo) VALUES
 ('Mateus Silva', 'mateus123@email.com', 19993235671, TRUE),
 ('Ronaldo Pereira', 'rperere@email.com', 19928375722, TRUE),
@@ -66,14 +74,14 @@ INSERT INTO usuario (id_usuario,nome, email, telefone, ativo) VALUES
 
 SELECT * FROM usuario;
 
-INSERT INTO livro (titulo, autor, isbn, ano_publicacao, quantidade_disponivel, editora) VALUES
+INSERT INTO livro (titulo, autor, isbn, ano_publicacao, quantidade_disponivel, editora, id_categoria) VALUES
 -- ALGUNS VALORES FICTÍCIOS
-('Branca de Neve', 'Mauricio de Sousa', '293-849192874', 2015, 6, 'Girassol'),
-('Diario de um Banana', 'Luciano Hulk', '345-167466798', 2010, 3, 'Editora EUA'),
-('Adão e Eva', 'Bruce Feiler', '251-635828996', 2017, 5, 'Zahar'),
-('Gibi da Mônica', 'Maurício de Souza', '345-255911846', 2005, 10, 'BR HQ'),
-('Gibi Homem Aranha', 'Mauro Rodrigues', '372-324248675', 1998, 8, 'MARVEL HQs'),
-('O Alquimista', 'Paulo Coelho', '234-262736246', 2009, 15, 'MARVEL HQs');
+('Branca de Neve', 'Mauricio de Sousa', '293-849192874', 2015, 6, 'Girassol', 1),
+('Diario de um Banana', 'Luciano Hulk', '345-167466798', 2010, 3, 'Editora EUA', 2),
+('Pequeno Príncipe', 'Machado de Assis', '251-635828996', 2017, 5, 'Zahar', 4),
+('Gibi da Mônica', 'Maurício de Souza', '345-255911846', 2005, 10, 'BR HQ', 3),
+('Gibi Homem Aranha', 'Mauro Rodrigues', '372-324248675', 1998, 8, 'MARVEL HQs', 3),
+('O Alquimista', 'Paulo Coelho', '234-262736246', 2009, 15, 'MARVEL HQs', 5);
 
 SELECT * FROM livro;
 
@@ -91,7 +99,7 @@ UPDATE usuario
 SET telefone = 19999889823
 WHERE id_usuario = 2;
 
--- Acrescente 2 exemplares a todos os livros publicados a partir de 2020. - Farei com 2010 por nenhum dos meus livros foi publicado depois de 2020
+-- Acrescente 2 exemplares a todos os livros publicados a partir de 2020. - Farei com 2010 por nenhum dos meus exemplos de livros foi publicado depois de 2020
 -- Aumentando quantidade em +2 acima de 2010
 UPDATE livro
 SET quantidade_disponivel = quantidade_disponivel + 2
@@ -136,3 +144,115 @@ WHERE titulo LIKE '%de%';
 SELECT titulo, autor, quantidade_disponivel
 FROM livro
 WHERE ano_publicacao BETWEEN 2015 AND 2025;
+
+-- Mostre COUNT, SUM, AVG, MIN e MAX sobre a quantidade disponível.
+SELECT COUNT(quantidade_disponivel) AS quantidade_livros,
+SUM(quantidade_disponivel) AS soma_quantidades,
+ROUND(AVG(quantidade_disponivel)) AS media_quantidades,
+MIN(quantidade_disponivel) AS menor_valor,
+MAX(quantidade_disponivel) AS maior_valor
+FROM livro;
+
+-- Liste ID do empréstimo, usuário, livro, data e status.
+SELECT EM.id_emprestimo, US.nome AS usuario, LI.titulo AS livro, EM.data_emprestimo AS data, EM.status_emprestimo AS status
+FROM emprestimo AS EM
+INNER JOIN usuario AS US
+ON US.id_usuario = EM.id_usuario
+INNER JOIN livro AS LI
+ON LI.id_livro = EM.id_livro;
+
+-- Mostre apenas os empréstimos ABERTOS.
+SELECT EM.id_emprestimo, US.nome AS usuario, LI.titulo AS livro, EM.data_emprestimo AS data, EM.status_emprestimo AS status
+FROM emprestimo AS EM
+INNER JOIN usuario AS US
+ON US.id_usuario = EM.id_usuario
+INNER JOIN livro AS LI
+ON LI.id_livro = EM.id_livro
+WHERE EM.status_emprestimo = 'ABERTO';
+
+-- Mostre cada usuário e sua quantidade de empréstimos, do maior para o menor.
+SELECT US.nome, US.email, US.telefone, COUNT(*) AS quantidade_emprestimos
+FROM emprestimo AS EM
+INNER JOIN usuario AS US
+ON US.id_usuario = EM.id_usuario
+GROUP BY EM.id_usuario
+ORDER BY quantidade_emprestimos DESC;
+
+-- Liste todos os usuários, inclusive os que nunca fizeram empréstimo, com a quantidade de empréstimos de cada um.
+SELECT US.nome, US.email, US.telefone, COUNT(*) AS quantidade_emprestimos
+FROM emprestimo AS EM
+LEFT JOIN usuario AS US
+ON US.id_usuario = EM.id_usuario
+GROUP BY EM.id_usuario
+ORDER BY quantidade_emprestimos DESC;
+
+
+-- FASE 4 — TCL, TRANSAÇÕES E INTEGRIDADE
+
+-- Transação de empréstimo
+START TRANSACTION;
+
+INSERT INTO emprestimo (data_emprestimo, data_prevista, data_devolucao, id_livro, id_usuario, status_emprestimo) VALUES
+('2026-11-01 10:00:00', '2026-11-11', '2026-11-06', 15, 1, 'ABERTO');
+
+UPDATE livro
+SET quantidade_disponivel = quantidade_disponivel - 1
+WHERE id_livro = 15;
+
+SELECT * FROM livro
+WHERE id_livro = 15;
+
+COMMIT;
+
+-- ROLLBACK
+START TRANSACTION;
+
+UPDATE livro
+SET quantidade_disponivel = 20
+WHERE id_livro = 15;
+
+SELECT * FROM livro
+WHERE id_livro = 15;
+
+ROLLBACK;
+
+SELECT * FROM livro
+WHERE id_livro = 15;
+
+-- SAVEPOINT
+START TRANSACTION;
+
+UPDATE livro
+SET quantidade_disponivel = 12
+WHERE id_livro = 16;
+
+SAVEPOINT modificacao1;
+
+UPDATE livro
+SET quantidade_disponivel = 15
+WHERE id_livro = 16;
+
+SELECT * FROM livro -- VERIFICANDO ALTERAÇÕES
+WHERE id_livro = 16;
+
+ROLLBACK TO SAVEPOINT modificacao1;
+
+COMMIT;
+
+
+-- Desafio Final de integridade
+-- constraint, integridade referencial, transação ou regra da aplicação
+
+-- Cadastrar dois usuários com o mesmo e-mail. - regra da aplicação, seria necessário tirar o unique para poder cadastrar dois livros com campo 'email' igual
+
+-- Cadastrar dois livros com o mesmo ISBN. - regra da aplicação, seria necessário tirar o unique para poder cadastrar dois livros com campo 'isbn' igual
+
+-- Permitir quantidade disponível negativa. regra da aplicação, seria necessário tirar o CHECK (quantidade_disponivel >= 0) para aceitar valores maiores que 0
+
+-- Criar empréstimo para usuário inexistente.  integridade referencial, é necessário que haja um dado existente para ser referenciado na chave estrangeira, pois há dependência entre tabelas
+
+-- Excluir livro com histórico de empréstimos. - constraint pois referencia a uma outra tabela
+
+-- Gravar empréstimo e falhar na redução do estoque. - transação, é necessário dar commit nas modificações feitas dentro da transação
+
+-- Emprestar livro cuja quantidade disponível seja zero. - regra da aplicação, não permite emprestar quando a quantidade for menor ou igual a 0
