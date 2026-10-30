@@ -1,0 +1,327 @@
+:root {
+    --fundo: #090A16;
+    --fundo-2: #101225;
+    --painel: #171A31;
+
+    --texto: #FFF7E6;
+    --texto-suave: #C7CADB;
+
+    --magenta: #FF3D81;
+    --ciano: #18D9FF;
+    --amarelo: #FFD84D;
+    --roxo: #6D4AFF;
+    --laranja: #FF7A33;
+    --azul-escuro: rgb(18, 19, 26);
+    --azul-pouco-escuro: rgb(9, 12, 39);
+
+    --borda: rgba(255, 255, 255, 0.12);
+
+    --sombra: 0 28px 70px rgba(0, 0, 0, 0.34);
+
+    --raio: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(21, 26, 41);
+}
+
+img {
+    display: block;
+}
+
+section {
+    padding: 50px 80px;
+}
+
+#cabecalhoPrincipal {
+    background-color: var(--azul-escuro);
+    display: flex;
+    padding: 5px 0;
+    position: sticky;
+    top: 0;
+}
+
+.tituloNostalgia {
+    color: var(--texto);
+    word-spacing: 10px;
+    margin-left: 80px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.tituloNostalgia span {
+    color: var(--magenta);
+}
+
+#cabecalhoPrincipal ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+#cabecalhoPrincipal ul li {
+    transition: all 0.3s ease;
+}
+
+#cabecalhoPrincipal ul li:hover {
+    transform: translateY(-1.5px);
+}
+
+#cabecalhoPrincipal nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding-right: 50px;
+}
+
+#cabecalhoPrincipal nav a {
+    text-decoration: none;
+    color: var(--texto-suave);
+    transition: all 0.2s ease;
+    font-size: 15px;
+}
+
+#cabecalhoPrincipal nav a:hover {
+    color: var(--texto);
+}
+
+#sobreNav {
+    border: solid 1.5px var(--magenta);
+    border-radius: 15px;
+    padding: 5px 30px;
+}
+
+.textoSuave {
+    color: var(--texto-suave);
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.textoCiano {
+    color: var(--ciano);
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: 4px 0;
+}
+
+#inicio {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(160deg, #000000, var(--azul-escuro), var(--azul-pouco-escuro), rgb(10, 10, 36));
+}
+
+#inicio h1 {
+    margin: 0;
+    font-size: 62px;
+    line-height: 60px;
+    letter-spacing: 2px;
+    color: var(--texto);
+}
+
+#assuntoInicio {
+    width: 40%;
+}
+
+#areaImagemInicio {
+    width: 40%;
+    background: linear-gradient(var(--azul-escuro), rgb(13, 19, 36), rgb(14, 24, 48));
+    border-radius: 30px;
+}
+
+#areaImagemInicio figcaption {
+    color: var(--texto);
+}
+
+#assuntoInicio button {
+    padding: 15px 30px;
+    font-weight: 600;
+    background-color: var(--magenta);
+    color: var(--texto);
+    border-radius: 20px;
+    border: none;
+    margin-top: 10px;
+}
+
+#assuntoAntes90 {
+    width: 50%;
+}
+
+#assuntoAntes90 h2, #secaoHerois h2, #secaoPresente h2 {
+    color: var(--texto);
+    font-size: 46px;
+    margin: 0;
+}
+
+#antesDos90 ul {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+#antesDos90 ul li {
+    width: 100%;
+    color: var(--texto-suave);
+    border-radius: 20px;
+    background-color: var(--azul-pouco-escuro);
+    padding: 20px 30px;
+}
+
+#antesDos90 ul li h3 {
+    color: var(--texto);
+    font-size: 26px;
+    margin: 0;
+}
+
+#antesDos90 ul li p, .nomeDesenho {
+    color: var(--amarelo);
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+#antesDos90 ul li img {
+    margin-bottom: 20px;
+}
+
+#desenho1 img, #desenho2 img {
+    background-color: var(--amarelo);
+    border-radius: 10px;
+}
+
+#desenho3 img {
+    background-color: var(--ciano);
+    border-radius: 10px;
+}
+
+#secaoHerois {
+    background-color: var(--azul-escuro);
+}
+
+#secaoHerois .textoCiano, #secaoHerois h2, #textoSuaveHerois {
+    text-align: center;
+}
+
+#areaImagensHerois ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    list-style: none;
+}
+
+#areaImagensHerois ul li {
+    background-color: var(--azul-pouco-escuro);
+    padding: 20px 30px;
+    border-radius: 20px;
+}
+
+#imagemHeroi1 img {
+    background-color: var(--magenta);
+    border-radius: 10px;
+}
+
+#imagemHeroi2 img {
+    background-color: var(--ciano);
+    border-radius: 10px;
+}
+
+#imagemHeroi3 img {
+    background-color: var(--amarelo);
+    border-radius: 10px;
+}
+
+
+#secaoPresente h2 {
+    width: 40%;
+}
+
+.nomeDesenho {
+    color: var(--amarelo);
+    margin: 30px 0 10px 0;
+}
+
+.nomeHeroi {
+    color: var(--texto);
+    font-size: 20px;
+    margin: 0 0 20px 0;
+}
+
+#desenhosPresente ul li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin: 30px 0;
+}
+
+#desenhosPresente ul li div h3 {
+    color: var(--magenta);
+    font-size: 42px;
+}
+
+#desenhosPresente ul li img {
+    height: 200px;
+}
+
+#desenhosPresente h3 {
+    margin: 0;
+}
+
+#desenhosPresente .nomeDesenho {
+    color: var(--texto);
+    font-size: 24px;
+    margin: 0;
+}
+
+#secaoFimFita {
+    background: linear-gradient(to right, var(--roxo), rgb(130, 59, 189), rgb(162, 89, 204), rgb(235, 83, 167), rgb(204, 96, 181));
+}
+
+#secaoFimFita {
+    text-align: center;
+}
+
+#fimDaFita {
+    color: var(--amarelo);
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+#secaoFimFita h2 {
+    color: var(--texto);
+    font-size: 84px;
+    margin: 0;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px 20px 0;
+}
+
+footer p {
+    color: var(--texto-suave);
+    text-align: center;
+}
+
+footer nav {
+    display: flex;
+    gap: 20px;
+}
+
+footer nav a {
+    color: var(--ciano);
+}
