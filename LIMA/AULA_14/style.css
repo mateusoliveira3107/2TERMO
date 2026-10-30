@@ -281,6 +281,10 @@ section {
     font-size: 42px;
 }
 
+#desenhosPresente ul li {
+    align-items: center;
+}
+
 #desenhosPresente ul li img {
     height: 200px;
 }
