@@ -32,7 +32,8 @@ ON CA.id_categoria = P.id_categoria;
 CREATE VIEW vw_pedidos_clientes_desafio AS
 SELECT P.id_pedido, P.data_pedido, P.valor_total, P.status_pedido, CL.id_cliente, CL.nome_cliente AS Cliente
 FROM pedido P
-INNER JOIN cliente AS CL;
+INNER JOIN cliente AS CL
+ON CL.id_cliente = P.id_cliente;
 
 -- 7. Consulte somente pedidos FINALIZADOS pela view.
 SELECT * FROM vw_pedidos_clientes_desafio
@@ -50,7 +51,7 @@ ON IP.id_pedido = P.id_pedido;
 
 -- Parte C — Relatórios Intermediário/
 -- Avançado
-SELECT P.id_pedido, PR.nome AS Produto, IP.quantidade, PR.preco AS Preco_Unitario, PR.preco * * PR.quantidade AS Subtotal
+SELECT P.id_pedido, PR.nome AS Produto, IP.quantidade, PR.preco AS Preco_Unitario, PR.preco * PR.quantidade AS Subtotal
 FROM pedido AS P
 INNER JOIN produto AS PR
 ON PR.id_produto = P.id_produto
