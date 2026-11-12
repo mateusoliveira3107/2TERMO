@@ -1,4 +1,4 @@
--- Active: 1794484541357@@127.0.0.1@3306@mysql
+-- Active: 1794484541357@@127.0.0.1@3306@biblioteca_senai_mateus_oliveira
 -- Criar Tabelas - Usuário, Livro, Emprestimo, Categoria, Fornecedor
 
 CREATE DATABASE IF NOT EXISTS BIBLIOTECA_SENAI_MATEUS_OLIVEIRA;
