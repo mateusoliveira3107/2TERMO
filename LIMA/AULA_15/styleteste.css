@@ -1,0 +1,205 @@
+/* esse foi um style.css utilizado apenas para testar e compreender melhor o funcionamento de ferramentas de estilização, não será utilizado */
+
+body {
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid #aeb7de; */
+    background-color: rgb(22, 30, 50);
+    transition: all 2.3s ease;
+}
+body:hover {
+    background-color: #DEDEDE;
+    box-shadow: 0 0 20px #DEDEDE;
+    transform: rotate(9999deg);
+    background-color: rgb(0, 255, 217);
+    section {
+        background-color: rgb(255, 146, 3);
+    }
+}
+section {
+    padding: 0 60px;
+    margin: 0;
+}
+
+.titulo-secao {
+    background-color: rgb(7, 14, 31);
+    position: sticky;
+    top: 0;
+    padding-bottom: 5px;
+    background-image: linear-gradient(to right, rgb(11, 31, 80), rgb(41, 28, 112), #482397e1);
+}
+
+.titulo h1 {
+    color: blue;
+    margin-bottom: 0;
+}
+
+.titulo span {
+    color: #DEDEDE;
+}
+
+.titulo a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    gap: 20px;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+}
+
+.titulo-secao h3 {
+    color: white;
+    margin-top: 0;
+    font-weight: 500;
+}
+
+.nav {
+    margin-left: auto;
+}
+
+.nav ul {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    gap: 32px;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.conteudo {
+    display: flex;
+    gap: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 20.3s ease;
+}
+
+.conteudo:hover {
+    background-color: #DEDEDE;
+    box-shadow: 0 0 20px #DEDEDE;
+    transform: rotate(939deg);
+    background-color: rgb(2, 131, 92);
+}
+
+.conteudo-art {
+    letter-spacing: 2px;
+    line-height: 1.6;
+    border: 1px solid #DEDEDE;
+    padding: 5px 20px;
+    
+    border-radius: 15px;
+}
+
+.conteudo-img {
+    float: left;
+    margin: 0 12px 8px 0;
+}
+
+.conteudo-img figcaption {
+    color: white;
+    text-align: center;
+}
+
+.galeria {
+    margin: 0;
+    padding: 24px;
+    background-color: #DEDEDE;
+    transition: all 26.4s ease;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.galeria:hover {
+    background-color: #DEDEDE;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #DEDEDE;
+    transform: translateY(-430px) rotate(93339deg);
+}
+
+.galeria-img {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 2px solid #FFFFFF;
+    border-radius: 30px;
+    text-align: center;
+    transition: all 25.4s ease;
+}
+.galeria-img:hover {
+    background-color: #DEDEDE;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #DEDEDE;
+    transform: translateY(180px) rotate(9393deg);
+}
+
+.galeria-img li {
+    list-style: none;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.galeria-img img {
+    border-radius: 40px;
+    transition: all 1322.4s ease;
+}
+
+.galeria-img img:hover {
+    background-color: #DEDEDE;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #DEDEDE;
+    transform: translateY(1220px) rotate(99999deg);
+}
+
+.imagem {
+    margin: 20px;
+    padding: 20px;
+}
+
+.imagem-img {
+    display: flex;
+    object-fit: cover;
+    object-position: left;
+}
+
+.cartoes {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.25s;
+    box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.3);
+}
+
+.cartoes-corpo {
+    overflow: hidden;
+}
+
+.cartoes-corpo img {
+    transition: transform 20.4s;
+}
+
+.cartoes-corpo img:hover {
+    
+}
+
+.cartoes:hover {
+    border-radius: 226px;
+    transform: translateY(428px) rotate(2000deg);
+    box-shadow: 0 212px 352px -14px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+    .galeria-img {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .conteudo {
+        flex-wrap: wrap;
+    }
+}
