@@ -1,5 +1,6 @@
 :root {
-    --azul-escuro: #13213e;
+    --azul-escuro: #112245;
+    --azul-bem-escuro: #10153b;
     --roxo-claro: #a39dec;
     --azul-claro: #85abd6;
     --cinza-claro: #e2e5ec;
@@ -13,7 +14,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--cinza-claro);
+    background: linear-gradient(var(--cinza), var(--cinza-claro));
 }
 
 img {
@@ -22,14 +23,14 @@ img {
 
 #cabecalho {
     display: flex;
-    background: var(--azul-escuro);
+    background: linear-gradient(to right, var(--texto),var(--azul-bem-escuro), var(--azul-escuro), var(--texto));
     justify-content: center;
     padding: 10px;
     color: var(--branco);
     gap: 10px;
     align-items: center;
     font-size: 18px;
-    border: solid 8px var(--cinza-claro);
+    border: solid 8px var(--azul-bem-escuro);
     position: sticky;
     top: 0;
 }
@@ -53,12 +54,13 @@ img {
     margin: 8px;
     padding: 20px 20% 40px 20%;
     text-align: center;
-    background: linear-gradient(to right, var(--roxo-claro),var(--azul-claro));
+    background: linear-gradient(to right,var(--roxo-claro),var(--azul-claro));
     justify-content: center;
 }
 
 #inicio h2 {
-    font-size: 32px;
+    font-size: 34px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #inicio p {
@@ -183,4 +185,8 @@ img {
     #programacao {
         grid-template-columns: 1fr;
     }
+
+    #inicio figure {
+        margin: 30px 3%;
+    }  
 }
