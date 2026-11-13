@@ -29,7 +29,9 @@ img {
     gap: 10px;
     align-items: center;
     font-size: 18px;
-    margin: 8px;
+    border: solid 8px var(--cinza-claro);
+    position: sticky;
+    top: 0;
 }
 
 #cabecalho h2 {
