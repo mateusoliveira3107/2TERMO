@@ -67,5 +67,3 @@ CREATE TABLE ATENDIMENTO_EXAME (
     FOREIGN KEY(id_exame) REFERENCES exame (id_exame),
     FOREIGN KEY(id_atendimento) REFERENCES atendimento (id_atendimento)
 )
-
-ALTER TABLE funcionario ADD FOREIGN KEY(id_atendimento) REFERENCES atendimento (id_atendimento)
