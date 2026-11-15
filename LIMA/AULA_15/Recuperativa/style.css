@@ -114,6 +114,13 @@ img {
     font-weight: 500;
 }
 
+.categoria {
+    color: var(--azul-claro);
+    background-color: var(--azul-bem-escuro);
+    padding: 10px;
+    border-radius: 20px;
+}
+
 #programacao {
     display: grid;
     grid-template-columns: 3fr 2fr;
