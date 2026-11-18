@@ -35,11 +35,11 @@ select * from exame;
 
 
 INSERT INTO atendimento (descricao_atendimento, status_atendimento, data_termino, data_inicio, id_funcionario, id_medico) VALUES
-('Exame admissional completo com avaliação clínica.', 'concluido', '2026-11-10 10:30:00', '2026-11-10 09:45:00', 1, 1),
-('Exame periódico anual e verificação de pressão arterial.', 'cancelado', null, null, 2, 2),
+('Exame periódico com avaliação clínica.', 'concluido', '2026-11-10 10:30:00', '2026-11-10 09:45:00', 1, 1),
+('Exame periódico anual e verificação de pressão arterial.', 'cancelado', NULL, NULL, 2, 2),
 ('Avaliação médica de retorno ao trabalho após afastamento.', 'concluido', '2026-11-15 11:20:00', '2026-11-15 10:40:00', 3, 1),
-('Atendimento clínico ocupacional em andamento.', 'andamento', null, '2026-11-18 17:30:00', 4, 2),
-('Exame de mudança de função para cargo de coordenação.', 'nao_iniciado', null, null, 5, 1);
+('Atendimento clínico ocupacional em andamento.', 'andamento', NULL, '2026-11-18 17:30:00', 4, 2),
+('Avaliação ocupacional para mudança de função.', 'nao_iniciado', NULL, NULL, 5, 1);
 select * from atendimento;
 
 
