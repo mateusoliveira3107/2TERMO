@@ -1,69 +1,77 @@
--- Gera��o de Modelo f�sico
--- Sql ANSI 2003 - brModelo.
+-- Active: 1792358517408@@127.0.0.1@3306
+CREATE DATABASE IF NOT EXISTS clinica;
+USE clinica;
 
-CREATE TABLE empresa (
+CREATE TABLE IF NOT EXISTS empresa (
     id_empresa int auto_increment,
-    telefone char(11) not null,
-    cnpj char(14) not null unique,
+    telefone varchar(11) not null,
+    cnpj varchar(18) not null,
     nome_empresa varchar(120) not null,
-    razao_social varchar(100) not null unique,
+    razao_social varchar(100) not null,
     ativo boolean default true,
 
     constraint pk_empresa primary key (id_empresa),
+    constraint uk_cnpj_empresa unique (cnpj),
     constraint uk_razao_empresa unique (razao_social)
 );
 
-CREATE TABLE funcionario (
+CREATE TABLE IF NOT EXISTS funcionario (
     id_funcionario int auto_increment,
     nome_funcionario varchar(100) not null,
-    cpf char(11) not null unique,
-    telefone char(11) not null,
+    cpf char(11) not null,
+    telefone varchar(11) not null,
     data_admissao date,
     cargo varchar(60) not null,
-    id_empresa int auto_inc
+    id_empresa int not null,
 
     constraint pk_funcionario primary key (id_funcionario),
-    constraint uk_cpf_funcionario
+    constraint uk_cpf_funcionario unique (cpf),
+    constraint fk_empresa_funcionario foreign key (id_empresa) references empresa (id_empresa)
 );
 
-CREATE TABLE atendimento (
-    descricao_atendimento text not null,
-    data_inicio datetime not null,
-    id_atendimento int auto_increment PRIMARY KEY,
-    concluido boolean,
-    andamento boolean,
-    nao_iniciado boolean,
-    cancelado boolean,
-    data_termino datetime not null
-);
-
-CREATE TABLE exame (
-    id_exame int auto_increment PRIMARY KEY,
-    nome_exame varchar(100) not null unique,
-    tipo varchar(50) not null unique,
-    concluido boolean,
-    andamento boolean,
-    nao_iniciado boolean,
-    cancelado boolean,
-    valor decimal(10, 2),
-    data_inicio datetime not null,
-    data_termino datetime not null
-)
-
-CREATE TABLE medico (
-    cpf char(11) not null unique,
-    crm varchar(6) not null,
-    id_medico int auto_increment PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS medico (
+    id_medico int auto_increment,
+    cpf char(11) not null,
+    crm varchar(10) not null,
     nome_medico varchar(100) not null,
-    telefone char(11) not null,
+    telefone varchar(11) not null,
     ativo boolean default true,
-    id_atendimento int auto_increment,
-    FOREIGN KEY(id_atendimento) REFERENCES atendimento (id_atendimento)
-)
 
-CREATE TABLE ATENDIMENTO_EXAME (
+    constraint pk_medico primary key (id_medico),
+    constraint uk_cpf_medico unique (cpf),
+    constraint uk_crm_medico unique (crm)
+);
+
+CREATE TABLE IF NOT EXISTS exame (
     id_exame int auto_increment,
+    nome_exame varchar(100) not null,
+    tipo varchar(50) not null,
+    valor decimal(10, 2),
+
+    constraint pk_exame primary key (id_exame),
+    constraint uk_nome_exame unique (nome_exame)
+);
+
+CREATE TABLE IF NOT EXISTS atendimento (
     id_atendimento int auto_increment,
-    FOREIGN KEY(id_exame) REFERENCES exame (id_exame),
-    FOREIGN KEY(id_atendimento) REFERENCES atendimento (id_atendimento)
-)
+    descricao_atendimento text not null,
+    status_atendimento VARCHAR(20) default 'nao_iniciado' CHECK(status_atendimento IN ('concluido', 'andamento', 'nao_iniciado', 'cancelado')),
+    data_inicio datetime    ,
+    data_termino datetime,
+    id_funcionario int not null,
+    id_medico int not null,
+
+    constraint pk_atendimento primary key (id_atendimento),
+    constraint fk_funcionario_atendimento foreign key (id_funcionario) references funcionario (id_funcionario),
+    constraint fk_medico_atendimento foreign key (id_medico) references medico (id_medico)
+);
+
+CREATE TABLE IF NOT EXISTS atendimento_exame (
+    id_exame int not null,
+    id_atendimento int not null,
+    status_exame varchar(20) default 'nao_iniciado' check (status_exame in ('concluido', 'andamento', 'nao_iniciado', 'cancelado')),
+
+    constraint pk_atendimento_exame primary key (id_exame, id_atendimento),
+    constraint fk_exame_atendimento foreign key(id_exame) REFERENCES exame (id_exame),
+    constraint fk_atendimento_exame foreign key(id_atendimento) REFERENCES atendimento (id_atendimento)
+);
