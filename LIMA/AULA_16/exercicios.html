@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css">
+    <title>Exercícios Bootstrap</title>
+</head>
+<body class="bg-secondary-subtle">
+    <header>
+        <h1>Exercícios Bootstrap</h1>
+    </header>
+
+    <main>
+        <section class="text-center mt-4 bg-light p-3">
+            <h2>Exercício 01 - Cores</h2>
+            <p>Crie um título azul, parágrafo secundário e uma seção escura com texto branco.</p>
+
+            <h2 class="text-primary">Titulo</h2>
+            <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quae perspiciatis, temporibus ut nulla eveniet modi debitis sed vel dolorem, dolore quod non! Nisi pariatur autem maiores, porro quae aut!</p>
+            
+            <article class="bg-dark text-white p-4">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi nisi ratione ipsa? Minima repellendus quam quos, ipsam in tempore! Eos sit consequuntur, dicta quasi est quibusdam ea sed quia magnam.</p>
+            </article>
+        </section>
+
+        <section class="text-center p-3 mt-4">
+            <h2>Exercício 02 - Espaçamentos</h2>
+            <p>Crie três seções e compare p-1, p-3 e p-5. Depois repita com margin.</p>
+
+            <article class="p-1 bg-dark text-white mt-2">
+                <H4>Essa é a seção 1 - padding 1</H4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet repellat perspiciatis dolore at modi natus! Eveniet aliquid sed quae. Consectetur vel enim quasi cumque. Officia soluta quod pariatur ea velit.</p>
+            </article>
+            <article class="p-3 bg-light text-danger mt-2">
+                <H4>Essa é a seção 2 - padding 3</H4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet repellat perspiciatis dolore at modi natus! Eveniet aliquid sed quae. Consectetur vel enim quasi cumque. Officia soluta quod pariatur ea velit.</p>
+            </article>
+            <article class="p-5 bg-secondary mt-2">
+                <H4>Essa é a seção 3 - padding 5</H4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet repellat perspiciatis dolore at modi natus! Eveniet aliquid sed quae. Consectetur vel enim quasi cumque. Officia soluta quod pariatur ea velit.</p>
+            </article>
+            <article class="p-2 bg-dark text-white m-1">
+                <H4>Essa é a seção 4 - margin 1</H4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet repellat perspiciatis dolore at modi natus! Eveniet aliquid sed quae. Consectetur vel enim quasi cumque. Officia soluta quod pariatur ea velit.</p>
+            </article>
+            <article class="p-2 bg-light text-danger m-3">
+                <H4>Essa é a seção 5 - margin 3</H4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet repellat perspiciatis dolore at modi natus! Eveniet aliquid sed quae. Consectetur vel enim quasi cumque. Officia soluta quod pariatur ea velit.</p>
+            </article>
+            <article class="p-2 bg-secondary m-5">
+                <H4>Essa é a seção 6 - margin 5</H4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet repellat perspiciatis dolore at modi natus! Eveniet aliquid sed quae. Consectetur vel enim quasi cumque. Officia soluta quod pariatur ea velit.</p>
+            </article>
+        </section>
+
+        <section class="text-center mt-4 bg-light p-3">
+            <h2>Exercício 03 - Botões</h2>
+            <p>Crie botões primary, success, danger, dark e outline-primary. Teste também btn-lg e btn-sm.</p>
+
+            <a href="#" class="btn btn-primary">Botão Primário</a>
+            <a href="#" class="btn btn-success">Botão Success</a>
+            <a href="#" class="btn btn-danger">Botão Danger</a>
+            <a href="#" class="btn btn-dark">Botão Primário</a>
+            <a href="#" class="btn btn-outline-primary">Botão Outline Primary</a>
+            <a href="#" class="btn btn-lg bg-warning">Botão lg</a>
+            <a href="#" class="btn btn-sm bg-info">Botão sm</a>
+        </section>
+
+        <section class="text-center mt-4 p-3">
+            <h2>Exercício 04 - Containers</h2>
+            <p>Crie duas páginas ou regiões iguais: uma com container e outra com container-fluid. Registre a diferença.</p>
+
+            <article class="container bg-dark text-white p-4">
+                <h3>Este é o container</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem expedita perferendis quos molestias? Quos doloribus eaque eum, veritatis distinctio aut molestias placeat voluptate voluptates totam inventore dolorem necessitatibus rerum doloremque.</p>
+            </article>
+            <article class="container-fluid bg-dark text-white p-4 mt-4">
+                <h3>Este é o container fluid</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, exercitationem facilis, id sed reiciendis animi veniam voluptatem esse eligendi veritatis nostrum dolor molestiae porro quo nulla voluptatibus ipsam in excepturi?</p>
+            </article>
+            <!-- Diferença registrada: o container tem uma margem automática de separação com a página, já o container fluid não possui margem e é colado horizontalmente na página -->
+        </section>
+
+        <section class="text-center mt-4 p-3 bg-secondary row g-4">
+            <h2>Exercício 05 - Grid responsivo</h2>
+            <p>Crie quatro conteúdos com comportamento:
+            celular: 1 por linha;
+            tablet: 2 por linha;
+            desktop: 4 por linha.</p>
+
+            <h3 class="text-primary">Desktop</h3>
+            <article class="col-12">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ex quis doloremque similique iusto ullam dolorum blanditiis tenetur ducimus voluptate sunt amet, fuga praesentium ea. Modi ullam eos omnis dicta.
+
+            <h3>Tablet</h3>
+            <article class="col-md-6">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ex quis doloremque similique iusto ullam dolorum blanditiis tenetur ducimus voluptate sunt amet, fuga praesentium ea. Modi ullam eos omnis dicta.
+            <article class="col-md-6">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ex quis doloremque similique iusto ullam dolorum blanditiis tenetur ducimus voluptate sunt amet, fuga praesentium ea. Modi ullam eos omnis dicta.
+
+            <h3 class="text-danger row text-center">Celular</h3>
+            <article class="col-md-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ex quis doloremque similique iusto ullam dolorum blanditiis tenetur ducimus voluptate sunt amet, fuga praesentium ea. Modi ullam eos omnis dicta.
+            <article class="col-md-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ex quis doloremque similique iusto ullam dolorum blanditiis tenetur ducimus voluptate sunt amet, fuga praesentium ea. Modi ullam eos omnis dicta.
+            <article class="col-md-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ex quis doloremque similique iusto ullam dolorum blanditiis tenetur ducimus voluptate sunt amet, fuga praesentium ea. Modi ullam eos omnis dicta.
+        </section>
+    </main>
+</body>
+</html>
