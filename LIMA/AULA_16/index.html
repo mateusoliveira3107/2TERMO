@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css">
+    <!-- Link para acesso Bootstrap -->
+    <title>Bootstrap</title>
+</head>
+<body class="bg-secondary-subtle">
+    <h1>Introdução ao bootstrap</h1>
+    <a href="#" class="link">Acessar conteúdo</a>
+    
+    <h2>Link CDN - Acesso a Biblioteca JS</h2>
+    <a href="#cdn" class="btn btn-primary">CSS Biblioteca</a>
+    <h3>Hello, Bootstrap</h3>
+    <br>
+    <h3>Hello, World!</h3>
+    <br>
+
+    <h1>Framework</h1>
+    <h2>Sem Framework</h2>
+    <p class="text-secondary">Escrevemos manualmente</p>
+    
+    <h2>Com Framework</h2>
+    <p>Utilizamos estruturas prontas</p>
+
+    <main>
+        <section class="container py-5">
+            <h1 class="text-primary text-center mb-3">Classes utilitárias</h1> <!-- mb - margin bottom -->
+
+            <p class="text-secondary text-center">Tecnologia e utilização de recursos em classes</p>
+        </section>
+
+        <section class="bg-dark text-success p-5 text-center lh-sm"> <!-- p - padding -->
+            <h2 class="fs-2 fw-bold">Produção</h2>
+
+            <p class="fs-4">Informações do processo produtivo.</p>
+        </section>
+
+        <h3>Espaçamentos:</h3>
+        <p class="fs-4">p-3 - Padding</p> <!-- fs - font size -->
+        <p class="fw-bolder">p-5 - Padding</p> <!-- fw - font weight -->
+        <p class="lh-sm">py-5 - Padding Vertical</p> <!-- lh - line height -->
+        <p class="text-decoration-underline">px-4 - Padding Horizontal</p>
+        <p class="fs-4">m-3 - Margin</p>
+        <p class="text-uppercase">mt-4 - Margin Top</p>
+        <p class="text-capitalize">mb-5 - Margin Bottom</p>
+        <p class="badge text-bg-primary text-wrap p-2" style="width: 6rem;">mx-auto - Margin Definida</p>
+        
+        <h2 class="text-primary">Container e Layout</h2>
+        <p class="text-secondary">Container - Largura responsiva controlada.</p>
+        <p class="text-secondary">Container-Fluid - Utiliza toda a largura.</p>
+
+        <header class="container">
+            <section class="row">
+                <article class="col-4 bg-dark p-3 text-secondary">
+                    Espaço 1
+                </article>
+                <article class="col-4 bg-secondary p-3">
+                    Espaço 2
+                </article>
+                <article class="col-4 bg-light p-3">
+                    Espaço 3
+                </article>
+            </section>
+        </header>
+
+        <h2 class="text-danger">Exercício 1</h2>
+        <p class="text-primary">Criar um container de duas colunas</p>
+
+        <section class="row text-center">
+            <article class="col-6 bg-secondary bg-gradient p-4">
+                Espaço 1
+            </article>
+            <article class="col-6 bg-dark bg-gradient p-4">
+                Espaço 2
+            </article>
+        </section>
+
+        <section class="card m-3" style="width: 20rem;">
+            Cartão Virtual
+            <figure>
+                <img src="imagens/spiderMan.jpg" class="card-img-top" alt="Cartão Virtual 1">
+                <article class="card-body">
+                    <h5 class="card-title">Cartão Virtual 1</h5>
+                    <p class="card-text">Um exemplo de cartão virtual</p>
+                    <a href="#" class="btn btn-primary">Cartão 1</a>
+                </article>
+            </figure>
+        </section>
+
+        <h2>Responsividade</h2>
+        <article class="col-12 col-md-6 col-md-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ex quis doloremque similique iusto ullam dolorum blanditiis tenetur ducimus voluptate sunt amet, fuga praesentium ea. Modi ullam eos omnis dicta.
+        </article>
+    </main>
+</body>
+</html>
