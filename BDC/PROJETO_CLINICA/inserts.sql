@@ -1,3 +1,4 @@
+-- Active: 1795086595435@@127.0.0.1@3306@clinica_ocupacional
 INSERT INTO EMPRESA (telefone, cnpj, nome_empresa, razao_social, ativo) VALUES
 ('19987654321', '12345678000190', 'MetalTech', 'MetalTech Industrial LTDA', true),
 ('19976543210', '23456789000181', 'AutoParts', 'AutoParts Componentes Automotivos LTDA', true),
@@ -242,15 +243,14 @@ INSERT INTO ATENDIMENTO_EXAME (id_exame, id_atendimento, status_exame) VALUES
 (23, @ID_ATENDIMENTO, 'nao_iniciado'),
 (24, @ID_ATENDIMENTO, 'nao_iniciado');
 
-SELECT AE.status_exame, ME.nome_medico AS MEDICO
+SELECT AE.status_exame, ME.nome_medico, AT.data_inicio, AT.data_termino
 FROM atendimento_exame AS AE
 INNER JOIN atendimento AS AT
 ON AT.id_atendimento = AE.id_atendimento
 INNER JOIN MEDICO AS ME
 ON ME.id_medico = AT.id_medico
-WHERE AT.ID_ATENDIMENTO = 18;
+WHERE AE.ID_ATENDIMENTO = 8;
 
 SELECT * FROM visualizar_atendimento;
 
 COMMIT;
-
