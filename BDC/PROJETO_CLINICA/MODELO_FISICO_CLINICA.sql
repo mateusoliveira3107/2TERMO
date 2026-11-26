@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS atendimento (
     id_atendimento int auto_increment,
     descricao_atendimento text not null,
     status_atendimento VARCHAR(20) default 'nao_iniciado' CHECK(status_atendimento IN ('concluido', 'andamento', 'nao_iniciado', 'cancelado')),
-    data_inicio datetime not null,
+    data_inicio datetime,
     data_termino datetime,
     id_funcionario int not null,
     id_medico int not null,
