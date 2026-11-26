@@ -1,6 +1,6 @@
--- Active: 1792358517408@@127.0.0.1@3306
-CREATE DATABASE IF NOT EXISTS clinica;
-USE clinica;
+-- Active: 1795086595435@@127.0.0.1@3306@clinica_ocupacional
+CREATE DATABASE IF NOT EXISTS clinica_ocupacional;
+USE clinica_ocupacional;
 
 CREATE TABLE IF NOT EXISTS empresa (
     id_empresa int auto_increment,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS exame (
     id_exame int auto_increment,
     nome_exame varchar(100) not null,
     tipo varchar(50) not null,
-    valor decimal(10, 2),
+    valor decimal(10, 2) not null,
 
     constraint pk_exame primary key (id_exame),
     constraint uk_nome_exame unique (nome_exame)
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS atendimento (
     id_atendimento int auto_increment,
     descricao_atendimento text not null,
     status_atendimento VARCHAR(20) default 'nao_iniciado' CHECK(status_atendimento IN ('concluido', 'andamento', 'nao_iniciado', 'cancelado')),
-    data_inicio datetime    ,
+    data_inicio datetime not null,
     data_termino datetime,
     id_funcionario int not null,
     id_medico int not null,
@@ -73,5 +73,5 @@ CREATE TABLE IF NOT EXISTS atendimento_exame (
 
     constraint pk_atendimento_exame primary key (id_exame, id_atendimento),
     constraint fk_exame_atendimento foreign key(id_exame) REFERENCES exame (id_exame),
-    constraint fk_atendimento_exame foreign key(id_atendimento) REFERENCES atendimento (id_atendimento)
+    constraint fk_atendimento_exame foreign key(id_atendimento) references atendimento (id_atendimento)
 );
