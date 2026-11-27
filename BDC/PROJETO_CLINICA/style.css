@@ -2,34 +2,42 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: rgb(194, 194, 194);
 }
 
-#navbar h1 {
-    padding: 10px;
-    font-size: 32px;
+#navbar #titulo {
     color: white;
+    background-color: #2EC4B6;
+    padding: 20px;
+
 }
 
 #navbar {
     position: sticky;
     top: 0;
     left: 0;
-    width: 240px;
+    width: 300px;
     height: 100vh;
-    background-color: black;
+    background-color: white;
 }
 
 #navbar nav {
     display: grid;
-    gap: 20px;
+    margin-top: 30px;
+    gap: 40px;
     list-style: none;
     margin-left: 20px;
 }
 #navbar nav a {
-    padding: 8px 5px;
     text-decoration: none;
     margin-top: 10px;
-    color: white;
+    color: black;
     font-size: 20px;
+    width: 60%;
+}
+#navbar nav a:hover {
+    color: white;
+    background-color: #2EC4B6;
+    border-radius: 10px;
 }
 
