@@ -75,3 +75,5 @@ CREATE TABLE IF NOT EXISTS atendimento_exame (
     constraint fk_exame_atendimento foreign key(id_exame) REFERENCES exame (id_exame),
     constraint fk_atendimento_exame foreign key(id_atendimento) references atendimento (id_atendimento)
 );
+
+-- Na hora de inserir os dados, seguimos a ordem das tabelas para evitar erros nas chaves estrangeiras. Nos comandos UPDATE e DELETE, utilizamos o WHERE para alterar ou excluir apenas os registros desejados. Na tabela ATENDIMENTO_EXAME, utilizamos os dois IDs para identificar corretamente cada registro, pois ela possui uma chave primária composta.
