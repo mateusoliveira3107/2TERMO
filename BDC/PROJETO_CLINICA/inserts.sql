@@ -1,4 +1,5 @@
--- Active: 1795086595435@@127.0.0.1@3306@clinica_ocupacional
+-- Active: 1792358517408@@127.0.0.1@3306@asd123
+USE clinica_ocupacional;
 INSERT INTO EMPRESA (telefone, cnpj, nome_empresa, razao_social, ativo) VALUES
 ('19987654321', '12345678000190', 'MetalTech', 'MetalTech Industrial LTDA', true),
 ('19976543210', '23456789000181', 'AutoParts', 'AutoParts Componentes Automotivos LTDA', true),
@@ -20,7 +21,6 @@ INSERT INTO FUNCIONARIO (nome_funcionario, cpf, telefone, data_admissao, cargo, 
 ('Amanda Souza', '10000000012', '19981000012', '2024-06-03', 'Tecnica de Seguranca do Trabalho', 3),
 ('Diego Pereira', '10000000013', '19981000013', '2020-10-19', 'Motorista', 4),
 ('Felipe Barbosa', '10000000015', '19981000015', '2023-05-25', 'Conferente', 4);
-SELECT * FROM funcionario;
 INSERT INTO EXAME(nome_exame, tipo, valor) VALUES
 ('Avaliacao Clinica Ocupacional', 'Clinico', 90.00),
 ('Audiometria Tonal', 'Audiologico', 75.00),
@@ -101,7 +101,7 @@ SET CARGO = 'Gestor de segurança'
 WHERE ID_FUNCIONARIO = 1;
 
 UPDATE MEDICO
-SET NOME_MEDICO = 'Neymar Junior Pereira'
+SET NOME_MEDICO = 'Neymar Pereira'
 WHERE ID_MEDICO = 10;
 
 UPDATE MEDICO
@@ -149,6 +149,10 @@ WHERE ID_ATENDIMENTO = 12;
 
 DELETE FROM ATENDIMENTO
 WHERE ID_ATENDIMENTO = 14;
+
+-- TESTE COM ERRO, ID_ATENDIMENTO 13 ESTÁ RELACIONADO COM ATENDIMENTO_EXAME
+-- DELETE FROM ATENDIMENTO
+-- WHERE ID_ATENDIMENTO = 13;
 
 
 DELETE FROM FUNCIONARIO
@@ -223,13 +227,6 @@ WHERE ID_EXAME IN (@ID_EXAME_1, @ID_EXAME_2);
 
 SAVEPOINT criacao_exame;
 
-SELECT ID_FUNCIONARIO -- DESCOBRIR ID DO FUNCIONÁRIO INSERIDO PARA CRIAR UM ATENDIMENTO - ID: 20
-FROM funcionario
-WHERE ID_FUNCIONARIO = @ULTIMO_ID_FUNCIONARIO;
-
-SELECT * FROM medico  -- DESCOBRIR ID DO MÉDICO INSERIDO PARA CRIAR UM ATENDIMENTO - ID: 13
-WHERE cpf = '20099800026';
-
 INSERT INTO ATENDIMENTO (descricao_atendimento, status_atendimento, data_inicio, data_termino, id_funcionario, id_medico) VALUES
 ('Atendimento de operador de máquinas', 'andamento', '2026-10-09 05:00:00', NULL, @ULTIMO_ID_FUNCIONARIO, @ULTIMO_ID_MEDICO);
 
@@ -241,10 +238,12 @@ INSERT INTO ATENDIMENTO_EXAME (id_exame, id_atendimento, status_exame) VALUES
 (@ID_EXAME_1, @ID_ATENDIMENTO, 'nao_iniciado'),
 (@ID_EXAME_2, @ID_ATENDIMENTO, 'nao_iniciado');
 
-SELECT AE.status_exame, ME.nome_medico, AT.data_inicio, AT.data_termino
+SELECT EX.nome_exame AS EXAME, AE.status_exame, ME.nome_medico, AT.data_inicio, AT.data_termino
 FROM atendimento_exame AS AE
 INNER JOIN atendimento AS AT
 ON AT.id_atendimento = AE.id_atendimento
+INNER JOIN EXAME AS EX
+ON EX.id_exame = AE.id_exame
 INNER JOIN MEDICO AS ME
 ON ME.id_medico = AT.id_medico
 WHERE AE.ID_ATENDIMENTO = @ID_ATENDIMENTO;
@@ -273,11 +272,64 @@ WHERE ID_EXAME = 1;
 -- INDEX E EXPLAIN
 EXPLAIN
 SELECT * FROM ATENDIMENTO
-WHERE STATUS_ATENDIMENTO = 'concluido';
+WHERE STATUS_ATENDIMENTO = 'nao_iniciado';
 
 CREATE INDEX IDX_STATUS_ATENDIMENTO
 ON ATENDIMENTO (STATUS_ATENDIMENTO);
 
 EXPLAIN
 SELECT * FROM ATENDIMENTO
-WHERE STATUS_ATENDIMENTO = 'concluido';
+WHERE STATUS_ATENDIMENTO = 'nao_iniciado';
+
+
+-- SELECTS
+-- consultar a tabela empresas
+SELECT * FROM empresa;
+
+-- consultar a tabela funcionarios
+SELECT * FROM funcionario;
+
+-- consultar a tabela medicos
+SELECT * FROM medico;
+
+-- consultar a tabela exames
+SELECT * FROM exame;
+
+-- consultar a tabela atendimento
+SELECT * FROM atendimento;
+
+-- consultar a tabela atendimento_exame
+SELECT * FROM atendimento_exame;
+
+-- consultar empresas ativas
+SELECT * FROM empresa
+WHERE ativo = TRUE;
+
+-- consultar exames por valor
+SELECT * FROM exame
+ORDER BY valor DESC;
+
+-- consultar funcionários e suas empresas
+SELECT f.nome_funcionario, e.nome_empresa
+FROM funcionario AS f
+INNER JOIN empresa AS e
+ON f.id_empresa = e.id_empresa;
+
+-- consultar atendimentos e seus médicos
+SELECT a.id_atendimento, m.nome_medico
+FROM atendimento AS a
+INNER JOIN medico AS m
+ON a.id_medico = m.id_medico;
+
+-- consultar quantidade de funcionários por empresa
+SELECT e.nome_empresa, COUNT(f.id_funcionario) AS total_funcionarios
+FROM empresa AS e
+LEFT JOIN funcionario AS f
+ON e.id_empresa = f.id_empresa
+GROUP BY e.id_empresa, e.nome_empresa;
+
+-- consultar quais os exames de cada atendimento
+SELECT ae.id_atendimento, e.nome_exame, ae.status_exame
+FROM atendimento_exame AS ae
+INNER JOIN exame AS e
+ON ae.id_exame = e.id_exame;
