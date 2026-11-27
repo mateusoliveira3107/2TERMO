@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(194, 194, 194);
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    min-height: 100vh;
+}
+
+#navbar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+#navbar #titulo {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(#14b1a1, #19b8a8, #34c7b8);
+    font-weight: bolder;
+    padding: 25px 20px;
+}
+
+#navbar #titulo h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+#navbar #titulo h2 {
+    margin: 5px 0 0 0;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+#navbar nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+    padding: 0 15px;
+}
+
+#navbar nav a {
+    text-decoration: none;
+    color: #414141;
+    font-size: 20px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: all 0.1s ease;
+}
+
+#navbar nav a:hover {
+    color: white;
+    background-color: #2EC4B6;
+}
+
+main {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#tituloPainel h2 {
+    font-size: 44px;
+    margin: 0;
+    color: rgb(0, 68, 85);
+}
+
+#tituloPainel p {
+    font-size: 22px;
+}
+
+#secaoDados {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+#secaoDados h3 {
+    font-size: 32px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    color: rgb(0, 68, 85);
+}
+
+#secaoDados article {
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 15px;
+}
+
+#atendimentosHoje h2 {
+    margin-left: 20px;
+}
+
+#atendimentosHoje article {
+    border-radius: 15px;
+    background-color: white;
+    padding: 20px;
+    width: 70%;
+}
+
+#atendimentosHoje article section {
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    gap: 30px;
+}
+
+#atendimentosHoje {
+    display: flex;
+    gap: 15px;
+}
+
+#atalhos article {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+#atalhos a {
+    font-size: 18px;
+    text-align: center;
+    padding: 30px;
+    background-color: #14b1a1;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+}
